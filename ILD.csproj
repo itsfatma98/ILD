@@ -2136,6 +2136,7 @@
     <Content Include="img\dashboard.png" />
     <Content Include="img\innovation.jfif" />
     <Content Include="img\LOGO.png" />
+    <Content Include="img\forHP.jpg" />
     <Content Include="img\template7-3.png" />
     <Content Include="img\FormBg.jfif" />
     <Content Include="Web.config" />

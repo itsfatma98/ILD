@@ -6,27 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <div class="">
-        <div>
-            <h1 class="mt-4 mb-4" style="text-align: center">مرحبا بكم في معمل الابتكارات !</h1>
-            <div class="w3-content w3-display-container " style="max-width: 800px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                <img class="mySlides w3-animate-fading" src="img/d1.jpg" style="width: 100%">
-                <img class="mySlides w3-animate-fading" src="img/d2.jpg" style="width: 100%">
-                <img class="mySlides w3-animate-fading" src="img/d3.jpg" style="width: 100%">
-                <img class="mySlides w3-animate-fading" src="img/d4.jpg" style="width: 100%">
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-middle" style="width: 100%; direction: ltr;">
-                    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">
-                        <i class="fa fa-arrow-right w3-xxlarge"></i>
-                    </div>
-                    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">
-                        <i class="fa fa-arrow-left w3-xxlarge"></i>
-                    </div>
-                </div>
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width: 100%; direction: ltr;">
-                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
-                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                </div>
+        <div class="container">
+            <img src="img/home.jpg" alt="Banner Image" style="width: 100%" class="center" />
+            <div class="text-block-left" style="text-align: right;">
+                    <h1>اعارة أجهزة معمل الابتكارات</h1>
+                    <h3>لخدمة مشاريعك</h3>
+                    <p>أحدث التقنيات والاجهزة لخدمة منسوبي جامعة الملك عبدالعزيز</p>
+                    <asp:Button ID="Button1" runat="server" Text="ابدأ الاستعارة/حجز أجهزة"/>
             </div>
         </div>
 
