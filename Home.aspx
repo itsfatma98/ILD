@@ -1,13 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ILD.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ILD.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-      <meta name="viewport" content="width=device-width, initial-scale=1">'
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <div class="">
-         <div>
-             <h1 class="mt-4 mb-4" style="text-align: center">مرحبا بكم في معمل الابتكارات !</h1>
-             <div class="w3-content w3-display-container " style="max-width: 800px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div>
+            <h1 class="mt-4 mb-4" style="text-align: center">مرحبا بكم في معمل الابتكارات !</h1>
+            <div class="w3-content w3-display-container " style="max-width: 800px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <img class="mySlides w3-animate-fading" src="img/d1.jpg" style="width: 100%">
                 <img class="mySlides w3-animate-fading" src="img/d2.jpg" style="width: 100%">
                 <img class="mySlides w3-animate-fading" src="img/d3.jpg" style="width: 100%">
@@ -26,9 +27,9 @@
                     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
                 </div>
-              </div>
+            </div>
         </div>
-        
+
 
         <div class="container-fluid">
             <div>
@@ -101,6 +102,4 @@
             }
         </script>
     </div>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>

@@ -55,6 +55,7 @@
                         </li>
 
                     </ul>
+                     </div>
                      <%--
                     <ul class="navbar-nav">
                         <li class="nav-item active">
@@ -78,45 +79,38 @@
                     </ul>
                          --%>
 
-                     
+                  <div class="collapse navbar-collapse  icon">
 
-                    
-                       
-                     
-
-                     <div class="collapse navbar-collapse  icon" >
-                        
-                    <%--Search Bar Start--%>
-                         <div class=" d-none d-lg-block mb-1 ">
-                        <form action="">
-                            <div class="input-group" style=" border-radius: 15px;">
-                                <div class="input-group-append">
-                                    <span class="input-group-text bg-transperant text-primary" style="border-radius: 1px 15px 15px 1px;">
-                                        <i class="fa fa-search iconbg"></i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control" style="border-radius: 15px 1px 1px 15px" placeholder="بحث...">
-                            </div>
-                        </form>
-                    </div>
-                    <%--My Account Icon --%>
-                         <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a href="" class="btn">
-                                    <i class="fas fa-user-alt fa-xl "></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                      <%--Search Bar Start--%>
+                      <div class=" d-none d-lg-block mb-1 ">
+                          <form action="">
+                              <div class="input-group" style="border-radius: 15px;">
+                                  <div class="input-group-append">
+                                      <span class="input-group-text bg-transperant text-primary" style="border-radius: 1px 15px 15px 1px;">
+                                          <i class="fa fa-search iconbg"></i>
+                                      </span>
+                                  </div>
+                                  <input type="text" class="form-control" style="border-radius: 15px 1px 1px 15px" placeholder="بحث...">
+                              </div>
+                          </form>
+                      </div>
+                      <%--My Account Icon --%>
+                      <ul class="navbar-nav">
+                          <li class="nav-item active">
+                              <a href="" class="btn">
+                                  <i class="fas fa-user-alt fa-xl "></i>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
             </nav>
         </div>
-    <%--Navbr End--%>
+        <%--Navbr End--%>
+
         <!-- Main Content Placeholder start -->
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
-        <!-- Main Content Placeholder end
+        <!-- Main Content Placeholder end -->
 
          <!-- Footer Start-->
         <footer class="bcolor">
@@ -154,14 +148,8 @@
                 </div>
             
         </footer>
-
         <!-- Footer End-->
 
-
-
-
-         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-         </asp:ContentPlaceHolder>
     </form>
 </body>
 </html>
