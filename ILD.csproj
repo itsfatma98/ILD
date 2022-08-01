@@ -2130,6 +2130,7 @@
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\yen-sign.svg" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\z.svg" />
+    <Content Include="img\about.jpg" />
     <Content Include="img\circleHeader.png" />
     <Content Include="img\d1.jpg" />
     <Content Include="img\d2.jpg" />

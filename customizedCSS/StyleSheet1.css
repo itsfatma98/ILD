@@ -64,6 +64,17 @@ a:hover {
     color: white;
     padding: 35px;
 }
+
+.text-block-right {
+    position: absolute;
+    left: 45%;
+    top: auto;
+    right:5%;
+    background: transparent;
+    color: white;
+    padding: 35px;
+}
+
 .text-block-center {
     position: absolute;
     top: 50%;
@@ -80,6 +91,17 @@ a:hover {
     width: 50%;
 }
 
+/* Centered text within image */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+    .centered:hover{
+        opacity: 1;
+    }
 /** Dividers for sections and headers */
 /* Dashed border */
 hr.dashed {
@@ -96,8 +118,26 @@ hr.dashed {
     margin-right: 50px;
 }
 
-/** Button custom style*/
+/** Home Page Button custom style*/
 .buttonHP:hover {
     background-color: seagreen;
     color: white;
+}
+
+/* Responsive text */
+/* If the screen size is 1200px wide or more, set the font-size to 80px */
+@media (min-width: 1200px) {
+    .responsiveText{
+        font-size: 80px;
+    }
+}
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+@media (max-width: 1199.98px) {
+    .responsiveText {
+        font-size: 30px;
+    }
+}
+
+.forMore:hover{
+    text-decoration: underline;
 }

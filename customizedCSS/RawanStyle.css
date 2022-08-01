@@ -97,6 +97,9 @@ h1 {
     justify-content: center;
 }
 
+.card:hover {
+    box-shadow: 5px 5px 21px 10px #cae8ca;
+}
 
 .image-content,
 .card-content {
@@ -113,4 +116,20 @@ h1 {
     background-size: cover;
     background-position: center;
     border-radius: 20px 20px 0 20px;
+    cursor: pointer;
 }
+
+/* Buttons of the cards within the slider */
+.cardButtons {
+    background-color: seagreen;
+    color: white;
+    font-size: 16px;
+    padding: 4px 27px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .cardButtons:hover {
+        background-color: black;
+    }
