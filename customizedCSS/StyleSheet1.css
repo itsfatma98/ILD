@@ -50,7 +50,7 @@ a:hover {
 }
 
 /* Container holding the image and the text */
-.container {
+.imageContainer {
     position: relative;
     padding: 50px;
 }
@@ -58,11 +58,11 @@ a:hover {
 .text-block-left {
     position: absolute;
     top: 50%;
-    right: 20%;
+    right: 25%;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.4);
     color: white;
-    padding: 50px;
+    padding: 35px;
 }
 .text-block-center {
     position: absolute;
@@ -71,11 +71,17 @@ a:hover {
     transform: translate(-50%, -50%);
     color: white;
     background: rgba(0, 0, 0, 0.4);
-    padding: 50px;
+    padding: 40px;
 }
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+/** Dividers for sections and headers */
+/* Dashed border */
+hr.dashed {
+    border-bottom: 2px dashed #bbb;
 }

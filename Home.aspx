@@ -5,87 +5,86 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="">
-        <div class="container">
-            <img src="img/home.jpg" alt="Banner Image" style="width: 100%" class="center" />
-            <div class="text-block-left" style="text-align: right;">
+        <!-- Banner Image -->
+        <section>
+            <div class="imageContainer d-flex">
+                <img src="img/home.jpg" alt="Banner Image" style="width: 100%" class="center" />
+                <div class="text-block-left" style="text-align: right;">
                     <h1>اعارة أجهزة معمل الابتكارات</h1>
                     <h3>لخدمة مشاريعك</h3>
                     <p>أحدث التقنيات والاجهزة لخدمة منسوبي جامعة الملك عبدالعزيز</p>
-                    <asp:Button ID="Button1" runat="server" Text="ابدأ الاستعارة/حجز أجهزة"/>
-            </div>
-        </div>
-
-
-        <div class="container-fluid">
-            <div>
-                <h1 class="text-center mt-5 w-100 h-100">لوحة المعلومات</h1>
-                <div class=" h-auto mr-5 ml-5 mt-5 mb-5">
-                    <img src="img/template7-3.png" class="h-100 w-100 " alt="Dashboard" />
-
+                    <asp:Button ID="Button1" runat="server" Text="ابدأ الاستعارة/حجز أجهزة" />
                 </div>
             </div>
+        </section>
 
-        </div>
-
-        <div class="container-fluid" id="devices">
-            <div>
-                <h1 class="text-center mt-5 w-100 h-100">التقنيات</h1>
-                <div class=" h-auto mr-5 ml-5 mt-5 mb-5">
-                    <img src="img/d1.jpg" class="h-100 w-100 " alt="Dashboard" />
-
+        <!-- Dashboard Section -->
+        <section>
+            <div class="container">
+                <!-- Header Section -->
+                <div class="row" style="text-align: right">
+                    <div class="col-3">
+                        <h2>لوحة المعلومات</h2>
+                    </div>
+                    <div class="col-9">
+                        <hr class="dashed">
+                    </div>
+                </div>
+                <!-- The Content of the Section -->
+                <div class="row">
+                    <!-- The Graph of the Dashboard -->
+                    <div class="col-7 bg-light mt-5" style="padding: 100px; box-shadow: 10px 10px 5px #1b3c27; border-radius: 25px;">
+                        <p style="text-align: center">Here will be the dashboard</p>
+                    </div>
+                    <!-- The Cards -->
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col-12 bg-light mt-5 mr-2" style="padding: 45px; box-shadow: 10px 10px 5px #1b3c27; border-radius: 25px; margin: auto;">
+                                <div class="row">
+                                    <div class="col-8" style="text-align: right">
+                                        <h4 style="font-size: 24px; text-align: right;">العدد الكلي لمستخدم النظام:</h4>
+                                        <p style="color: #437231">1.4K مستخدم</p>
+                                    </div>
+                                    <div class="col-4" style="text-align: center">
+                                        <i class="fa fa-group" style="font-size: 65px"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 bg-light mt-5 mr-2" style="padding: 45px; box-shadow: 10px 10px 5px #1b3c27; border-radius: 25px; margin: auto;">
+                                <div class="row">
+                                    <div class="col-8" style="text-align: right">
+                                        <h4 style="font-size: 24px">اكثر الأجهزة مستعارة:</h4>
+                                        <p style="color: #437231;">جهاز الـ(Leap)</p>
+                                    </div>
+                                    <div class="col-4" style="text-align: center">
+                                        <i class="fa fa-line-chart" style="font-size: 65px"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-        </div>
-        <script>
-            var slideIndex = 1;
-            showDivs(slideIndex);
-
-            function plusDivs(n) {
-                showDivs(slideIndex += n);
-            }
-
-            function currentDiv(n) {
-                showDivs(slideIndex = n);
-            }
-
-            function showDivs(n) {
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                var dots = document.getElementsByClassName("demo");
-                if (n > x.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = x.length }
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" w3-white", "");
-                }
-                x[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " w3-white";
-
-            }
-            var slideIndex = 0;
-            carousel();
-
-            function carousel() {
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                var dots = document.getElementsByClassName("demo");
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" w3-white", "");
-                }
-                slideIndex++;
-                if (slideIndex > x.length) { slideIndex = 1 }
-                x[slideIndex - 1].style.display = "block";
-                setTimeout(carousel, 8000); // Change image every 2 seconds
-
-                dots[slideIndex - 1].className += " w3-white";
-            }
-        </script>
+        </section>
+        
+        <!-- Devices Section -->
+        <section>
+            <div class="container mt-5">
+                <!-- Header Section -->
+                <div class="row" style="text-align: right">
+                    <div class="col-2">
+                        <h2>التقنيات</h2>
+                    </div>
+                    <div class="col-10">
+                        <hr class="dashed">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
     </div>
 </asp:Content>
