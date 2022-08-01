@@ -85,3 +85,19 @@ a:hover {
 hr.dashed {
     border-bottom: 2px dashed #bbb;
 }
+
+/** Add a Circle on a Header */
+.dotHomeHeader {
+    height: 80px;
+    width: 80px;
+    background-color: #cae8ca;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 50px;
+}
+
+/** Button custom style*/
+.buttonHP:hover {
+    background-color: seagreen;
+    color: white;
+}

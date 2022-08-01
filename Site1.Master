@@ -45,7 +45,7 @@
                             <a class="nav-link"" href="Home.aspx">الرئيسية</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link ml-5" href="#devices">التقنيات</a>
+                            <a class="nav-link ml-5" href="#Devices">التقنيات</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link ml-5" href="AboutUs.aspx">نبذه عنا</a>

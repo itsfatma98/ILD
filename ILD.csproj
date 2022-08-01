@@ -73,6 +73,7 @@
     <Content Include="bootsrap\js\popper.min.js" />
     <Content Include="customizedCSS\FormsStyle.css" />
     <Content Include="customizedCSS\StyleSheet1.css" />
+    <Content Include="customizedCSS\RawanStyle.css" />
     <Content Include="dataTables\css\jquery.dataTables.min.css" />
     <Content Include="dataTables\js\jquery.dataTables.min.js" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\css\all.css" />
@@ -2129,16 +2130,25 @@
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\yen-sign.svg" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\z.svg" />
+    <Content Include="img\circleHeader.png" />
     <Content Include="img\d1.jpg" />
     <Content Include="img\d2.jpg" />
     <Content Include="img\d3.jpg" />
     <Content Include="img\d4.jpg" />
     <Content Include="img\dashboard.png" />
+    <Content Include="img\holo.jpg" />
     <Content Include="img\innovation.jfif" />
+    <Content Include="img\leap-motion.jpg" />
     <Content Include="img\LOGO.png" />
     <Content Include="img\forHP.jpg" />
+    <Content Include="img\OIP.jpg" />
+    <Content Include="img\pp.jpg" />
+    <Content Include="img\printer1.jpg" />
+    <Content Include="img\proc2.jpg" />
     <Content Include="img\template7-3.png" />
     <Content Include="img\FormBg.jfif" />
+    <Content Include="img\vvvr.jpg" />
+    <Content Include="Scripts\RawanScript.js" />
     <Content Include="Web.config" />
     <Content Include="AboutUs.aspx" />
     <Content Include="Home.aspx" />
@@ -2236,9 +2246,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
