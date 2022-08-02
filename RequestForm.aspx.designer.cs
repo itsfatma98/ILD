@@ -11,7 +11,7 @@ namespace ILD
 {
 
 
-    public partial class Login2
+    public partial class RequestForm
     {
     }
 }

@@ -14,7 +14,7 @@
                          </p>
                      </div>
             </div>
-            
+             
              <div class="col-lg-6 h-auto  ">
                  <div>
                      <img class="w-100 h-100" src="img/innovation.jfif" alt="innovation" />
