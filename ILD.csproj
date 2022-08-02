@@ -67,14 +67,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Add_Edit_Devices.aspx" />
     <Content Include="bootsrap\css\bootstrap.min.css" />
     <Content Include="bootsrap\js\bootstrap.min.js" />
     <Content Include="bootsrap\js\jquery-3.3.1.slim.min.js" />
     <Content Include="bootsrap\js\popper.min.js" />
+    <Content Include="BorrowingForm.aspx" />
     <Content Include="customizedCSS\FormsStyle.css" />
     <Content Include="customizedCSS\StyleSheet1.css" />
     <Content Include="dataTables\css\jquery.dataTables.min.css" />
     <Content Include="dataTables\js\jquery.dataTables.min.js" />
+    <Content Include="Device_Information.aspx" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\css\all.css" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\css\all.min.css" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\css\brands.css" />
@@ -2136,16 +2139,70 @@
     <Content Include="img\dashboard.png" />
     <Content Include="img\innovation.jfif" />
     <Content Include="img\LOGO.png" />
+    <Content Include="img\forHP.jpg" />
     <Content Include="img\template7-3.png" />
     <Content Include="img\FormBg.jfif" />
+    <Content Include="img\w3.jfif" />
+    <Content Include="Login.aspx" />
+    <Content Include="RequestForm.aspx" />
+    <Content Include="ReservationForm.aspx" />
+    <Content Include="Signup.aspx" />
+    <Content Include="UserForm.aspx" />
     <Content Include="Web.config" />
     <Content Include="AboutUs.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="LogIn.aspx" />
-    <Content Include="WebForm4.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_Edit_Devices.aspx.cs">
+      <DependentUpon>Add_Edit_Devices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Add_Edit_Devices.aspx.designer.cs">
+      <DependentUpon>Add_Edit_Devices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowingForm.aspx.cs">
+      <DependentUpon>BorrowingForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BorrowingForm.aspx.designer.cs">
+      <DependentUpon>BorrowingForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Device_Information.aspx.cs">
+      <DependentUpon>Device_Information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Device_Information.aspx.designer.cs">
+      <DependentUpon>Device_Information.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestForm.aspx.cs">
+      <DependentUpon>RequestForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestForm.aspx.designer.cs">
+      <DependentUpon>RequestForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationForm.aspx.cs">
+      <DependentUpon>ReservationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservationForm.aspx.designer.cs">
+      <DependentUpon>ReservationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2167,19 +2224,12 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.aspx.cs">
-      <DependentUpon>LogIn.aspx</DependentUpon>
+    <Compile Include="UserForm.aspx.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LogIn.aspx.designer.cs">
-      <DependentUpon>LogIn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm4.aspx.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm4.aspx.designer.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="UserForm.aspx.designer.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

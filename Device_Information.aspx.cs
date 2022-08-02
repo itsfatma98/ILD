@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ILD
 {
-    public partial class WebForm4 : System.Web.UI.Page
+    public partial class Device_Information : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
