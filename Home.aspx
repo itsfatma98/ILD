@@ -123,7 +123,7 @@
                     <div class="card-body">
                         <h4 class="card-title">طابعة ثلاثية الابعاد<br />
                             <h5>3D Printer</h5></h4>
-                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">حجز</button>
+                        <button onclick="location.href='#'" type="button" class="cardButtons">حجز</button>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
 
                     <div class="card-body">
                         <h4 class="card-title">حاسب بمعالج عالي السرعة   <br />    <h5>Master case h500p</h5></h4>
-                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">حجز</button>
+                        <button onclick="location.href='#'" type="button" class="cardButtons">حجز</button>
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@
 
                     <div class="card-body">
                         <h4 class="card-title">الهولوجرام  <br>    <h5>HOLHO 3Faces </h5></h4>
-                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">حجز</button>
+                        <button onclick="location.href='#'" type="button" class="cardButtons">حجز</button>
                     </div>
                 </div>
             </div>
@@ -166,7 +166,7 @@
 
                     <div class="card-body">
                         <h4 class="card-title">نظارة الواقع الافتراضي   <br>   <h5> VR </h5> </h4>
-                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">حجز</button>
+                        <button onclick="location.href='#'" type="button" class="cardButtons">حجز</button>
                     </div>
                 </div>
             </div>
@@ -210,7 +210,7 @@
 
                     <div class="card-body">
                         <h4 class="card-title">نظارة الواقع الافتراضي   <br>  <h5> VR </h5>  </h4>
-                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">استعارة</button>
+                        <button onclick="location.href='#'" type="button" class="cardButtons">استعارة</button>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
 
                     <div class="card-body">
                         <h4 class="card-title">الهولوجرام<br/>  <h5>   3D Hologram </h5>   </h4>
-                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">استعارة</button>
+                        <button onclick="location.href='#'" type="button" class="cardButtons">استعارة</button>
                     </div>
                 </div>
             </div>
@@ -239,7 +239,7 @@
                     <div class="card-body">
                         <h4 class="card-title">الليب موشن
                             <br /> <h5>   Leap Motion </h5>  </h4>
-                            <button onclick="location.href='#Devices'" type="button" class="cardButtons">استعارة</button>
+                            <button onclick="location.href='#'" type="button" class="cardButtons">استعارة</button>
                     </div>
                 </div>
 
@@ -272,12 +272,11 @@
         <!-- About Us Section -->
         <section>
             <div class="imageContainer d-flex">
-                <img src="img/about.jpg" alt="Image" style="width: 100%" class="center" />
+                <img src="img/about.jpg" alt="Image" style="width: 100%; opacity: 0.6;" class="center" />
                 <div class="text-block-right mt-3" style="text-align: right">
                     <h1 style="margin: auto; text-align: center;"> --- نبذه عنا ---</h1>
                     <p></p>
-                    <p style="font-size: 24px">
-                        تم إنشاء معمل ابتكارات التعلم الإلكتروني بعمادة التعلم الإلكتروني والتعليم عن بعد لتوفير كافة المتطلبات التقنية والوسائل التعليمية للاستخدام التدريبي والبحثي.
+                    <p style="font-size: 24px">من منطلق المساهمة في الجهود الحثيثة لتحسين مخرجات التعليم والتعلم الالكتروني بجامعة الملك عبدالعزيز ولتحقيق الميزة التنافسية التي تطمح لها جامعة المؤسس، تم إنشاء نظام اعارة أجهزة الابتكارات والذي يندرج تحت مظلة معمل ابتكارات التعلم الالكتروني بعمادة التعلم الالكتروني والتعليم عن بعد. ويسمح النظام للمستخدمين باستعارة أو حجز عدة متطلبات تقنية ووسائل تعليمية للاستخدام التدريبي والبحثي والخدمة المجتمعية.
                         <span style="color: seagreen; cursor: pointer;" class="forMore" onclick="location.href='AboutUs.aspx'">للمزيد...</span>
                     </p>
                 </div>
