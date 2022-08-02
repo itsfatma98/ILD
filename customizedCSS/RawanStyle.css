@@ -1,0 +1,141 @@
+﻿html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Arial;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-right: 100px;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        object-fit: cover;
+    }
+
+.swiper {
+    width: 100%;
+    height: 80%;
+    margin: 20px auto;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+    margin: 20px auto;
+}
+
+.append-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .append-buttons button {
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid #007aff;
+        color: #007aff;
+        text-decoration: none;
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin: 0 10px;
+        font-size: 13px;
+    }
+
+.card {
+    width: 20rem;
+    height: 30rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 10px 4px 10px rgb(160, 156, 156);
+    background: #fff;
+}
+
+
+.card-body {
+    text-align: center;
+    padding-top: 40px;
+}
+
+
+.card-content {
+    position: center;
+    justify-content: center;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 21px 10px #cae8ca;
+}
+
+.image-content,
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.image-content {
+    position: relative;
+    row-gap: 5px;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px 20px 0 20px;
+    cursor: pointer;
+}
+
+/* Buttons of the cards within the slider */
+.cardButtons {
+    background-color: seagreen;
+    color: white;
+    font-size: 16px;
+    padding: 4px 27px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    align-items: flex-start;
+}
+
+    .cardButtons:hover {
+        background-color: black;
+    }
