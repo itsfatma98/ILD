@@ -273,8 +273,8 @@
         <section>
             <div class="imageContainer d-flex">
                 <img src="img/about.jpg" alt="Image" style="width: 100%" class="center" />
-                <div class="text-block-right" style="text-align: right">
-                    <h1 style="margin: auto; text-align: center;">نبذه عنا</h1>
+                <div class="text-block-right mt-3" style="text-align: right">
+                    <h1 style="margin: auto; text-align: center;"> --- نبذه عنا ---</h1>
                     <p></p>
                     <p style="font-size: 24px">
                         تم إنشاء معمل ابتكارات التعلم الإلكتروني بعمادة التعلم الإلكتروني والتعليم عن بعد لتوفير كافة المتطلبات التقنية والوسائل التعليمية للاستخدام التدريبي والبحثي.

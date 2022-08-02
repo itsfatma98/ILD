@@ -105,7 +105,8 @@ a:hover {
 /** Dividers for sections and headers */
 /* Dashed border */
 hr.dashed {
-    border-bottom: 2px dashed #bbb;
+    border-top: 3px dashed gray;
+    background-color: transparent;
 }
 
 /** Add a Circle on a Header */
