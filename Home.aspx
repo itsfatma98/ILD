@@ -210,7 +210,7 @@
 
                     <div class="card-body">
                         <h4 class="card-title">نظارة الواقع الافتراضي   <br>  <h5> VR </h5>  </h4>
-                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">حجز</button>
+                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">استعارة</button>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
 
                     <div class="card-body">
                         <h4 class="card-title">الهولوجرام<br/>  <h5>   3D Hologram </h5>   </h4>
-                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">حجز</button>
+                        <button onclick="location.href='#Devices'" type="button" class="cardButtons">استعارة</button>
                     </div>
                 </div>
             </div>
@@ -239,7 +239,7 @@
                     <div class="card-body">
                         <h4 class="card-title">الليب موشن
                             <br /> <h5>   Leap Motion </h5>  </h4>
-                            <button onclick="location.href='#Devices'" type="button" class="cardButtons">حجز</button>
+                            <button onclick="location.href='#Devices'" type="button" class="cardButtons">استعارة</button>
                     </div>
                 </div>
 
