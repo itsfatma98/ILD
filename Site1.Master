@@ -31,7 +31,7 @@
         <div>
             <%--Top Right Logo--%>
               <nav class="navbar navbar-expand-lg navbar-light bcolor">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="Home.aspx">
                     <img src="img/LOGO.png" width="120" height="80" />
                 </a>
             <%--Center --%>
@@ -45,7 +45,7 @@
                             <a class="nav-link"" href="Home.aspx">الرئيسية</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link ml-5" href="#devices">التقنيات</a>
+                            <a class="nav-link ml-5" href="#Devices">التقنيات</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link ml-5" href="AboutUs.aspx">نبذه عنا</a>
@@ -86,7 +86,7 @@
                           <form action="">
                               <div class="input-group" style="border-radius: 15px;">
                                   <div class="input-group-append">
-                                      <span class="input-group-text bg-transperant text-primary" style="border-radius: 1px 15px 15px 1px;">
+                                      <span class="input-group-text bg-transperant text-primary" style="border-radius: 1px 15px 15px 1px; cursor: pointer;" onClick="">
                                           <i class="fa fa-search iconbg"></i>
                                       </span>
                                   </div>
