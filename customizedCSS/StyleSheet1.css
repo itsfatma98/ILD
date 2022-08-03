@@ -143,3 +143,31 @@ hr.dashed {
 .forMore:hover{
     text-decoration: underline;
 }
+
+.box{
+    margin-right:28%;
+}
+
+.field {
+    margin-right:0;
+    font-family: Roboto, Arial, sans-serif;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    vertical-align: central;
+    border: none;
+    box-shadow: 10px 4px 10px rgb(108, 108, 108);
+    padding: 20px 30px 40px 0px;
+}
+
+personal-details {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+    width: 50%;
+}

@@ -74,6 +74,7 @@
     <Content Include="bootsrap\js\popper.min.js" />
     <Content Include="BorrowingForm.aspx" />
     <Content Include="customizedCSS\FormsStyle.css" />
+    <Content Include="customizedCSS\sideNav.css" />
     <Content Include="customizedCSS\StyleSheet1.css" />
     <Content Include="customizedCSS\RawanStyle.css" />
     <Content Include="dataTables\css\jquery.dataTables.min.css" />
@@ -2151,10 +2152,8 @@
     <Content Include="img\proc2.jpg" />
     <Content Include="img\template7-3.png" />
     <Content Include="img\FormBg.jfif" />
-
     <Content Include="img\vvvr.jpg" />
     <Content Include="Scripts\RawanScript.js" />
-  
     <Content Include="Login.aspx" />
     <Content Include="RequestForm.aspx" />
     <Content Include="ReservationForm.aspx" />
@@ -2163,6 +2162,8 @@
     <Content Include="Web.config" />
     <Content Include="AboutUs.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="DevicesBrowsing.aspx" />
+    <Content Include="Admin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Add_Edit_Devices.aspx.cs">
@@ -2242,6 +2243,20 @@
     </Compile>
     <Compile Include="UserForm.aspx.designer.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DevicesBrowsing.aspx.cs">
+      <DependentUpon>DevicesBrowsing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevicesBrowsing.aspx.designer.cs">
+      <DependentUpon>DevicesBrowsing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

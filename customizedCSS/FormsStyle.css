@@ -98,7 +98,7 @@ fieldset {
     padding: 20px 30px 40px 0px;
 }
 
-personal-details {
+.personal-details {
     display: inline;
     flex-wrap: wrap;
     justify-content: space-between;
