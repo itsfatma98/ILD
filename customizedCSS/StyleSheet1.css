@@ -143,3 +143,11 @@ hr.dashed {
 .forMore:hover{
     text-decoration: underline;
 }
+.dotHomeHeader {
+    height: 80px;
+    width: 80px;
+    background-color: #cae8ca;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 50px;
+}

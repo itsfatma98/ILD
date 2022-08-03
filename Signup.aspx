@@ -39,10 +39,10 @@
                         <option value="qual">علوم التأهيل الطبي</option>
                     </select>
                     <div>
-                        <label>رقم الجوال:</label><input type="text" name="phoneNum" required>
+                        <label>رقم الجوال:</label><input type="number" name="phoneNum" required>
                     </div>
                     <div>
-                        <label>البريد الالكتروني:</label><input type="text" name="Gmail" required>
+                        <label>البريد الالكتروني:</label><input type="email" name="Gmail" required>
                     </div>
                     <div>
                         <label>كلمة المرور:</label><input type="password" name="pass" required>
