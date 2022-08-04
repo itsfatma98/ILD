@@ -14,6 +14,7 @@ var swiper = new Swiper('.mySwiper', {
     },
 });
 
+/** 
 var appendNumber = 4;
 
 
@@ -35,7 +36,7 @@ document
         );
     });
 
-
+*/
 
 
 var swiper2 = new Swiper('.mySwiper2', {
@@ -73,3 +74,4 @@ document
             '</div>'
         );
     });
+    

@@ -186,10 +186,10 @@
         <div class="swiper-pagination"></div>
     </div>
     
-    <p class="append-buttons">
+   <!-- <p class="append-buttons">
         <button class="append-slide">Append Slide</button>
     </p>
-                           
+                      -->     
                         </div>
                 </div>
 
