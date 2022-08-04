@@ -68,13 +68,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Add_Edit_Devices.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="bootsrap\css\bootstrap.min.css" />
     <Content Include="bootsrap\js\bootstrap.min.js" />
     <Content Include="bootsrap\js\jquery-3.3.1.slim.min.js" />
     <Content Include="bootsrap\js\popper.min.js" />
     <Content Include="BorrowingForm.aspx" />
     <Content Include="customizedCSS\FormsStyle.css" />
+
     <Content Include="customizedCSS\JumanaStyle.css" />
+
+    <Content Include="customizedCSS\sideNav.css" />
+
     <Content Include="customizedCSS\StyleSheet1.css" />
     <Content Include="customizedCSS\RawanStyle.css" />
     <Content Include="dataTables\css\jquery.dataTables.min.css" />
@@ -2166,6 +2174,8 @@
     <Content Include="Web.config" />
     <Content Include="AboutUs.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="DevicesBrowsing.aspx" />
+    <Content Include="Admin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Add_Edit_Devices.aspx.cs">
@@ -2273,6 +2283,20 @@
     </Compile>
     <Compile Include="UserForm.aspx.designer.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DevicesBrowsing.aspx.cs">
+      <DependentUpon>DevicesBrowsing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevicesBrowsing.aspx.designer.cs">
+      <DependentUpon>DevicesBrowsing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
