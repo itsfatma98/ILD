@@ -58,12 +58,13 @@ a:hover {
 
 .text-block-left {
     position: absolute;
-    top: 50%;
-    right: 25%;
-    transform: translate(-50%, -50%);
+    top: 30%;
+    right: 45%;
     background: rgba(0, 0, 0, 0.4);
     color: white;
-    padding: 35px;
+    padding: 2%;
+    width: 40%;
+    height: 35%;
 }
 
 .text-block-right {
@@ -126,17 +127,22 @@ hr.dashed {
     color: white;
 }
 
+.buttonHP {
+    font-size: 1.2rem;
+    border-color: transparent;
+}
+
 /* Responsive text */
 /* If the screen size is 1200px wide or more, set the font-size to 80px */
-@media (min-width: 1200px) {
+@media (min-width: 600px) {
     .responsiveText{
         font-size: 80px;
     }
 }
 /* If the screen size is smaller than 1200px, set the font-size to 80px */
-@media (max-width: 1199.98px) {
+@media (max-width: 600px) {
     .responsiveText {
-        font-size: 30px;
+        font-size: 20px;
     }
 }
 
