@@ -98,7 +98,7 @@ fieldset {
     padding: 20px 30px 40px 0px;
 }
 
-personal-details {
+.personal-details {
     display: inline;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -137,6 +137,7 @@ select {
 
 
 button {
+    float:left;
     position: center;
     width: 20%;
     padding: 10px 24px;
