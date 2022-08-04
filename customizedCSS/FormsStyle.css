@@ -137,6 +137,7 @@ select {
 
 
 button {
+    float:left;
     position: center;
     width: 20%;
     padding: 10px 24px;

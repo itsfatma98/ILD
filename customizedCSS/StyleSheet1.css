@@ -144,8 +144,10 @@ hr.dashed {
     text-decoration: underline;
 }
 
-.box{
-    margin-right:28%;
+.box {
+    /*margin-right:5%;*/
+    
+    
 }
 
 .field {
