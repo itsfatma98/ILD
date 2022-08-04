@@ -2157,6 +2157,7 @@
     <Content Include="img\template7-3.png" />
     <Content Include="img\FormBg.jfif" />
     <Content Include="img\vvvr.jpg" />
+    <Content Include="NewAdmin.aspx" />
     <Content Include="Scripts\RawanScript.js" />
     <Content Include="Login.aspx" />
     <Content Include="RequestForm.aspx" />
@@ -2223,6 +2224,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdmin.aspx.cs">
+      <DependentUpon>NewAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewAdmin.aspx.designer.cs">
+      <DependentUpon>NewAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestForm.aspx.cs">
