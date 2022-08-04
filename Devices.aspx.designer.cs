@@ -11,7 +11,7 @@ namespace ILD
 {
 
 
-    public partial class WebForm1
+    public partial class Devices
     {
     }
 }

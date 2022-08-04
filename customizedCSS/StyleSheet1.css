@@ -144,6 +144,15 @@ hr.dashed {
     text-decoration: underline;
 }
 
+.dotHomeHeader {
+    height: 80px;
+    width: 80px;
+    background-color: #cae8ca;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 50px;
+
+
 .box {
     /*margin-right:5%;*/
     
@@ -172,4 +181,5 @@ personal-details {
     align-items: center;
     margin-bottom: 7px;
     width: 50%;
+
 }

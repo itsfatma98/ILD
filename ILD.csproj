@@ -78,11 +78,16 @@
     <Content Include="bootsrap\js\popper.min.js" />
     <Content Include="BorrowingForm.aspx" />
     <Content Include="customizedCSS\FormsStyle.css" />
+
+    <Content Include="customizedCSS\JumanaStyle.css" />
+
     <Content Include="customizedCSS\sideNav.css" />
+
     <Content Include="customizedCSS\StyleSheet1.css" />
     <Content Include="customizedCSS\RawanStyle.css" />
     <Content Include="dataTables\css\jquery.dataTables.min.css" />
     <Content Include="dataTables\js\jquery.dataTables.min.js" />
+    <Content Include="Devices.aspx" />
     <Content Include="Device_Information.aspx" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\css\all.css" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\css\all.min.css" />
@@ -2138,6 +2143,9 @@
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\yen-sign.svg" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\z.svg" />
+    <Content Include="ForgetPass1.aspx" />
+    <Content Include="ForgetPass2.aspx" />
+    <Content Include="ForgetPass3.aspx" />
     <Content Include="img\about.jpg" />
     <Content Include="img\circleHeader.png" />
     <Content Include="img\d1.jpg" />
@@ -2157,6 +2165,7 @@
     <Content Include="img\template7-3.png" />
     <Content Include="img\FormBg.jfif" />
     <Content Include="img\vvvr.jpg" />
+    <Content Include="NewAdmin.aspx" />
     <Content Include="Scripts\RawanScript.js" />
     <Content Include="Login.aspx" />
     <Content Include="RequestForm.aspx" />
@@ -2184,6 +2193,13 @@
     <Compile Include="BorrowingForm.aspx.designer.cs">
       <DependentUpon>BorrowingForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Devices.aspx.cs">
+      <DependentUpon>Devices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Devices.aspx.designer.cs">
+      <DependentUpon>Devices.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Device_Information.aspx.cs">
       <DependentUpon>Device_Information.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2191,12 +2207,40 @@
     <Compile Include="Device_Information.aspx.designer.cs">
       <DependentUpon>Device_Information.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ForgetPass1.aspx.cs">
+      <DependentUpon>ForgetPass1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPass1.aspx.designer.cs">
+      <DependentUpon>ForgetPass1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPass2.aspx.cs">
+      <DependentUpon>ForgetPass2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPass2.aspx.designer.cs">
+      <DependentUpon>ForgetPass2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPass3.aspx.cs">
+      <DependentUpon>ForgetPass3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPass3.aspx.designer.cs">
+      <DependentUpon>ForgetPass3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdmin.aspx.cs">
+      <DependentUpon>NewAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewAdmin.aspx.designer.cs">
+      <DependentUpon>NewAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestForm.aspx.cs">

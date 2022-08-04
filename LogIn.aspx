@@ -15,7 +15,7 @@
                     <div>
                         <label>الرقم الجامعي/الوظيفي:</label><input type="text" name="name" required></div>
                     <div>
-                        <label>كلمة المرور:</label><input type="text" name="name"></div>
+                        <label>كلمة المرور:</label><input type="password" name="name"></div>
                     <span class="psw"><a href="#">هل نسيت كلمة المرور؟</a></span>
                 </div>
             </div>

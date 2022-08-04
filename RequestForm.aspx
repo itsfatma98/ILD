@@ -16,7 +16,7 @@
                         <label>نوع الطلب:</label><input type="text" readonly>
                         <label>اسم المستعير:</label><input type="text" readonly>
 
-                        <label>البريد الالكتروني:</label><input type="text" readonly>
+                        <label>البريد الالكتروني:</label><input type="email" readonly>
                         <label>الرقم الجامعي / الوظيفي:</label><input type="text" readonly>
                         <label>رقم الجوال:</label><input type="text" readonly>
                         <label>الكلية / القسم:</label><input type="text" readonly>
