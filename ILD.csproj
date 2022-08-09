@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,6 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Add_Edit_Devices.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="bootsrap\css\bootstrap.min.css" />
     <Content Include="bootsrap\js\bootstrap.min.js" />
     <Content Include="bootsrap\js\jquery-3.3.1.slim.min.js" />
@@ -2151,10 +2156,8 @@
     <Content Include="img\proc2.jpg" />
     <Content Include="img\template7-3.png" />
     <Content Include="img\FormBg.jfif" />
-
     <Content Include="img\vvvr.jpg" />
     <Content Include="Scripts\RawanScript.js" />
-  
     <Content Include="Login.aspx" />
     <Content Include="RequestForm.aspx" />
     <Content Include="ReservationForm.aspx" />

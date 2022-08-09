@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ILD.Home" %>
+
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -38,45 +40,75 @@
             <div class="container">
                 <!-- Header Section -->
                 <div class="row" style="text-align: right">
-                    <div class="col-5">
+                    <div class="col-md-5">
                         <hr class="dashed">
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3">
                         <h2 style="text-align: center">لوحة المعلومات</h2>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <hr class="dashed">
                     </div>
                 </div>
                 <!-- The Content of the Section -->
                 <div class="row">
                     <!-- The Graph of the Dashboard -->
-                    <div class="col-7 bg-light mt-5" style="padding: 100px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px;">
-                        <p style="text-align: center">Here will be the graph representation of the dashboard</p>
-                    </div>
+                    <div dir="ltr" class="col-md-7 mt-5" id="myChart" style="max-width: 600px; max-height:424px; padding: 20px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; background-color: white;"></div>
+                    <!-- The Script for the chart -->
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script>
+                        google.charts.load('current', { 'packages': ['corechart'] });
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                                ['التقنيات', 'إعارة محلية', 'إعارة خارجية'],
+                                ['VR', 55, 21],
+                                ['Hologram', 49, 22],
+                                ['3D Printer', 44, 12],
+                                ['Leap Motion', 24, 9]
+                            ]);
+
+                            var options = {
+                                title: 'أكثر الأجهزة طلباً في معمل الابتكارات',
+                                titleTextStyle: {
+                                    fontName: "Arial",    // 'Times New Roman'
+                                    fontSize: 25,               // 12, 18
+                                },
+                                colors: ['#437131', '#1e3b29'],
+                                legendTextStyle: {
+                                    fontName: "Arial",
+                                    fontSize: 14,
+                                }
+                            };
+
+                            var chart = new google.visualization.ColumnChart(document.getElementById('myChart'));
+                            chart.draw(data, options);
+                        }
+                    </script>
                     <!-- The Cards -->
-                    <div class="col-5">
+                    <div class="col-md-5">
                         <div class="row">
-                            <div class="col-10 bg-light mt-5" style="padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; margin: auto;">
+                            <div class="col-md-10 bg-light mt-5" style="padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; margin: auto;">
                                 <div class="row">
-                                    <div class="col-8" style="text-align: right">
-                                        <h4 style="font-size: 24px; text-align: right;">العدد الكلي لمستخدم النظام:</h4>
-                                        <p class="mt-2" style="color: #437231; font-size: 20px;">1.4 ألف مستخدم</p>
+                                    <div class="col-md-8" style="text-align: right">
+                                        <h4 style="font-size: 24px; text-align: right;">العدد الكلي لمستخدمي النظام:</h4>
+                                        <p class="mt-2" style="color: #437231; font-size: 20px;"><%=visitors%> مستخدم</p>
                                     </div>
-                                    <div class="col-4" style="text-align: center">
+                                    <div class="col-md-4" style="text-align: center">
                                         <i class="fa fa-group" style="font-size: 65px"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-10 bg-light mt-5" style="padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; margin: auto;">
+                            <div class="col-md-10 bg-light mt-5" style="padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; margin: auto;">
                                 <div class="row">
-                                    <div class="col-8" style="text-align: right">
+                                    <div class="col-md-8" style="text-align: right">
                                         <h4 style="font-size: 24px">اكثر الأجهزة مستعارة:</h4>
                                         <p class="mt-2" style="color: #437231; font-size: 20px">جهاز الـ(Leap)</p>
                                     </div>
-                                    <div class="col-4" style="text-align: center">
+                                    <div class="col-md-4" style="text-align: center">
                                         <i class="fa fa-line-chart" style="font-size: 65px"></i>
                                     </div>
                                 </div>
@@ -116,7 +148,22 @@
                         <div class="row">
                             <div #swiperRef="" class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <asp:Repeater ID="RPTR_local" runat="server">
+                <ItemTemplate>
+                    <div class="swiper-slide">
+                <div class="card">
+                    <div class="image-content" onclick="location.href='#'" style="background-image: url(<%#Eval("picture")%>); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+                    </div>
+
+                    <div class="card-body">
+                        <h4 class="card-title"><%#Eval("en_name")%></h4>
+                        <cardButtons onclick="location.href='#'" type="button" class="cardButtons mt-4">حجز</cardButtons>
+                    </div>
+                </div>
+            </div>
+                </ItemTemplate>
+            </asp:Repeater>
+           <!-- <div class="swiper-slide">
 
                 <div class="card">
                     <div class="image-content" onclick="location.href='#'" style="background-image: url(img/printer1.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover;">
@@ -171,7 +218,7 @@
                     </div>
                 </div>
             </div>
-
+            -->
 
 
         </div>
@@ -204,6 +251,23 @@
                         <div class="row">
                             <div #swiperRef="" class="swiper mySwiper2">
         <div class="swiper-wrapper">
+
+            <asp:Repeater ID="RPTR_global" runat="server">
+                <ItemTemplate>
+                    <div class="swiper-slide">
+                <div class="card">
+                    <div class="image-content" onclick="location.href='#'" style="background-image: url(<%#Eval("picture")%>); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+                    </div>
+
+                    <div class="card-body">
+                        <h4 class="card-title"><%#Eval("en_name")%></h4>
+                        <cardButtons onclick="location.href='#'" type="button" class="cardButtons mt-4">استعارة</cardButtons>
+                    </div>
+                </div>
+            </div>
+                </ItemTemplate>
+            </asp:Repeater>
+            <!--
             <div class="swiper-slide">
                 <div class="card">
                     <div class="image-content" onclick="location.href='#'" style="background-image: url(img/OIP.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover;">
@@ -245,6 +309,8 @@
                 </div>
 
             </div>
+            -->
+
         </div>
 
         <div class="swiper-button-next" style="color:#437131"></div>
