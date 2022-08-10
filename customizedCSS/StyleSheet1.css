@@ -56,25 +56,39 @@ a:hover {
     padding: 50px;
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.clearfix {
+    overflow:auto;
+}
+
 .text-block-left {
     position: absolute;
     top: 30%;
     right: 45%;
     background: rgba(0, 0, 0, 0.4);
     color: white;
-    padding: 2%;
+    padding: 1%;
     width: 40%;
-    height: 35%;
+    height: 37%;
+    overflow:auto;
 }
 
 .text-block-right {
     position: absolute;
     left: 45%;
     top: auto;
-    right:5%;
+    right: 8%;
     background: transparent;
     color: gray;
-    padding: 35px;
+    padding: 10px;
+    overflow: auto;
+    height: 60%;
+    width: 45%;
 }
 
 .text-block-center {
@@ -148,4 +162,8 @@ hr.dashed {
 
 .forMore:hover{
     text-decoration: underline;
+}
+
+.plusMinus:hover {
+    color: #1e3b29;
 }

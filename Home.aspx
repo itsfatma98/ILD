@@ -26,11 +26,11 @@
         <section>
             <div class="imageContainer d-flex">
                 <img src="img/home.jpg" alt="Banner Image" style="width: 100%" class="center" />
-                <div class="text-block-left" style="text-align: right;">
-                    <h1 style="margin: auto">اعارة أجهزة معمل الابتكارات</h1>
-                    <h4>لخدمة مشاريعك</h4>
-                    <p>أحدث التقنيات والاجهزة لخدمة منسوبي جامعة الملك عبدالعزيز</p>
-                    <button onclick="location.href='#Devices'" type="button" class="buttonHP">ابدأ الاستعارة/حجز الأجهزة</button>
+                <div class="text-block-left" style="text-align: right">
+                    <h1 style="margin: auto; font-size: 3vw;">اعارة أجهزة معمل الابتكارات</h1>
+                    <h4 style="font-size: 2vw">لخدمة مشاريعك</h4>
+                    <p style="font-size: 1.7vw">أحدث التقنيات والاجهزة لخدمة منسوبي جامعة الملك عبدالعزيز</p>
+                    <button onclick="location.href='#Devices'" type="button" class="buttonHP" style="font-size:1.5vw">ابدأ الاستعارة/حجز الأجهزة</button>
                 </div>
             </div>
         </section>
@@ -53,7 +53,7 @@
                 <!-- The Content of the Section -->
                 <div class="row">
                     <!-- The Graph of the Dashboard -->
-                    <div dir="ltr" class="col-md-7 mt-5" id="myChart" style="max-width: 600px; max-height:424px; padding: 20px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; background-color: white;"></div>
+                    <div dir="ltr" class="col-md-7 mt-5" id="myChart" style="max-width: 600px; max-height:424px; padding: 20px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; background-color: white; overflow:auto;"></div>
                     <!-- The Script for the chart -->
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                     <script>
