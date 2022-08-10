@@ -24,13 +24,13 @@
         <div class="col-md-12">
             <!-- Description Header -->
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <a class="plusMinus" onclick="showHide()">
                         <i id="plus" class="fa fa-plus-square-o" style="font-size:36px;"></i>
                         <i id="minus" class="fa fa-minus-square-o"style="font-size:36px; display:none;"></i>
                     </a>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-11">
                     <h2>وصف الجهاز:</h2>
                 </div>
             </div>
