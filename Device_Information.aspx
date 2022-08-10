@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="customizedCSS/StyleSheet1.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-5" style="background-color: white; padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; width: 60%;vertical-align: central; text-align: right;">
@@ -25,7 +26,7 @@
             <!-- Description Header -->
             <div class="row">
                 <div class="col-md-1">
-                    <a class="plusMinus" onclick="showHide()">
+                    <a class="plusMinus" onclick="showHideDesc()">
                         <i id="plus" class="fa fa-plus-square-o" style="font-size:36px;"></i>
                         <i id="minus" class="fa fa-minus-square-o"style="font-size:36px; display:none;"></i>
                     </a>
@@ -36,7 +37,7 @@
             </div>
             <!-- Script to Show/Hide -->
             <script>
-                function showHide() {
+                function showHideDesc() {
                     if (document.getElementById("desc").style.display == "none") {
                         document.getElementById("desc").style.display = "block";
                         document.getElementById("plus").style.display = "none";
@@ -62,16 +63,33 @@
         <div class="col-md-12">
             <!-- Serial Number Header -->
             <div class="row">
-                <div class="col-md-2">
-                    <a class="btn" onclick=""
+                <div class="col-md-1">
+                    <a class="plusMinus" onclick="showHideSer()">
+                        <i id="plus1" class="fa fa-plus-square-o" style="font-size:36px;"></i>
+                        <i id="minus1" class="fa fa-minus-square-o"style="font-size:36px; display:none;"></i>
+                    </a>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-11">
                     <h2>الرقم التسلسلي:</h2>
                 </div>
             </div>
+            <!-- Script to Show/Hide -->
+            <script>
+                function showHideSer() {
+                    if (document.getElementById("ser").style.display == "none") {
+                        document.getElementById("ser").style.display = "block";
+                        document.getElementById("plus1").style.display = "none";
+                        document.getElementById("minus1").style.display = "block";
+                    } else {
+                        document.getElementById("ser").style.display = "none";
+                        document.getElementById("plus1").style.display = "block";
+                        document.getElementById("minus1").style.display = "none";
+                    }
+                }
+            </script>
             <!-- Serial Number Content -->
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" style="display: none" id="ser">
                     <p style="width: 85%; margin-right: 50px;">112211443293</p>
                 </div>
             </div>
@@ -83,13 +101,33 @@
         <div class="col-md-12">
             <!-- Status Header -->
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-1">
+                    <a class="plusMinus" onclick="showHideStat()">
+                        <i id="plus2" class="fa fa-plus-square-o" style="font-size:36px;"></i>
+                        <i id="minus2" class="fa fa-minus-square-o"style="font-size:36px; display:none;"></i>
+                    </a>
+                </div>
+                <div class="col-md-11">
                     <h2>حالة الجهاز:</h2>
                 </div>
             </div>
+            <!-- Script to Show/Hide -->
+            <script>
+                function showHideStat() {
+                    if (document.getElementById("stat").style.display == "none") {
+                        document.getElementById("stat").style.display = "block";
+                        document.getElementById("plus2").style.display = "none";
+                        document.getElementById("minus2").style.display = "block";
+                    } else {
+                        document.getElementById("stat").style.display = "none";
+                        document.getElementById("plus2").style.display = "block";
+                        document.getElementById("minus2").style.display = "none";
+                    }
+                }
+            </script>
             <!-- Setatus Content -->
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" id="stat" style="display:none">
                     <p style="width: 85%; margin-right: 50px;">متوفر</p>
                 </div>
             </div>

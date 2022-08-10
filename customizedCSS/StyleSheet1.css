@@ -167,3 +167,13 @@ hr.dashed {
 .plusMinus:hover {
     color: #1e3b29;
 }
+
+.deviceInfo {
+    font-size: 18px;
+    width: 80%; 
+    margin-right: 50px; 
+    background-color: #cae8ca; 
+    border-radius:10px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    padding: 15px;
+}
