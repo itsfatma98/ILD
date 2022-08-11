@@ -64,9 +64,9 @@
             <!-- Serial Number Header -->
             <div class="row">
                 <div class="col-md-1">
-                    <a class="plusMinus" onclick="showHideSer()">
-                        <i id="plus1" class="fa fa-plus-square-o" style="font-size:36px;"></i>
-                        <i id="minus1" class="fa fa-minus-square-o"style="font-size:36px; display:none;"></i>
+                    <a onclick="showHideSer()">
+                        <i id="plus1" class="fa fa-plus-square-o plusMinus" style="font-size:36px;"></i>
+                        <i id="minus1" class="fa fa-minus-square-o plusMinus"style="font-size:36px; display:none;"></i>
                     </a>
                 </div>
                 <div class="col-md-11">

@@ -165,7 +165,7 @@ hr.dashed {
 }
 
 .plusMinus:hover {
-    text-shadow: 5px 5px 21px 10px #cae8ca;
+    box-shadow: 5px 5px 21px 10px #cae8ca;
 }
 
 .deviceInfo {
