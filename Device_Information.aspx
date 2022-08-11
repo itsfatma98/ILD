@@ -1,15 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Device_Information.aspx.cs" Inherits="ILD.Device_Information" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <body >
+     <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
+   
 
             <h1>الصفحة الشخصية</h1>
             <br>
             <br>
-            <fieldset>
-      <form action="/">
+          
+      
  
           <center>
             <h1 style=" color: black;">نظارة الواقع الافتراضي</h1>
@@ -41,7 +42,5 @@
                     <button class="button button1">طلب حجز</button>
                   </center>
 
-      </form>
-    </fieldset>
-  </body>
+    
 </asp:Content>

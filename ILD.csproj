@@ -67,9 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Add_Edit_Devices.aspx" />
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
+    <Content Include="Add_Edit_Devices..aspx" />
+    <Content Include="App_Data\App_Data\Database1.mdf" />
+    <Content Include="App_Data\App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="bootsrap\css\bootstrap.min.css" />
@@ -78,11 +78,8 @@
     <Content Include="bootsrap\js\popper.min.js" />
     <Content Include="BorrowingForm.aspx" />
     <Content Include="customizedCSS\FormsStyle.css" />
-
     <Content Include="customizedCSS\JumanaStyle.css" />
-
-    <Content Include="customizedCSS\sideNav.css" />
-
+    <Content Include="customizedCSS\AdminPages.css" />
     <Content Include="customizedCSS\StyleSheet1.css" />
     <Content Include="customizedCSS\RawanStyle.css" />
     <Content Include="dataTables\css\jquery.dataTables.min.css" />
@@ -2175,16 +2172,17 @@
     <Content Include="Web.config" />
     <Content Include="AboutUs.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="DevicesBrowsing.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="DevicesMangement.aspx" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add_Edit_Devices.aspx.cs">
-      <DependentUpon>Add_Edit_Devices.aspx</DependentUpon>
+    <Compile Include="Add_Edit_Devices..aspx.cs">
+      <DependentUpon>Add_Edit_Devices..aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Add_Edit_Devices.aspx.designer.cs">
-      <DependentUpon>Add_Edit_Devices.aspx</DependentUpon>
+    <Compile Include="Add_Edit_Devices..aspx.designer.cs">
+      <DependentUpon>Add_Edit_Devices..aspx</DependentUpon>
     </Compile>
     <Compile Include="BorrowingForm.aspx.cs">
       <DependentUpon>BorrowingForm.aspx</DependentUpon>
@@ -2285,6 +2283,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.aspx.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2292,19 +2297,26 @@
     <Compile Include="UserForm.aspx.designer.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DevicesBrowsing.aspx.cs">
-      <DependentUpon>DevicesBrowsing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DevicesBrowsing.aspx.designer.cs">
-      <DependentUpon>DevicesBrowsing.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DevicesMangement.aspx.cs">
+      <DependentUpon>DevicesMangement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevicesMangement.aspx.designer.cs">
+      <DependentUpon>DevicesMangement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2361,6 +2373,7 @@
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\webfonts\fa-v4compatibility.woff2" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2368,7 +2381,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DevicesImgs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

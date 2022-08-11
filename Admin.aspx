@@ -2,9 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <link href="customizedCSS/sideNav.css" rel="stylesheet" />
- <div class="container-fluid">
+     <link href="customizedCSS/sideNav.css" rel="stylesheet" />
+     <div class="container-fluid">
    <div class="row">
         <div id="mySidenav"  class="sidenav  text-right ">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -33,7 +32,7 @@
     <%--side nav bar end--%>
 
     <%--left section--%>
-    <div  class ="container  " >
+    <div  class ="container" >
         <div class="d-flex flex-column  px-xl-5"> 
                 <%--Dashboard--%>
                 <div class=" mt-5 mb-5 h-auto box">
@@ -43,10 +42,10 @@
                 </div>
                <%-- Personal Information--%>
                 <div class="h-auto box" >
-                    <form>
+                    <div>
 
                         <div class="form-group row">
-                            <label for="inputName3" class="col-sm-2 col-form-label text-center ">الإسم</label>
+                            <label for="inputName3" class="col-sm-2 col-form-label text-center">الإسم</label>
                             <div class="col-sm-10">
                               <input type="name" class="form-control w-50" id="inputName3" placeholder="">
                             </div>
@@ -78,7 +77,7 @@
                               <button type="submit" class="btn btn-success">تعديل البيانات</button>
                             </div>
                        </div>
-                    </form>
+                    </div>
                 
 
                 </div>
