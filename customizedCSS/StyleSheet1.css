@@ -165,7 +165,9 @@ hr.dashed {
 }
 
 .plusMinus:hover {
-    box-shadow: 5px 5px 21px 10px #cae8ca;
+    box-shadow: 0px 0px 21px 10px #cae8ca;
+    background-image: radial-gradient(white 40%, #cae8cac2, #cfe7cfc7);
+    color: #447232;
 }
 
 .deviceInfo {
