@@ -5,7 +5,7 @@
 <link href="customizedCSS/StyleSheet1.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div ID="devInfo" runat="server" class="container mt-5" style="background-color: white; padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; width: 60%;vertical-align: central; text-align: right;">
+    <div ID="devInfo" runat="server" class="container mt-5" style="background-color: white; padding: 40px; box-shadow: 5px 5px 10px gray; border-radius: 25px; width: 60%;vertical-align: central; text-align: right;">
     <!-- Header -->
     <div class="row">
         <div class="col-md-12">
@@ -26,9 +26,9 @@
             <!-- Description Header -->
             <div class="row">
                 <div class="col-md-1">
-                    <a class="plusMinus" onclick="showHideDesc()">
-                        <i id="plus" class="fa fa-plus-square-o" style="font-size:36px;"></i>
-                        <i id="minus" class="fa fa-minus-square-o"style="font-size:36px; display:none;"></i>
+                    <a onclick="showHideDesc()">
+                        <i id="plus" class="fa fa-plus-square-o plusMinus" style="font-size:36px;"></i>
+                        <i id="minus" class="fa fa-minus-square-o plusMinus"style="font-size:36px; display:none;"></i>
                     </a>
                 </div>
                 <div class="col-md-11">
