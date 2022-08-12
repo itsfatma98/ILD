@@ -62,12 +62,12 @@ namespace ILD
 
         protected void saveChanges(object sender, EventArgs e)    //add button click
         {
-            if (sNum != null)
-            {
+            //if (sNum != null)
+            //{
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 if (checkIfDeviceExsist())
                 {
                     Response.Write("<script>alert(' الجهاز مخزن في النظام');</script>");
@@ -77,7 +77,7 @@ namespace ILD
                     addNewDevice();
                 }
 
-            }
+            //}
 
         }
 
@@ -166,7 +166,7 @@ namespace ILD
                     string filename = Path.GetFileName(DeviceImg.PostedFile.FileName);
                     if (filename == "" || filename == null)
                     {
-                        filepath = global_filepath;
+                        //filepath = global_filepath;
 
                     }
                     else
