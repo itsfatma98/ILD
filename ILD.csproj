@@ -68,9 +68,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+
     <Content Include="Add_Edit_Devices.aspx" />
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
+    <Content Include="App_Data\App_Data\Database1.mdf" />
+    <Content Include="App_Data\App_Data\Database1_log.ldf">
+
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="bootsrap\css\bootstrap.min.css" />
@@ -79,10 +81,13 @@
     <Content Include="bootsrap\js\popper.min.js" />
     <Content Include="BorrowingForm.aspx" />
     <Content Include="customizedCSS\FormsStyle.css" />
+    <Content Include="customizedCSS\JumanaStyle.css" />
+    <Content Include="customizedCSS\AdminPages.css" />
     <Content Include="customizedCSS\StyleSheet1.css" />
     <Content Include="customizedCSS\RawanStyle.css" />
     <Content Include="dataTables\css\jquery.dataTables.min.css" />
     <Content Include="dataTables\js\jquery.dataTables.min.js" />
+    <Content Include="Devices.aspx" />
     <Content Include="Device_Information.aspx" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\css\all.css" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\css\all.min.css" />
@@ -2138,6 +2143,9 @@
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\yen-sign.svg" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\z.svg" />
+    <Content Include="ForgetPass1.aspx" />
+    <Content Include="ForgetPass2.aspx" />
+    <Content Include="ForgetPass3.aspx" />
     <Content Include="img\about.jpg" />
     <Content Include="img\circleHeader.png" />
     <Content Include="img\d1.jpg" />
@@ -2157,6 +2165,7 @@
     <Content Include="img\template7-3.png" />
     <Content Include="img\FormBg.jfif" />
     <Content Include="img\vvvr.jpg" />
+    <Content Include="NewAdmin.aspx" />
     <Content Include="Scripts\RawanScript.js" />
     <Content Include="Login.aspx" />
     <Content Include="RequestForm.aspx" />
@@ -2166,14 +2175,17 @@
     <Content Include="Web.config" />
     <Content Include="AboutUs.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="Admin.aspx" />
+    <Content Include="DevicesMangement.aspx" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add_Edit_Devices.aspx.cs">
-      <DependentUpon>Add_Edit_Devices.aspx</DependentUpon>
+    <Compile Include="Add_Edit_Devices..aspx.cs">
+      <DependentUpon>Add_Edit_Devices..aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Add_Edit_Devices.aspx.designer.cs">
-      <DependentUpon>Add_Edit_Devices.aspx</DependentUpon>
+    <Compile Include="Add_Edit_Devices..aspx.designer.cs">
+      <DependentUpon>Add_Edit_Devices..aspx</DependentUpon>
     </Compile>
     <Compile Include="BorrowingForm.aspx.cs">
       <DependentUpon>BorrowingForm.aspx</DependentUpon>
@@ -2182,6 +2194,13 @@
     <Compile Include="BorrowingForm.aspx.designer.cs">
       <DependentUpon>BorrowingForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Devices.aspx.cs">
+      <DependentUpon>Devices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Devices.aspx.designer.cs">
+      <DependentUpon>Devices.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Device_Information.aspx.cs">
       <DependentUpon>Device_Information.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2189,12 +2208,40 @@
     <Compile Include="Device_Information.aspx.designer.cs">
       <DependentUpon>Device_Information.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ForgetPass1.aspx.cs">
+      <DependentUpon>ForgetPass1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPass1.aspx.designer.cs">
+      <DependentUpon>ForgetPass1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPass2.aspx.cs">
+      <DependentUpon>ForgetPass2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPass2.aspx.designer.cs">
+      <DependentUpon>ForgetPass2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPass3.aspx.cs">
+      <DependentUpon>ForgetPass3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPass3.aspx.designer.cs">
+      <DependentUpon>ForgetPass3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdmin.aspx.cs">
+      <DependentUpon>NewAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewAdmin.aspx.designer.cs">
+      <DependentUpon>NewAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestForm.aspx.cs">
@@ -2239,12 +2286,40 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.aspx.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserForm.aspx.designer.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DevicesMangement.aspx.cs">
+      <DependentUpon>DevicesMangement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevicesMangement.aspx.designer.cs">
+      <DependentUpon>DevicesMangement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2301,6 +2376,7 @@
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\webfonts\fa-v4compatibility.woff2" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2308,7 +2384,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DevicesImgs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

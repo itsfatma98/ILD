@@ -36,11 +36,17 @@
         </section>
 
         <!-- Dashboard Section -->
+
         <section>
             <div class="container">
                 <!-- Header Section -->
                 <div class="row" style="text-align: right">
                     <div class="col-md-5">
+
+        <div class="container">
+            <div class="row" style="text-align: right">
+                    <div class="col-5">
+
                         <hr class="dashed">
                     </div>
                     <div class="col-md-3">
@@ -50,6 +56,9 @@
                         <hr class="dashed">
                     </div>
                 </div>
+            
+            <!-- Header Section -->
+                
                 <!-- The Content of the Section -->
                 <div class="row">
                     <!-- The Graph of the Dashboard -->
@@ -117,7 +126,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+            </div>
+        </div>
+            
+                
+        
         
         <!-- Devices Section -->
         <section>

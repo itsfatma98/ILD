@@ -1,0 +1,38 @@
+﻿
+
+    .box {
+        background-color: white;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 10px 4px 10px rgb(108, 108, 108);
+        padding: 20px 30px 40px 0px;
+    }
+    
+
+    .tableContainer {
+        height: 500px;
+        overflow:auto;
+    }
+
+    .table {
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
+
+    .wrapper {
+        display: flex;
+        width: 100%;
+    }
+
+    #sidebar {
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 999;
+        background: #7386D5;
+        color: #fff;
+        transition: all 0.3s;
+    }
