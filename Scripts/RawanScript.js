@@ -14,14 +14,11 @@ var swiper = new Swiper('.mySwiper', {
     },
 });
 
-/** 
-var appendNumber = 4;
+
+//var appendNumber = 4;
 
 
-document
-    .querySelector('.append-slide')
-    .addEventListener('click', function (e, imgPath, name, enName) {
-        e.preventDefault();
+function addSlide(imgPath, name, enName) {
         swiper.appendSlide(
             '<div class="swiper-slide"> ' +
             '  <div class="card">' +
@@ -34,9 +31,8 @@ document
             ' </div>' +
             '</div>'
         );
-    });
+    };
 
-*/
 
 
 var swiper2 = new Swiper('.mySwiper2', {
@@ -54,7 +50,7 @@ var swiper2 = new Swiper('.mySwiper2', {
     },
 });
 
-var appendNumber2 = 3;
+//var appendNumber2 = 3;
 
 
 document

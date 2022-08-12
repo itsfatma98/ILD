@@ -26,7 +26,6 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
      <%--Navbr Start--%>
         <div>
             <%--Top Right Logo--%>
@@ -150,7 +149,6 @@
         </footer>
         <!-- Footer End-->
 
-    </form>
 </body>
 </html>
 
