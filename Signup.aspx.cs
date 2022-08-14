@@ -14,7 +14,6 @@ namespace ILD
 {
     public partial class Signup : System.Web.UI.Page
     {
-
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,38 +29,32 @@ namespace ILD
         //sign up button click event
         protected void Button1_Click(object sender, EventArgs e)
         {
-            // Response.Redirect("Home.aspx");
-
-            //Response.Write("<script>alert('Testing');</script>");
 
             if (Fname.Text == "" || Lname.Text == "" || id.Text == "" || department.SelectedItem.Value == "select" || phone.Text == "" || email.Text == "" || password.Text == "" || confirm_password.Text == "")
             {
                 //  System.Windows.Forms.MessageBox.Show("الرجاء تعبئة جميع البيانات");
-                Response.Write("<script>alert('الرجاء تعبئة جميع البيانات');</script>");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errorInfo();", true);
+                //  Response.Write("<script>alert('الرجاء تعبئة جميع البيانات');</script>");
             }
-          else if (password.Text != confirm_password.Text)
+            else if (password.Text != confirm_password.Text)
             {
-                //System.Windows.Forms.MessageBox.Show("كلمة المرور غير متطابقة");
-                Response.Write("<script>alert('كلمة المرور غير متطابقة');</script>");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errorPassword();", true);
+                //  Response.Write("<script>alert('كلمة المرور غير متطابقة');</script>");
                 //mylabel.Visible = true;
                 //mylabel.InnerText = "كلمة المرور غير متطابقة";
             }
 
-        
             else
             {
                 if (CheckUserExists())
                 {
-
-                     Response.Write("<script>alert('الرقم الجامعي / الوظيفي مسجل من قبل');</script>");
-                   
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "error();", true);
+                    //   Response.Write("<script>alert('الرقم الجامعي / الوظيفي مسجل من قبل');</script>");
                 }
                 else
                 {
                     SignupNewUser();
                 }
-
-
 
             }
 
@@ -114,33 +107,31 @@ namespace ILD
                     {
                         con.Open();
                     }
-                    
+
                     SqlCommand cmd = new SqlCommand("INSERT INTO Account(Fname,Lname,Id,phone,email,password,department_name,account_type) values(@Fname,@Lname,@Id,@phone,@email,@password,@department_name,@account_type)", con);
-                  
-                  cmd.Parameters.AddWithValue("@Fname", Fname.Text.Trim().ToString());
+
+                    cmd.Parameters.AddWithValue("@Fname", Fname.Text.Trim().ToString());
                     cmd.Parameters.AddWithValue("@Lname", Lname.Text.Trim().ToString());
                     cmd.Parameters.AddWithValue("@Id", id.Text.Trim().ToString());
                     cmd.Parameters.AddWithValue("@phone", phone.Text.Trim().ToString());
                     cmd.Parameters.AddWithValue("@email", email.Text.Trim().ToString());
                     cmd.Parameters.AddWithValue("@Password", password.Text.Trim().ToString());
-                   cmd.Parameters.AddWithValue("@department_name", department.SelectedItem.Value);
+                    cmd.Parameters.AddWithValue("@department_name", department.SelectedItem.Value);
                     cmd.Parameters.AddWithValue("@account_type", "regular_user");
                     cmd.ExecuteNonQuery();
 
-                    
+
                     /* Session["id"] = id.Text.Trim();
                      Session["Fname"] = Fname.Text.Trim();
                      Session["password"] = password.Text.Trim();
                      Response.Redirect("Home.aspx");*/
-                    
-                    Response.Redirect("home.aspx");
-                    Response.Write("<script>alert('Sign up Successful');</script>");
+
+                    //    Response.Redirect("Home.aspx");
+                    //     Response.Write("<script>alert('Sign up Successful');</script>");
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "success();", true);
                     Session["id"] = id.Text.Trim().ToString();
                     Session["name"] = Fname.Text.Trim().ToString();
                     con.Close();
-
-                   
-                   
 
                 }
                 catch (Exception ex)
@@ -151,4 +142,3 @@ namespace ILD
         }
     }
 }
-    

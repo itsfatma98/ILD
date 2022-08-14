@@ -2,8 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <link href="customizedCSS/sideNav.css" rel="stylesheet" />
-     <div class="container-fluid">
+    
+    <link href="customizedCSS/sideNav.css" rel="stylesheet" />
+ <div class="container-fluid">
    <div class="row">
         <div id="mySidenav"  class="sidenav  text-right ">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -32,7 +33,7 @@
     <%--side nav bar end--%>
 
     <%--left section--%>
-    <div  class ="container" >
+    <div  class ="container  " >
         <div class="d-flex flex-column  px-xl-5"> 
                 <%--Dashboard--%>
                 <div class=" mt-5 mb-5 h-auto box">
@@ -42,44 +43,43 @@
                 </div>
                <%-- Personal Information--%>
                 <div class="h-auto box" >
-                    <div>
+                    <form runat="server">
 
                         <div class="form-group row">
-                            <label for="inputName3" class="col-sm-2 col-form-label text-center">الإسم</label>
+                            <label for="inputName3" class="col-sm-2 col-form-label text-center ">الإسم الأول</label>
                             <div class="col-sm-10">
-                              <input type="name" class="form-control w-50" id="inputName3" placeholder="">
+                              <input class="form-control w-50" id="fname" runat="server" placeholder="">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="inputId3" class="col-sm-2 col-form-label text-center">الرقم الوظيفي </label>
+                            <label for="inputId3" class="col-sm-2 col-form-label text-center">الاسم الأخير </label>
                             <div class="col-sm-10">
-                              <input type="password" class="form-control w-50" id="inputId3" placeholder="">
+                              <input class="form-control w-50" id="lname" runat="server" placeholder="">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="inputPhone3" class="col-sm-2 col-form-label text-center">الرقم الوظيفي </label>
+                            <label for="inputPhone3" class="col-sm-2 col-form-label text-center">رقم الجوال </label>
                             <div class="col-sm-10">
-                              <input type="password" class="form-control w-50" id="inputPhone3" placeholder="">
+                              <input class="form-control w-50" id="num" runat="server" placeholder="">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-center">البريد الإلكتروني</label>
                             <div class="col-sm-10">
-                              <input type="email" class="form-control w-50" id="inputEmail3" placeholder="">
+                              <input type="email" class="form-control w-50" id="email" runat="server" placeholder="">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-10">
-                              <button type="submit" class="btn btn-success">تعديل البيانات</button>
+                                <asp:Button Class="btn btn-success" ID="Button1" runat="server" Text="تحديث البيانات" OnClick="Edit_Click" />
+         
                             </div>
                        </div>
-                    </div>
-                
-
+                    </form>
                 </div>
         </div>
         
@@ -88,9 +88,6 @@
    </div>
      </div>
     <%--side nav bar right--%>
-
-   
-
 
     <script>
         function openNav() {

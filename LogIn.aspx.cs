@@ -12,7 +12,7 @@ using System.IO;
 
 namespace ILD
 {
-    public partial class Login2 : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         SqlConnection con;
 

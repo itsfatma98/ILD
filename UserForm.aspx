@@ -1,130 +1,58 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UserForm.aspx.cs" Inherits="ILD.UserForm" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <body style="background: url(img/w3.JFIF); background-repeat: no-repeat; background-position: 
-    center center; background-size: cover;">
-
     <h1>الصفحة الشخصية</h1>
     <fieldset>
-        <form action="/">
-
+        
             <div class="personal-details">
                 <div>
-                    <div>
-                        <label>الاسم:</label><input type="text" name="name" required placeholder="منى ابراهيم علي احمد "></div>
-
-                    <div>
-                        <label>الرقم الجامعي/الوظيفي:</label><input type="text" name="name" placeholder="1815588 "></div>
-
-                    <div>
-                        <label>الكلية:</label><input type="text" name="name" placeholder="الحاسبات وتقنية المعلومات"></div>
-
-                    <div>
-                        <label>رقم الجوال:</label><input type="text" name="phoneNum" required placeholder="0547313772"></div>
-                    <div>
-                        <label>البريد الالكتروني:</label><input type="text" name="Gmail" required placeholder="imuna0000@gmail.com"></div>
-
+                    <label>الاسم الأول:</label>
+                    <input type="text" id="fname" runat="server" required>
+                </div>
+                <div>
+                    <label>الاسم الأخير:</label>
+                    <input type="text" id="lname" runat="server" required>
+                </div>
+                <div>
+                    <label>الكلية:</label>
+                    <select id="dep" typeof="text" runat="server" required>
+                        <option value=""></option>
+                        <option value="computer">الحاسبات وتقنية المعلومات</option>
+                        <option value="science">العلوم</option>
+                        <option value="econ">الاقتصاد والادارة</option>
+                        <option value="eng">الهندسة</option>
+                        <option value="hum">الاداب والعلوم الانسانية</option>
+                        <option value="tour">السياحة</option>
+                        <option value="mid">الطب</option>
+                        <option value="rig">الحقوق</option>
+                        <option value="dent">طب الاسنان</option>
+                        <option value="phar">الصيدلة</option>
+                        <option value="design">علوم الانسان والتصاميم</option>
+                        <option value="com">الاتصال والاعلام</option>
+                        <option value="appli">العلوم التطبيقية</option>
+                        <option value="nur">التمريض</option>
+                        <option value="edu">الدراسات العليا التربوية</option>
+                        <option value="qual">علوم التأهيل الطبي</option>
+                    </select>
+                </div>
+                <div>
+                    <label>رقم الجوال:</label>
+                    <input type="text" id="num" runat="server" required>
+                </div>
+                <div>
+                    <label>البريد الالكتروني:</label>
+                    <input type="text" id="email" runat="server" required>
                 </div>
             </div>
-             <br />  <br />
+            <br>
+            <br>
+            <br>
             <center>
-                <button class="d-flex justify-content-center" type="submit" href="/">تعديل المعلومات</button>
+                <asp:Button Class="btn btn-success" ID="Button3" runat="server" Text="تحديث البيانات" OnClick="Edit_Click" />
             </center>
-             <br />  <br />
-        </form>
-
-
-
-
-
-
-        <hr>
-        <p>
-
-            <label for="order">
-                <br>
-                <br>
-                <center>
-                    نوع الطلب:
-
-               
-
-                    <select name="order">
-                        <order>
-                        <option value="borrow">استعارة </option>
-                        <option value="reserve">حجز</option>
-                    </select>
-        </p>
-        </center>
-   
-        <br>
-        <br>
-        </label>
-
-
-       
-
-
-        <table class="center">
-            <tr>
-                <th>
-                    <input type="checkbox">
-                </th>
-                <th>اسم الجهاز </th>
-                <th>تاريخ الطلب </th>
-                <th>تاريخ التسليم </th>
-                <th>الحالة </th>
-
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                        </th></td>
-                    <td>VR</td>
-
-                    <td>
-                        <form>
-                            <input type="date" id="calender" name="calender">
-                        </form>
-                    </td>
-
-                    <td>
-                        <form>
-                            <input type="date" id="calender" name="calender">
-                        </form>
-                    </td>
-
-                    <td>فعال</td>
-                </tr>
-
-            <tr>
-                <td>
-                    <input type="checkbox">
-                    </th></td>
-                <td>HOLO</td>
-
-                <td>
-                    <form>
-                        <input type="date" id="calender" name="calender">
-                    </form>
-                </td>
-
-                <td>
-                    <form>
-                        <input type="date" id="calender" name="calender">
-                    </form>
-                </td>
-
-
-                <td>غير فعال </td>
-            </tr>
-        </table>
-         <br />  <br />
-          <center>
-                <button class="d-flex justify-content-center" type="submit" href="/"> طلب تمديد</button>
-            </center>
-        <br />  <br />
+        
     </fieldset>
-</body>
 </asp:Content>
