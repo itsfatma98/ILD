@@ -3,12 +3,9 @@
     <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br>
-    <br>
+    
     <h1>إنشاء حساب</h1>
-    <br>
-    <br>
-    <fieldset runat="server">
+   
        
             <div class="personal-details">
                 <div>

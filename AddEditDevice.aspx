@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Add_Edit_Devices..aspx.cs" Inherits="ILD.Add_Edit_Devices" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddEditDevice.aspx.cs" Inherits="ILD.Add_Edit_Devices" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
 </asp:Content>
@@ -38,6 +38,8 @@
                               <asp:Label ID="Label4" class="col-sm-2 col-form-label text-center"  runat="server" Text="صورة الجهاز:"></asp:Label>
                               <div class="col-sm-10">
                                      <asp:FileUpload ID="DeviceImg" class="form-control w-50" runat="server"/>
+                                     <asp:Label id="UploadStatusLabel" Visible="true"  runat="server"> </asp:Label>
+           
                               </div>
                             </div>
 
@@ -61,7 +63,7 @@
                            <%-- save changes button--%>
                             <div class="form-group row mt-2">
                                 <div class="col-sm-10">
-                                     <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="حفظ التغيرات" OnClick="saveChanges" />
+                                     <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="حفظ التغيرات" OnClick="saveChanges_Click" />
                                 </div>
                                
                             </div>       

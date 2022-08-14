@@ -37,7 +37,7 @@ namespace ILD
         protected void login_Click(object sender, EventArgs e)
         {
 
-           // mylabel.Visible = true;
+            // mylabel.Visible = true;
 
 
             string ID = usid.Value;
@@ -66,15 +66,24 @@ namespace ILD
                     {
                         Session["id"] = ID;
                         Session["name"] = username;
-                        Session["password"] = userpass;
                         Session["userType"] = userType;
                         Response.Redirect("Home.aspx");
                     }
+
+
                     else
                     {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errorInfo();", true);
+                        //errorlabel.Text = "الرقم السري غير صحيح";
 
                     }
                 }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "error();", true);
+                    errorlabel.Text = "الرقم الجامعي/الوظيفي غير مسجل";
+                }
+
             }
             catch (Exception error)
             {
@@ -84,16 +93,49 @@ namespace ILD
 
             con.Close();
 
-
-
-
-
-
         }
 
         protected void SignUp_Click(object sender, EventArgs e)
         {
             Response.Redirect("Signup.aspx");
         }
+
+        protected void password(object sender, EventArgs e)
+        {
+
+        }
+
+        //    bool CheckUserExists()
+        //    {
+        //        try
+        //        {
+        //            SqlConnection con = new SqlConnection(con);
+        //            if (con.State == ConnectionState.Closed)
+        //            {
+        //                con.Open();
+        //            }
+        //            SqlCommand cmd = new SqlCommand("SELECT * from Account where Id='" + id.Text.Trim() + "';", con);
+        //            SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //            DataTable dt = new DataTable();
+        //            da.Fill(dt);
+        //            if (dt.Rows.Count >= 1)
+        //            {
+        //                return true;
+        //            }
+        //            else
+        //            {
+        //                return false;
+        //            }
+
+
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Response.Write("<script>alert('" + ex.Message + "');</script>");
+        //            return false;
+        //        }
+
+
+        //    }
     }
 }

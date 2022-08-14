@@ -31,10 +31,10 @@
                                         <td ><%#Eval("serial_number")%></td>
                                         <td><%#Eval("name")%></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnEdit" class="btn btn-success" Text="تعديل" OnClick="btnEdit_Click" CommandArgument='<%# Eval("serial_number") %>' />
+                                            <asp:Button runat="server" ID="btnEdit" class="btn btn-success" Text="تعديل" OnClick="Edit_Click" CommandArgument='<%# Eval("serial_number") %>' />
                                         </td>
                                         <td>
-                                            <asp:Button runat="server" ID="btndelete" class="btn btn-success" Text="حذف" OnClientClick="return confirm('هل تريد بالتأكيد إتمام عملية الحذف ؟');" OnClick="btnDel_Click" CommandArgument='<%# Eval("serial_number") %>' />
+                                            <asp:Button runat="server" ID="btndelete" class="btn btn-success" Text="حذف" OnClientClick="return confirm('هل تريد بالتأكيد إتمام عملية الحذف ؟');" OnClick="Del_Click" CommandArgument='<%# Eval("serial_number") %>' />
                                         </td>
                                 </ItemTemplate>
                             </asp:Repeater>
@@ -42,7 +42,7 @@
                     </table>
                  </div>
                  <div class="container mt-2">
-                            <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="إضافة جهاز" onclick="Button1_Click" /><br />
+                            <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="إضافة جهاز" OnClick="Button1_Click"  /><br />
                  </div>
            </div>
     </div>

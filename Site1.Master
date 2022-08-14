@@ -97,7 +97,7 @@
                       <%--My Account Icon --%>
                       <ul class="navbar-nav">
                           <li class="nav-item active">
-                              <a href="#" class="btn">
+                              <a href="Login.aspx" class="btn">
                                   <i class="fas fa-user-alt fa-xl "></i>
                               </a>
                           </li>

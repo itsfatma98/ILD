@@ -32,8 +32,8 @@ namespace ILD
                 DA.Fill(Table);
                 RPTR_device.DataSource = Table;
                 RPTR_device.DataBind();
-
                 con.Close();
+               
             }
         }
 
@@ -43,24 +43,21 @@ namespace ILD
             return constr;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Add_Edit_Devices.aspx");
-        }
+       
 
-        protected void btnEdit_Click(object sender, EventArgs e)
+        protected void Edit_Click(object sender, EventArgs e)
         {
             string serial_number = ((Button)sender).CommandArgument;
             Session["serial_number"] = serial_number;
             Response.Write(Session["serial_number"]);
-            Response.Redirect("Add_Edit_Devices.aspx");
+            Response.Redirect("AddEditDevice.aspx");
 
 
         }
-        protected void btnDel_Click(object sender, EventArgs e)
+        protected void Del_Click(object sender, EventArgs e)
         {
 
-            var id = int.Parse(((Button)sender).CommandArgument);
+           // var id = int.Parse(((Button)sender).CommandArgument);
             string serial_number = ((Button)sender).CommandArgument;
             string str = getConstring();
             con = new SqlConnection(str);
@@ -70,8 +67,14 @@ namespace ILD
             cmd.ExecuteNonQuery();
             con.Close();
             //set feedback session
-            Response.Redirect("DevicesMangement");
+            Response.Write("<script>alert(' تم حذف الجهاز بنجاح');</script>");
+            Response.Redirect("DevicesMangement.aspx");
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddEditDevice.aspx");
         }
     }
 }

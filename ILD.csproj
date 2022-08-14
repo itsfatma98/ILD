@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Add_Edit_Devices..aspx" />
     <Content Include="App_Data\App_Data\Database1.mdf" />
     <Content Include="App_Data\App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -2175,15 +2174,9 @@
     <Content Include="Admin.aspx" />
     <Content Include="DevicesMangement.aspx" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="AddEditDevice.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add_Edit_Devices..aspx.cs">
-      <DependentUpon>Add_Edit_Devices..aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Add_Edit_Devices..aspx.designer.cs">
-      <DependentUpon>Add_Edit_Devices..aspx</DependentUpon>
-    </Compile>
     <Compile Include="BorrowingForm.aspx.cs">
       <DependentUpon>BorrowingForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2317,6 +2310,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditDevice.aspx.cs">
+      <DependentUpon>AddEditDevice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditDevice.aspx.designer.cs">
+      <DependentUpon>AddEditDevice.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
