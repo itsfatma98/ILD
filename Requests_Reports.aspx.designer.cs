@@ -11,7 +11,7 @@ namespace ILD
 {
 
 
-    public partial class Request_Reports
+    public partial class Requests_Reports1
     {
 
         /// <summary>

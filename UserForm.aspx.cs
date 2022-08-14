@@ -27,8 +27,8 @@ namespace ILD
                     string str = getConstring();
                     con = new SqlConnection(str);
                     con.Open();
-                    //SqlCommand cmd = new SqlCommand("select * from Account where UserName='" + Session["UserName"] + "'", con);
-                    cmd = new SqlCommand("select * from Account where Id='1911144'", con);
+                    SqlCommand cmd = new SqlCommand("select * from Account where UserName='" + Session["UserName"] + "'", con);
+                    //cmd = new SqlCommand("select * from Account where Id='1911144'", con);
                     SqlDataReader reader;
                     reader = cmd.ExecuteReader();
                     if (reader.Read())
@@ -62,7 +62,7 @@ namespace ILD
             try { 
                 string str = getConstring();
                 con = new SqlConnection(str);       
-                cmd = new SqlCommand("update Account set Fname=@fname, Lname=@lname, email=@email, phone=@phone, department_name=@dep where Id='1911144'", con);
+                cmd = new SqlCommand("update Account set Fname=@fname, Lname=@lname, email=@email, phone=@phone, department_name=@dep where Id='" + Session["UserName"] + "'", con);
                 con.Open();
                 cmd.Parameters.Add("fname", fname.Value.Trim().ToString());
                 cmd.Parameters.Add("lname", lname.Value.Trim().ToString());

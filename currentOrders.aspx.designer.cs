@@ -11,16 +11,25 @@ namespace ILD
 {
 
 
-    public partial class ViewAdmins
+    public partial class currentOrders
     {
 
         /// <summary>
-        /// RPTR_Admin control.
+        /// bor_table control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RPTR_Admin;
+        protected global::System.Web.UI.WebControls.Repeater bor_table;
+
+        /// <summary>
+        /// rse_table control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rse_table;
     }
 }

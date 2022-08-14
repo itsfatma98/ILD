@@ -1,26 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UserForm.aspx.cs" Inherits="ILD.UserForm" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>الصفحة الشخصية</h1>
-
     <fieldset>
-        <form runat="server">
+        
             <div class="personal-details">
-               
-                    <div>
-                        <label>الاسم الأول:</label> <input type="text"  ID="fname" runat="server" required>
-
-                    </div>
-
                 <div>
-                        <label>الاسم الأخير:</label> <input type="text"  ID="lname" runat="server" required>
-
-                    </div>
-
-                    <div>
-                        <label>الكلية:</label> <select id="dep" typeof="text" runat="server" required>
+                    <label>الاسم الأول:</label>
+                    <input type="text" id="fname" runat="server" required>
+                </div>
+                <div>
+                    <label>الاسم الأخير:</label>
+                    <input type="text" id="lname" runat="server" required>
+                </div>
+                <div>
+                    <label>الكلية:</label>
+                    <select id="dep" typeof="text" runat="server" required>
                         <option value=""></option>
                         <option value="computer">الحاسبات وتقنية المعلومات</option>
                         <option value="science">العلوم</option>
@@ -39,24 +37,22 @@
                         <option value="edu">الدراسات العليا التربوية</option>
                         <option value="qual">علوم التأهيل الطبي</option>
                     </select>
-                    </div>
-
-                    <div>
-                        <label>رقم الجوال:</label> <input type="text"  ID="num" runat="server" required>
-
-                    </div>
-
-                    <div>
-                        <label>البريد الالكتروني:</label> <input type="text"  ID="email" runat="server" required> 
-
-                    </div>
-
-                
+                </div>
+                <div>
+                    <label>رقم الجوال:</label>
+                    <input type="text" id="num" runat="server" required>
+                </div>
+                <div>
+                    <label>البريد الالكتروني:</label>
+                    <input type="text" id="email" runat="server" required>
+                </div>
             </div>
-             <br>  
-             <br>
-             <br>
-       <center>
+            <br>
+            <br>
+            <br>
+            <center>
                 <asp:Button Class="btn btn-success" ID="Button3" runat="server" Text="تحديث البيانات" OnClick="Edit_Click" />
-           </center>
-
+            </center>
+        
+    </fieldset>
+</asp:Content>

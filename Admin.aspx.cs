@@ -19,7 +19,7 @@ namespace ILD
             {
                 try
                 {
-                    if (Session["Id"] != null)
+                    if (Session["Id"] == null)
                     {
                         Response.Redirect("Login.aspx");
                     }

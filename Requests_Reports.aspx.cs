@@ -12,10 +12,10 @@ using System.IO;
 
 namespace ILD
 {
-    public partial class Request_Reports : System.Web.UI.Page
+    public partial class Requests_Reports1 : System.Web.UI.Page
     {
         SqlConnection con;
-        
+
         public string getConstring()
         {
             string constr = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
@@ -23,30 +23,11 @@ namespace ILD
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            //string str = getConstring();
-            //con = new SqlConnection(str);
-            //con.Open();
-            //    SqlCommand cmd = new SqlCommand("SELECT Device.name, Acount.Fname, Borrowing.status, Borrowing.start_date, Borrowing.return_date FROM Borrowing" +
-            //        " JOIN Device ON Device.serial_number= Borrowing.serial_number " +
-            //        " JOIN Account ON Account.Id= Borrowing.user_id ;" , con);
-            //    cmd.CommandType = CommandType.Text;
-            //    SqlDataAdapter DA = new SqlDataAdapter(cmd);
-            //    DataTable Table = new DataTable();
-            //Session["table"] = Table;
-            //DA.Fill(Table);
-            //    RPTR_device.DataSource = Table;
-            //    RPTR_device.DataBind();
-
-            //    con.Close();
-
             string str = getConstring();
             con = new SqlConnection(str);
             con.Open();
 
-            
-
-            // Current Borrowing requests table
+            // Borrowing requests table
             SqlCommand cmd = new SqlCommand("SELECT Device.name, Account.Fname, Borrowing.status, Borrowing.start_date, Borrowing.return_date, Borrowing.admin_id FROM Borrowing" +
                 " JOIN Device ON Device.serial_number= Borrowing.serial_number " +
                 " JOIN Account ON Account.Id= Borrowing.user_id", con);
@@ -60,8 +41,5 @@ namespace ILD
             bor_table.DataBind();
             con.Close();
         }
-
-      
-
     }
 }

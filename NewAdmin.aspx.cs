@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Configuration;
 using System.Data;
-
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.IO;
 namespace ILD
 {
     public partial class NewAdmin : System.Web.UI.Page
@@ -28,11 +29,13 @@ namespace ILD
 
             if (pass.Value != pass2.Value)
             {
-                Response.Write("<script>alert('كلمة المرور غير متطابقة');</script>");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errorPassword();", true);
+                //  Response.Write("<script>alert('كلمة المرور غير متطابقة');</script>");
             }
             else if (CheckUserExists())
             {
-                Response.Write("<script>alert('الرقم الوظيفي مسجل من قبل');</script>");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "error();", true);
+                //  Response.Write("<script>alert('الرقم الوظيفي مسجل من قبل');</script>");
             }
             else
             {
@@ -51,8 +54,9 @@ namespace ILD
                 cmd.Parameters.AddWithValue("@dep", "null");
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('تم التسجيل بنجاح');</script>");
-                Response.Redirect("Home.aspx");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "success();", true);
+                //  Response.Write("<script>alert('تم التسجيل بنجاح');</script>");
+                // Response.Redirect("Home.aspx");
             }
         }
 

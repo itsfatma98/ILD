@@ -77,6 +77,7 @@
     <Content Include="bootsrap\js\jquery-3.3.1.slim.min.js" />
     <Content Include="bootsrap\js\popper.min.js" />
     <Content Include="BorrowingForm.aspx" />
+    <Content Include="currentOrders.aspx" />
     <Content Include="customizedCSS\AdminPages.css" />
     <Content Include="customizedCSS\FormsStyle.css" />
     <Content Include="customizedCSS\JumanaStyle.css" />
@@ -2164,18 +2165,18 @@
     <Content Include="img\FormBg.jfif" />
     <Content Include="img\vvvr.jpg" />
     <Content Include="NewAdmin.aspx" />
-    <Content Include="Request_Reports.aspx" />
+    <Content Include="Requests_Reports.aspx" />
     <Content Include="Scripts\RawanScript.js" />
     <Content Include="Login.aspx" />
     <Content Include="RequestForm.aspx" />
     <Content Include="ReservationForm.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="UserForm.aspx" />
-    <Content Include="ViewAdmins.aspx" />
     <Content Include="Web.config" />
     <Content Include="AboutUs.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="View_Admins.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Add_Edit_Devices.aspx.cs">
@@ -2191,6 +2192,13 @@
     </Compile>
     <Compile Include="BorrowingForm.aspx.designer.cs">
       <DependentUpon>BorrowingForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="currentOrders.aspx.cs">
+      <DependentUpon>currentOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="currentOrders.aspx.designer.cs">
+      <DependentUpon>currentOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Devices.aspx.cs">
       <DependentUpon>Devices.aspx</DependentUpon>
@@ -2249,12 +2257,12 @@
     <Compile Include="RequestForm.aspx.designer.cs">
       <DependentUpon>RequestForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Request_Reports.aspx.cs">
-      <DependentUpon>Request_Reports.aspx</DependentUpon>
+    <Compile Include="Requests_Reports.aspx.cs">
+      <DependentUpon>Requests_Reports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Request_Reports.aspx.designer.cs">
-      <DependentUpon>Request_Reports.aspx</DependentUpon>
+    <Compile Include="Requests_Reports.aspx.designer.cs">
+      <DependentUpon>Requests_Reports.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReservationForm.aspx.cs">
       <DependentUpon>ReservationForm.aspx</DependentUpon>
@@ -2305,12 +2313,12 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ViewAdmins.aspx.cs">
-      <DependentUpon>ViewAdmins.aspx</DependentUpon>
+    <Compile Include="View_Admins.aspx.cs">
+      <DependentUpon>View_Admins.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ViewAdmins.aspx.designer.cs">
-      <DependentUpon>ViewAdmins.aspx</DependentUpon>
+    <Compile Include="View_Admins.aspx.designer.cs">
+      <DependentUpon>View_Admins.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

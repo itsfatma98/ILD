@@ -31,6 +31,7 @@ hr {
 html, body {
     min-height: 100%;
 }
+
 center {
     margin-left: auto;
     margin-right: auto;
@@ -51,16 +52,7 @@ body, form3, input, select {
     color: black;
 }
 
-h1 {
-    font-family: Roboto, Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    font-weight: 400;
-    font-size: 50px;
-    color: #fff;
-}
+
 
 h3 {
     margin: 12px 0;
@@ -76,12 +68,7 @@ h3 {
     background: #fff;
 }
 
-form3 {
-    place-items: center;
-    display: inline;
-    padding: 20px;
-    width: 55%;
-}
+
 
 fieldset {
     margin: auto;
@@ -89,7 +76,6 @@ fieldset {
     position: relative;
     justify-content: center;
     align-items: center;
-    width: 60%;
     background-color: white;
     border-radius: 20px;
     vertical-align: central;
@@ -137,9 +123,7 @@ select {
 
 
 button {
-    float:left;
     position: center;
-    width: 20%;
     padding: 10px 24px;
     margin: 10px auto;
     border-radius: 4px;
