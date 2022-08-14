@@ -1,14 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ILD.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ILD.Login2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
+
    <div class="container-fluid">
         <div class="d-flex flex-column  px-xl-5">
             <div class="text-center mt-5 mr-5 " >
                  <h1> تسجيل الدخول </h1>
              </div>
+
              <div class="box" >
                  <div  class="mt-5" style="margin-right:25%">
                      <div class="form-group row ">
@@ -26,10 +27,9 @@
                                 </div>     
                      </div>
 
-                   <div class="form-group row text-left" style="margin-left:15%">
+                ``` <div class="form-group row text-left" style="margin-left:15%">
                         <div class="col-sm-10 "  >
-                            <asp:linkButton ID="Button1" runat="server" Text="إنشاء حساب" OnClick="SignUp_Click" />
-                            <asp:linkButton ID="LinkButton1" runat="server" Style="margin-right: 20%;"  Text="هل نسيت كلمة السر؟" OnClick="password" />
+                            <a href="#">هل نسيت كلمة المرور؟</a>
                         </div>
                          
                     </div >
@@ -37,51 +37,33 @@
                       
                 <center>        
                      <div class="form-group row mt-2 w-50 ">
-                              <asp:Label ID="Label3" class="col-sm-2" runat="server" ></asp:Label>
+                              <asp:Label ID="Label3" class="col-sm-2" ></asp:Label>
                              <div class="col-sm-10 text-center" style="padding-right:25%">
 
                                   <asp:Button ID="Button2" class="btn btn-success"  runat="server" Text="تسجيل الدخول" OnClick="login_Click" />
-                                 
                             </div>
-                        <asp:Label ID="errorlabel" runat="server" Text="Label" Visible="false"></asp:Label>
+                        
                      </div>
                 </center>
                         
-                
+                <%--<--center>
+                    <div class="form-group row mt-2 w-50">
+                                <div class="col-sm-10 text-center btn btn-success " style="padding-right:25%">
+                                    <asp:Button ID="Button3"   runat="server" Text="إنشاء حساب جديد" OnClick="SignUp_Click" />
+                                </div>
+                       </div>
+                </center> --%>
 
+                 
+<%--                    <div class="form-group row mt-2 ">
+                        <div class="col-sm-10 text-center  " style="padding-right:25%">
+                            <label Style="color:red" id="mylabel" runat="server" Visible="true">عفوا لايوجد مستخدم  بهذا الرقم الوظيفي أو الجامعي</label> 
+                        </div>
+                         
+                    </div>--%>
+                     
               </div>
+
         </div>
-       </div>
-        
-
-    <!-- pupup JS -->
-             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-             <script src="sweetalert2.all.min.js"></script>
-    <script>
-        function error() {
-            Swal.fire({
-                title: 'خطأ!',
-                text: 'الرقم الجامعي / الوظيفي غير مسجل من قبل',
-                icon: 'error',
-                buttonsStyling: false,
-                confirmButtonText: 'موافق'
-
-            }).then(function () {
-                // Response.redirect("")
-                window.location.href = 'Login.aspx';
-            });
-        }
-
-
-        function errorInfo() {
-            Swal.fire({
-                title: 'خطأ!',
-                text: 'الرقم السري غير صحيح',
-                icon: 'error',
-                buttonsStyling: false,
-                confirmButtonText: 'موافق'
-
-            })
-        }
-    </script>
+    </div>
 </asp:Content>

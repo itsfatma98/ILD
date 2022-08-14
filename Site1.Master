@@ -45,7 +45,7 @@
                             <a class="nav-link"" href="Home.aspx">الرئيسية</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link ml-5" href="#Devices">التقنيات</a>
+                            <a class="nav-link ml-5" href="Devices.aspx">التقنيات</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link ml-5" href="AboutUs.aspx">نبذه عنا</a>
@@ -83,6 +83,7 @@
 
                       <%--Search Bar Start--%>
                       <div class=" d-none d-lg-block mb-1 ">
+                         
                               <div class="input-group" style="border-radius: 15px;">
                                   <div class="input-group-append">
                                       <span class="input-group-text bg-transperant text-primary" style="border-radius: 1px 15px 15px 1px; cursor: pointer;" onClick="">
@@ -91,11 +92,12 @@
                                   </div>
                                   <input type="text" class="form-control" style="border-radius: 15px 1px 1px 15px" placeholder="بحث...">
                               </div>
+                          
                       </div>
                       <%--My Account Icon --%>
                       <ul class="navbar-nav">
                           <li class="nav-item active">
-                              <a href="" class="btn">
+                              <a href="#" class="btn">
                                   <i class="fas fa-user-alt fa-xl "></i>
                               </a>
                           </li>
@@ -118,10 +120,10 @@
                 <div class="b pt"> 
                     <h5 class="text-dark">العنوان</h5>
                      <div class="d-flex d-inline mt-3">
-                        <p class="mb-2">
+                        <div class="mb-2">
                             <i class="fa fa-map-marker-alt text-primary  "></i>
                             <p class="mr-3 d-flex d-inline">جامعة الملك عبدالعزيز عمادة التعلم الإلكتروني والتعليم عن بعد مبنى 66 الدور الثالث غرفة 452</p>
-                        </p>
+                        </div>
                      </div>
                         
                 </div>
@@ -151,3 +153,4 @@
     </form>
 </body>
 </html>
+
