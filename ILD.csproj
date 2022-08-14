@@ -77,12 +77,10 @@
     <Content Include="bootsrap\js\jquery-3.3.1.slim.min.js" />
     <Content Include="bootsrap\js\popper.min.js" />
     <Content Include="BorrowingForm.aspx" />
+    <Content Include="customizedCSS\AdminPages.css" />
     <Content Include="customizedCSS\FormsStyle.css" />
-
     <Content Include="customizedCSS\JumanaStyle.css" />
-
     <Content Include="customizedCSS\sideNav.css" />
-
     <Content Include="customizedCSS\StyleSheet1.css" />
     <Content Include="customizedCSS\RawanStyle.css" />
     <Content Include="dataTables\css\jquery.dataTables.min.css" />
@@ -2166,16 +2164,17 @@
     <Content Include="img\FormBg.jfif" />
     <Content Include="img\vvvr.jpg" />
     <Content Include="NewAdmin.aspx" />
+    <Content Include="Request_Reports.aspx" />
     <Content Include="Scripts\RawanScript.js" />
     <Content Include="Login.aspx" />
     <Content Include="RequestForm.aspx" />
     <Content Include="ReservationForm.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="UserForm.aspx" />
+    <Content Include="ViewAdmins.aspx" />
     <Content Include="Web.config" />
     <Content Include="AboutUs.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="DevicesBrowsing.aspx" />
     <Content Include="Admin.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -2250,6 +2249,13 @@
     <Compile Include="RequestForm.aspx.designer.cs">
       <DependentUpon>RequestForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Request_Reports.aspx.cs">
+      <DependentUpon>Request_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request_Reports.aspx.designer.cs">
+      <DependentUpon>Request_Reports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReservationForm.aspx.cs">
       <DependentUpon>ReservationForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2292,19 +2298,19 @@
     <Compile Include="UserForm.aspx.designer.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DevicesBrowsing.aspx.cs">
-      <DependentUpon>DevicesBrowsing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DevicesBrowsing.aspx.designer.cs">
-      <DependentUpon>DevicesBrowsing.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAdmins.aspx.cs">
+      <DependentUpon>ViewAdmins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAdmins.aspx.designer.cs">
+      <DependentUpon>ViewAdmins.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
