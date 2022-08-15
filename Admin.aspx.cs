@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace ILD
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class Admin : System.Web.UI.Page
     {
         SqlConnection con;
         SqlCommand cmd;
@@ -28,8 +28,8 @@ namespace ILD
                         string str = getConstring();
                         con = new SqlConnection(str);
                         con.Open();
-                        //SqlCommand cmd = new SqlCommand("select * from Account where UserName='" + Session["UserName"] + "'", con);
-                        cmd = new SqlCommand("select * from Account where Id='1911144'", con);
+                        SqlCommand cmd = new SqlCommand("select * from Account where UserName='" + Session["UserName"] + "'", con);
+                        //cmd = new SqlCommand("select * from Account where Id='1911144'", con);
                         SqlDataReader reader;
                         reader = cmd.ExecuteReader();
                         if (reader.Read())

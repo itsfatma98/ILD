@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <br>
     <br>
-    <form runat="server">
+    
     <h1>اضافة مشرف</h1>
     <br>
     <br>
@@ -44,7 +44,7 @@
             </center>           
            
     </fieldset>
-        </form>
+      
 
            <!-- pupup JS -->
              <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -59,8 +59,8 @@
                          buttonsStyling: false,
                          confirmButtonText: 'موافق'
                      }).then(function () {
-                        // Response.redirect("")
-                         window.location.href = 'Home.aspx';
+                         /*Response.redirect("")*/
+                         window.location.href = 'Admin.aspx';
                      });
 
          }

@@ -1,16 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ILD.Home" %>
+
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+     <!-- bootstrap  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
-    <!-- swiper css link -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<%--    <!-- swiper css link -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />--%>
 
     <!-- bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,71 +31,120 @@
 
     <link href="customizedCSS/RawanStyle.css" rel="stylesheet" />
 
-    <div class="">
+    
+<div class="">
         <!-- Banner Image -->
         <section>
             <div class="imageContainer d-flex">
                 <img src="img/home.jpg" alt="Banner Image" style="width: 100%" class="center" />
                 <div class="text-block-left" style="text-align: right">
-                    <h1 style="margin: auto">اعارة أجهزة معمل الابتكارات</h1>
-                    <h4>لخدمة مشاريعك</h4>
-                    <p>أحدث التقنيات والاجهزة لخدمة منسوبي جامعة الملك عبدالعزيز</p>
-                    <button onclick="location.href='#Devices'" type="button" class="buttonHP" style="border-color: transparent;">ابدأ الاستعارة/حجز الأجهزة</button>
+                    <h1 style="margin: auto; font-size: 3vw;">إعارة أجهزة معمل الابتكارات</h1>
+                    <h4 style="font-size: 2vw">لخدمة مشاريعك</h4>
+                    <p style="font-size: 1.7vw">أحدث التقنيات والاجهزة لخدمة منسوبي جامعة الملك عبدالعزيز</p>
+                    <button onclick="location.href='#Devices'" type="button" class="buttonHP" style="font-size:1.5vw">ابدأ الإستعارة/حجز الأجهزة</button>
                 </div>
             </div>
         </section>
 
         <!-- Dashboard Section -->
-        <div class="container">
-            <div class="row" style="text-align: right">
-                    <div class="col-5">
+
+        <section>
+            <div class="container">
+                <!-- Header Section -->
+                <div class="row" style="text-align: right">
+                    <div class="col-md-5">
                         <hr class="dashed">
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3">
                         <h2 style="text-align: center">لوحة المعلومات</h2>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <hr class="dashed">
                     </div>
                 </div>
-            
-            <!-- Header Section -->
                 
                 <!-- The Content of the Section -->
                 <div class="row">
-                    <!-- The Graph of the Dashboard -->
-                    <div class="col-7 bg-light mt-5" style="padding: 100px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px;">
-                        <p style="text-align: center">Here will be the graph representation of the dashboard</p>
-                    </div>
-                    <!-- The Cards -->
-                    <div class="col-5">
-                        <div class="row">
-                            <div class="col-10 bg-light mt-5" style="padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; margin: auto;">
-                                <div class="row">
-                                    <div class="col-8" style="text-align: right">
-                                        <h4 style="font-size: 24px; text-align: right;">العدد الكلي لمستخدم النظام:</h4>
-                                        <p class="mt-2" style="color: #437231; font-size: 20px;">1.4 ألف مستخدم</p>
+                        <!-- The Graph of the Dashboard -->
+                        <div dir="ltr" class="col-md-7 mt-5" id="myChart" style="max-width: 600px; max-height: 424px; padding: 20px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; background-color: white; overflow: auto;"></div>
+                        
+                    <!-- Data for the graph taken from the database -->
+                    <p id="d1" style="display: none"><%=d1%></p>
+                    <p id="d2" style="display: none"><%=d2%></p>
+                    <p id="d3" style="display: none"><%=d3%></p>
+                    <p id="d4" style="display: none"><%=d4%></p>
+                    <p id="d5" style="display: none"><%=d5%></p>
+                    <p id="l1" style="display: none"><%=l1%></p>
+                    <p id="l2" style="display: none"><%=l2%></p>
+                    <p id="l3" style="display: none"><%=l3%></p>
+                    <p id="l4" style="display: none"><%=l4%></p>
+                    <p id="l5" style="display: none"><%=l5%></p>
+                    <p id="g1" style="display: none"><%=g1%></p>
+                    <p id="g2" style="display: none"><%=g2%></p>
+                    <p id="g3" style="display: none"><%=g3%></p>
+                    <p id="g4" style="display: none"><%=g4%></p>
+                    <p id="g5" style="display: none"><%=g5%></p>
+                        <!-- The Script for the chart -->
+                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                        <script>
+                            google.charts.load('current', { 'packages': ['corechart'] });
+                            google.charts.setOnLoadCallback(drawChart);
+                            function drawChart() {
+                                
+                                var data = google.visualization.arrayToDataTable([
+                                    ['التقنيات','إعارة محلية', 'إعارة خارجية'],
+                                    [document.getElementById("d1").innerText, parseInt(document.getElementById("l1").innerText), parseInt(document.getElementById("g1").innerText)],
+                                    [document.getElementById("d2").innerText, parseInt(document.getElementById("l2").innerText), parseInt(document.getElementById("g2").innerText)],
+                                    [document.getElementById("d3").innerText, parseInt(document.getElementById("l3").innerText), parseInt(document.getElementById("g3").innerText)],
+                                    [document.getElementById("d4").innerText, parseInt(document.getElementById("l4").innerText), parseInt(document.getElementById("g4").innerText)],
+                                    [document.getElementById("d5").innerText, parseInt(document.getElementById("l5").innerText), parseInt(document.getElementById("g5").innerText)]
+                                ]);
+                                var options = {
+                                    title: 'أكثر الأجهزة طلباً في معمل الابتكارات',
+                                    titleTextStyle: {
+                                        fontName: "Arial",    // 'Times New Roman'
+                                        fontSize: 25,               // 12, 18
+                                    },
+                                    colors: ['#437131', '#1e3b29'],
+                                    legendTextStyle: {
+                                        fontName: "Arial",
+                                        fontSize: 14,
+                                    },
+                                    isStacked: true,
+                                };
+                                var chart = new google.visualization.ColumnChart(document.getElementById('myChart'));
+                                chart.draw(data, options);
+                            }
+                        </script>
+                        <!-- The Cards -->
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-10 bg-light mt-5" style="padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; margin: auto;">
+                                    <div class="row">
+                                        <div class="col-md-8" style="text-align: right">
+                                            <h4 style="font-size: 24px; text-align: right;">العدد الكلي لمستخدمي النظام:</h4>
+                                            <p class="mt-2" style="color: #437231; font-size: 20px;"><%=visitors%> مستخدم</p>
+                                        </div>
+                                        <div class="col-md-4" style="text-align: center">
+                                            <i class="fa fa-group" style="font-size: 65px"></i>
+                                        </div>
                                     </div>
-                                    <div class="col-4" style="text-align: center">
-                                        <i class="fa fa-group" style="font-size: 65px"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 bg-light mt-5" style="padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; margin: auto;">
+                                    <div class="row">
+                                        <div class="col-md-8" style="text-align: right">
+                                            <h4 style="font-size: 24px">اكثر الأجهزة مستعارة:</h4>
+                                            <p class="mt-2" style="color: #437231; font-size: 20px">جهاز الـ(<%=top1%>)</p>
+                                        </div>
+                                        <div class="col-md-4" style="text-align: center">
+                                            <i class="fa fa-line-chart" style="font-size: 65px"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-10 bg-light mt-5" style="padding: 40px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; margin: auto;">
-                                <div class="row">
-                                    <div class="col-8" style="text-align: right">
-                                        <h4 style="font-size: 24px">اكثر الأجهزة مستعارة:</h4>
-                                        <p class="mt-2" style="color: #437231; font-size: 20px">جهاز الـ(Leap)</p>
-                                    </div>
-                                    <div class="col-4" style="text-align: center">
-                                        <i class="fa fa-line-chart" style="font-size: 65px"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             </div>
@@ -113,87 +175,43 @@
                         <!-- Header -->
                         <div class="row">
                                 <span class="dotHomeHeader" style="width: 8%">
-                                <p style="font-size: 35px; padding: 12px; width: 200px;">اعارة محلية</p>
+                                <p style="font-size: 35px; padding: 12px; width: 200px;">إعارة محلية</p>
                                 </span>
                         </div>
                         <!-- Slider of Devices -->
                         <div class="row">
                             <div #swiperRef="" class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
+                            <div class="swiper-wrapper">
+            
+                                <asp:Repeater ID="RPTR_local" runat="server">
+                                        <itemtemplate>
+                                            <div class="swiper-slide">
+                                                <div class="card" >
+                                                    <div class="image-content" style="background-image: url(<%#Eval("picture")%>); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+                                                    </div>
 
-                <div class="card">
-                    <div class="image-content" onclick="location.href='#'" style="background-image: url(img/printer1.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover;">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">طابعة ثلاثية الابعاد<br />
-                            <h5>3D Printer</h5></h4>
-                        <cardButtons onclick="location.href='#'" type="button" class="cardButtons">حجز</cardButtons>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="swiper-slide">
-                <div class="card">
-                    <div class="image-content" onclick="location.href='#'" style="background-image: url(img/proc2.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover;">
-                    </div>
-
-                    <div class="card-body">
-                        <h4 class="card-title">حاسب بمعالج عالي السرعة   <br />    <h5>Master case h500p</h5></h4>
-                        <cardButtons onclick="location.href='#'" type="button" class="cardButtons">حجز</cardButtons>
-                    </div>
-                </div>
-            </div>
+                                                    <div class="card-body" >
+                                                        <h4 id="deviceName" class="card-title"><%#Eval("name")%></h4>
+                                                        <asp:Button onclick="deviceClicked" runat="server" class="cardButtons mt-4" Text="حجز" CommandArgument='<%#Eval("serial_number")%>'></asp:Button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </itemtemplate>
+                                </asp:Repeater>
+            
 
 
+                            </div>
 
 
-            <div class="swiper-slide">
-                <div class="card">
-                    <div class="image-content" onclick="location.href='#'" style="background-image: url(img/holo.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover;">
-                    </div>
-
-                    <div class="card-body">
-                        <h4 class="card-title">الهولوجرام  <br>    <h5>HOLHO 3Faces </h5></h4>
-                        <cardButtons onclick="location.href='#'" type="button" class="cardButtons">حجز</cardButtons>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="swiper-slide">
-                <div class="card">
-                    <div class="image-content" onclick="location.href='#'" style="background-image: url(img/vvvr.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover;">
-                    </div>
-
-                    <div class="card-body">
-                        <h4 class="card-title">نظارة الواقع الافتراضي   <br>   <h5> VR </h5> </h4>
-                        <cardButtons onclick="location.href='#'" type="button" class="cardButtons">حجز</cardButtons>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-
-
-        <div class="swiper-button-next" style="color:#437131"></div>
-        <div class="swiper-button-prev" style="color:#437131"></div>
-        <div class="swiper-pagination"></div>
-    </div>
-    
-   <!-- <p class="append-buttons">
-        <button class="append-slide">Append Slide</button>
-    </p>
-                      -->     
+                                <div class="swiper-button-next" style="color:#437131"></div>
+                                <div class="swiper-button-prev" style="color:#437131"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>   
                         </div>
-                </div>
+                    </div>
 
-            </div>
+                </div>
                 
                 <!-- Global Devices -->
                 <div class="row" style="text-align: right">
@@ -201,54 +219,29 @@
                         <!-- Header -->
                         <div clss="row">
                             <span class="dotHomeHeader" style="width: 8%">
-                                <p style="font-size: 35px; padding: 12px; width: 200px;">اعارة خارجية</p>
+                                <p style="font-size: 35px; padding: 12px; width: 200px;">إعارة خارجية</p>
                             </span>
                         </div>
                         <!-- Slider of Devices -->
                         <div class="row">
                             <div #swiperRef="" class="swiper mySwiper2">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
+
+            <asp:Repeater ID="RPTR_global" runat="server">
+                <ItemTemplate>
+                    <div class="swiper-slide">
                 <div class="card">
-                    <div class="image-content" onclick="location.href='#'" style="background-image: url(img/OIP.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+                    <div class="image-content" onclick="location.href='#'" style="background-image: url(<%#Eval("picture")%>); background-repeat: no-repeat; background-position: center center; background-size: cover;">
                     </div>
 
                     <div class="card-body">
-                        <h4 class="card-title">نظارة الواقع الافتراضي   <br>  <h5> VR </h5>  </h4>
-                        <cardButtons onclick="location.href='#'" type="button" class="cardButtons">استعارة</cardButtons>
+                        <h4 class="card-title"><%#Eval("name")%></h4>
+                        <asp:Button runat="server" onclick="deviceClicked" class="cardButtons mt-4" Text="إستعارة" CommandArgument='<%#Eval("serial_number")%>'></asp:Button>
                     </div>
                 </div>
             </div>
-
-
-
-            <div class="swiper-slide">
-                <div class="card">
-                    <div class="image-content" onclick="location.href='#'" style="background-image: url(img/holo.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover;">
-                    </div>
-
-                    <div class="card-body">
-                        <h4 class="card-title">الهولوجرام<br/>  <h5>   3D Hologram </h5>   </h4>
-                        <cardButtons onclick="location.href='#'" type="button" class="cardButtons">استعارة</cardButtons>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="swiper-slide">
-                <div class="card">
-                    <div class="image-content" onclick="location.href='#'" style="background-image: url(img/leap-motion.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover;">
-                    </div>
-
-                    <div class="card-body">
-                        <h4 class="card-title">الليب موشن
-                            <br /> <h5>   Leap Motion </h5>  </h4>
-                            <cardButtons onclick="location.href='#'" type="button" class="cardButtons">استعارة</cardButtons>
-                    </div>
-                </div>
-
-            </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
 
         <div class="swiper-button-next" style="color:#437131"></div>
@@ -287,5 +280,6 @@
                 </div>
             </div>
         </section>
-    </div>
+   
+    
 </asp:Content>

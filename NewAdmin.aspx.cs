@@ -43,21 +43,23 @@ namespace ILD
                 string str = getConstring();
                 con = new SqlConnection(str);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("insert into Account values (@userid,@fname,@lname,@emailAdd,@phoneNum,@password,@accountTyp, @dep)", con);
+                SqlCommand cmd = new SqlCommand("insert into Account values (@userid,@fname,@lname,@emailAdd,@phoneNum,@password,@dep,@accountTyp)", con);
                 cmd.Parameters.AddWithValue("@fname", firstname.Value.Trim().ToString());
                 cmd.Parameters.AddWithValue("@lname", lastname.Value.Trim().ToString());
                 cmd.Parameters.AddWithValue("@userid", usid.Value.Trim().ToString());
                 cmd.Parameters.AddWithValue("@phoneNum", phone.Value.Trim().ToString());
                 cmd.Parameters.AddWithValue("@emailAdd", email.Value.Trim().ToString());
                 cmd.Parameters.AddWithValue("@password", pass.Value.Trim().ToString());
-                cmd.Parameters.AddWithValue("@accountTyp", "admin");
                 cmd.Parameters.AddWithValue("@dep", "null");
+                cmd.Parameters.AddWithValue("@accountTyp", "admin");
+               
                 cmd.ExecuteNonQuery();
                 con.Close();
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "success();", true);
                 //  Response.Write("<script>alert('تم التسجيل بنجاح');</script>");
                 // Response.Redirect("Home.aspx");
             }
+
         }
 
         //user defined method

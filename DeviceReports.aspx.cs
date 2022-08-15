@@ -9,12 +9,11 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+
 namespace ILD
 {
-
-    public partial class View_Admins : System.Web.UI.Page
+    public partial class DeviceReports : System.Web.UI.Page
     {
-        string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,11 +23,14 @@ namespace ILD
                 string str = getConstring();
                 con = new SqlConnection(str);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select Id, Fname, Lname from Account where account_type='admin'", con);
+
+                SqlCommand cmd = new SqlCommand("select Device.serial_number, Device.name , Device.total_quantity , Device.available_quantity from Device ", con);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter DA = new SqlDataAdapter(cmd);
                 DataTable Table = new DataTable();
                 DA.Fill(Table);
+
+
                 RPTR_device.DataSource = Table;
                 RPTR_device.DataBind();
 
@@ -40,25 +42,6 @@ namespace ILD
         {
             string constr = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             return constr;
-        }
-
-      
-
-       
-        protected void Del_Click(object sender, EventArgs e)
-        {
-            // var id = int.Parse(((Button)sender).CommandArgument);
-            string id_number = ((Button)sender).CommandArgument;
-            string str = getConstring();
-            con = new SqlConnection(str);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("delete from Account where Id= '" + id_number + "'", con);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
-            con.Close();
-            //set feedback session
-            Response.Redirect("Admin.aspx");
-
         }
     }
 }

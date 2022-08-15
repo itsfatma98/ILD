@@ -5,104 +5,89 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <body style="background: url(img/w3.jfif); background-repeat: no-repeat; background-position: center center; background-size: cover;">
-        <body style="background: url(img/w3.JFIF); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+    <h1>نموذج طلب الإعارة </h1>
 
-            <h1>نموذج طلب الإعارة </h1>
-
-            <fieldset>
-                <form >
-
-                    <div class="personal-details">
-                        <div>
-
-                            <div>
-                                <label>الاسم :</label><input type="text" name="name" required>
-                            </div>
-
-                            <div>
-                                <label>الرقم الجامعي/الوظيفي:</label><input type="text" name="name">
-                            </div>
-                            <label>الكلية:</label>
-                            <select name="الكلية:">
-                                <option value="computer">الحاسبات وتقنية المعلومات</option>
-                                <option value="science">العلوم</option>
-                                <option value="econ">الاقتصاد والادارة</option>
-                                <option value="eng">الهندسة</option>
-                                <option value="hum">الاداب والعلوم الانسانية</option>
-                                <option value="tour">السياحة</option>
-                                <option value="mid">الطب</option>
-                                <option value="rig">الحقوق</option>
-                                <option value="dent">طب الاسنان</option>
-                                <option value="phar">الصيدلة</option>
-                                <option value="design">علوم الانسان والتصاميم</option>
-                                <option value="com">الاتصال والاعلام</option>
-                                <option value="appli">العلوم التطبيقية</option>
-                                <option value="nur">التمريض</option>
-                                <option value="edu">الدراسات العليا التربوية</option>
-                                <option value="qual">علوم التأهيل الطبي</option>
-                            </select>
-
-                            <div>
-                                <label>تاريخ استلام الجهاز :</label><input type="date" name="calender" name="calender">
-                            </div>
-
-                            <div>
-                                <label>مدة الإستعارة:</label>
-
-                                <select name="مدة الإستعارة:">
-                                    <option value="1 month">شهر فقط </option>
-                                    <option value="2 months">شهرين فقط </option>
-                                    <option value="3 months">ثلاثة اشهر فقط</option>
-                                </select>
-
-                            </div>
-
-                            <div style="text-align:right; margin-right: 85px; width: 100%">
-                                <div class="d-flex flex-row">
-                                       <div>
-                                           <label>
-                                                <span style="color:red"><strong>ملاحظة:</strong></span>
-                                            </label>
-                                       </div>
-                                             
-                                       <div >
-                                                <p style="font-size: 180%" class="mt-2 mr-2">أقصى مدة للإعارة 3 أشهر من تاريخ الإستعارة</p>
-                                       </div>
-                                </div>
-                            </div>
-
-                            <input type="checkbox" style="width: 5%;" name="إقرار[]" id="إقرار" placeholder="إقرار" required />
-                            <label style="width: 90%;">أتعهد بالمحافظة على الجهاز وملحقاته واستعماله بصورة جيدة</label><br>
-                        </div>
-
-                        <center>
-
-                            <button class="d-flex justify-content-center" type="submit" href="/">إتمام الطلب </button>
-                        </center>
-                </form>
-            </fieldset>
+    <fieldset>
 
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">  </script>
-            <script>
-                $(document).ready(function () {
-                    $('button').click(function () {
-                        checked = $("input[type=checkbox]:checked").length;
+        <div class="personal-details">
+            <div>
 
-                        if (!checked) {
-                            alert("الرجاء الموافقة على الإقرار.");
-                            return false;
-                        }
+                <div>
+                    <label>الاسم :</label><asp:TextBox runat="server" type="text" ID="name" ReadOnly="true">
+                    </asp:TextBox>
+                </div>
 
-                    });
-                });
-            </script>
+                <div>
+                    <label>الرقم الجامعي/الوظيفي:</label><asp:TextBox runat="server" ID="id" type="text" ReadOnly="true">
+                    </asp:TextBox>
+                </div>
+                <label>الكلية:</label>
+                <asp:TextBox runat="server" ID="dep" type="text" ReadOnly="true">
+                </asp:TextBox>
+                <div>
+                    <label>تاريخ استلام الجهاز :</label><asp:TextBox ID="cal" runat="server" type="date"  name="calender" required="true"></asp:TextBox>
+                </div>
 
-        </body>
-    </body>
+                <div>
+                    <label>مدة الإستعارة:</label>
+
+                    <asp:DropDownList class="form-control" ID="duration" runat="server" >
+                        <asp:ListItem Text="شهر فقط" Value=" one month" />
+                        <asp:ListItem Text="شهرين فقط" Value="two months" />
+                        <asp:ListItem Text="ثلاثة اشهر فقط" Value="three months" />
+                    </asp:DropDownList>
+
+                </div>
+
+                <div>
+                    <label>
+
+                        <p style="font-size: 23px; color: red; font-weight: 800">ملاحظة: </p>
+                        <p style="font-size: 23px; width: 150%">
+                            اقصى مدى للإعارة ٣ اشهر من تاريخ استلام الجهاز.
+                    </label>
+                </div>
+
+                <input type="checkbox" style="width: 5%;" name="إقرار[]" id="إقرار" placeholder="إقرار"required  />
+                <label style="width: 90%;">أتعهد بالمحافظة على الجهاز وملحقاته واستعماله بصورة جيدة</label><br>
+            </div>
+            <div>
+                <label id="mylabel" runat="server" visible="false"></label>
+            </div>
+            <center>
+
+                <asp:Button class="btn btn-success"  runat="server" OnClick="Borrowing_Form_Click" Text="اتمام الطلب"></asp:Button>
+            </center>
+        </div>
+    </fieldset>
 
 
-    
+  <!-- pupup JS -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var today = new Date();
+            var month = ('0' + (today.getMonth() + 1)).slice(-2);
+            var day = ('0' + today.getDate()).slice(-2);
+            var year = today.getFullYear();
+            var date = year + '-' + month + '-' + day;
+            $('[id*=cal]').attr('min', date);
+        });
 
+        function success() {
+            Swal.fire({
+                title: 'شكراً لك',
+                text: 'تم اتمام الطلب بنجاح',
+                icon: 'success',
+                buttonsStyling: false,
+                confirmButtonText: 'موافق'
+            }).then(function () {
+                window.location.href = 'Home.aspx';
+            });
+        }
+
+    </script>
 </asp:Content>

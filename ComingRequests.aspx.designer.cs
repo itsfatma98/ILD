@@ -11,25 +11,16 @@ namespace ILD
 {
 
 
-    public partial class Home
+    public partial class ComingRequests
     {
 
         /// <summary>
-        /// RPTR_local control.
+        /// RPTR_request control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RPTR_local;
-
-        /// <summary>
-        /// RPTR_global control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RPTR_global;
+        protected global::System.Web.UI.WebControls.Repeater RPTR_request;
     }
 }

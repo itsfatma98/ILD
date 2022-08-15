@@ -9,13 +9,14 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+
+
 namespace ILD
 {
-
-    public partial class View_Admins : System.Web.UI.Page
+    public partial class ComingRequests : System.Web.UI.Page
     {
-        string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         SqlConnection con;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,13 +25,20 @@ namespace ILD
                 string str = getConstring();
                 con = new SqlConnection(str);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select Id, Fname, Lname from Account where account_type='admin'", con);
+                SqlCommand cmd = new SqlCommand("SELECT Borrowing.request_number ,Device.name , Account.Fname, Borrowing.request_type FROM Borrowing" +
+                     " JOIN Device ON Device.serial_number= Borrowing.serial_number " +
+                     " JOIN Account ON Account.Id= Borrowing.user_id " +
+                 "WHERE Borrowing.admin_response='pending'", con);
+
+
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter DA = new SqlDataAdapter(cmd);
                 DataTable Table = new DataTable();
                 DA.Fill(Table);
-                RPTR_device.DataSource = Table;
-                RPTR_device.DataBind();
+
+
+                RPTR_request.DataSource = Table;
+                RPTR_request.DataBind();
 
                 con.Close();
             }
@@ -42,23 +50,15 @@ namespace ILD
             return constr;
         }
 
-      
-
-       
-        protected void Del_Click(object sender, EventArgs e)
+        protected void Reqnum_Click(object sender, EventArgs e)
         {
-            // var id = int.Parse(((Button)sender).CommandArgument);
-            string id_number = ((Button)sender).CommandArgument;
-            string str = getConstring();
-            con = new SqlConnection(str);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("delete from Account where Id= '" + id_number + "'", con);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
-            con.Close();
-            //set feedback session
-            Response.Redirect("Admin.aspx");
+
+            int request_number = int.Parse(((LinkButton)sender).CommandArgument);
+            (Session["request_number"]) = request_number;
+            Response.Redirect("RequestForm.aspx");
 
         }
+
+
     }
 }

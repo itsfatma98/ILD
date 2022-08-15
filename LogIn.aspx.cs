@@ -67,7 +67,21 @@ namespace ILD
                         Session["id"] = ID;
                         Session["name"] = username;
                         Session["userType"] = userType;
-                        Response.Redirect("Home.aspx");
+                        //Response.Redirect("Admin.aspx");
+                        
+                        if (String.Equals(userType, "admin"))
+                        {
+                            Response.Redirect("Admin.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("Home.aspx");
+                        }
+
+                        //{
+
+                            //}
+
                     }
 
 

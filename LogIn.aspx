@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ILD.Login2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ILD.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-<link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
+<%--    
+<link href="customizedCSS/FormsStyle.css" rel="stylesheet" />--%>
     <fieldset>
    <div class="container-fluid">
         <div class="d-flex flex-column text-center justify-content-center  px-xl-5">
