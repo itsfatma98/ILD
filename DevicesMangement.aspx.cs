@@ -67,8 +67,7 @@ namespace ILD
             cmd.ExecuteNonQuery();
             con.Close();
             //set feedback session
-            Response.Write("<script>alert(' تم حذف الجهاز بنجاح');</script>");
-            Response.Redirect("DevicesMangement.aspx");
+            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "success();", true);
 
         }
 

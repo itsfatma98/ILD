@@ -46,5 +46,22 @@
                  </div>
            </div>
     </div>
+      <!-- pupup JS -->
+             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+             <script src="sweetalert2.all.min.js"></script>
+   <script>
+       function success() {
+           Swal.fire({
+               title: 'شكراً لك',
+               text: 'تم حذف الجهاز  بنجاح',
+               icon: 'success',
+               buttonsStyling: false,
+               confirmButtonText: 'موافق'
+           }).then(function () {
+               window.location.href = 'DevicesMangement.aspx';
+           });
+
+       }
+    </script>
 
 </asp:Content>

@@ -9,8 +9,8 @@
              <div class="text-center mt-5 mr-5 mb-5" >
                  <h1> إضافة / تعديل جهاز </h1>
              </div>
-             <div class="box" >
-                 <div  class="mt-5" style="margin-right:25%">
+             <div class="box" style="" >
+                 <div  class="mt-5 " style="margin-right:25%">
                      <div class="form-group row ">
                                 <asp:Label ID="Label1" class="col-sm-2 col-form-label text-center" runat="server" Text="اسم الجهاز:"></asp:Label>
                                 <div class="col-sm-10" >
@@ -63,7 +63,7 @@
                            <%-- save changes button--%>
                             <div class="form-group row mt-2">
                                 <div class="col-sm-10">
-                                     <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="حفظ التغيرات" OnClick="saveChanges_Click" />
+                                     <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="حفظ التغيرات" OnClick="saveChanges" />
                                 </div>
                                
                             </div>       
@@ -77,7 +77,36 @@
      </div>
             
            
-  
-   
+   <!-- pupup JS -->
+             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+             <script src="sweetalert2.all.min.js"></script>
+   <script>
+       function success() {
+           Swal.fire({
+               title: 'شكراً لك',
+               text: 'تم إضافة الجهاز  بنجاح',
+               icon: 'success',
+               buttonsStyling: false,
+               confirmButtonText: 'موافق'
+           }).then(function () {
+               window.location.href = 'DevicesMangement.aspx';
+           });
+
+       }
+
+       function fail() {
+           Swal.fire({
+               title: 'عذراً',
+               text: 'يوجد جهاز مخزن مسبقا بالرقم التسلسلي المدخل ',
+               icon: 'error',
+               buttonsStyling: false,
+               confirmButtonText: 'موافق'
+           }).then(function () {
+               window.location.href = 'DevicesMangement.aspx';
+           });
+
+       }
+   </script>
 
 </asp:Content>
+
