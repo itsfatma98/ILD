@@ -41,10 +41,61 @@
                         <br />
                         <center>
                             <asp:button class="d-flex justify-content-center" text="حفظ التغييرات" type="submit" runat="server" OnClick="Button_click"></asp:button>
-                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
                         </center>
                     </div>
             
 
         </fieldset>
+
+    <!-- pupup JS -->
+           <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+           <script src="sweetalert2.all.min.js"></script>
+
+     <script>
+         $(function () {
+             var today = new Date();
+             var month = ('0' + (today.getMonth() + 1)).slice(-2);
+             var day = ('0' + today.getDate()).slice(-2);
+             var year = today.getFullYear();
+             var date = year + '-' + month + '-' + day;
+             $('[id*=date2]').attr('min', date);
+         });
+
+
+         function accept() {
+             Swal.fire({
+                 title: 'شكراً لك',
+                 text: 'تم قبول الطلب بنجاح',
+                 icon: 'success',
+                 buttonsStyling: false,
+                 confirmButtonText: 'موافق'
+             }).then(function () {
+                 window.location.href = 'ComingRequests.aspx';
+             });
+         }
+
+         function decline() {
+             Swal.fire({
+                 title: 'شكراً لك',
+                 text: 'تم رفض الطلب',
+                 icon: 'success',
+                 buttonsStyling: false,
+                 confirmButtonText: 'موافق'
+             }).then(function () {
+                 window.location.href = 'ComingRequests.aspx';
+             });
+         }
+         function error() {
+             Swal.fire({
+                 title: 'خطأ',
+                 text: 'الرجاء تحديد تاريخ ارجاع الجهاز',
+                 icon: 'error',
+                 buttonsStyling: false,
+                 confirmButtonText: 'موافق'
+             })
+         }
+
+     </script>
+
+
 </asp:Content>

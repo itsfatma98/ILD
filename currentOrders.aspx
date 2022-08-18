@@ -1,18 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="currentOrders.aspx.cs" Inherits="ILD.currentOrders" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="currentOrders.aspx.cs" Inherits="ILD.currentOrders" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="customizedCSS/AdminPages.css" rel="stylesheet" />
+  <%--  <link href="customizedCSS/AdminPages.css" rel="stylesheet" />--%>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="container-fluid  ">
-        <div class=" d-flex flex-column">
+        <div class=" d-flex flex-column ml-5 pl-5">
             <div class="text-center mt-5">
                 <h2>طلبات الإستعارة والتمديد: </h2>
             </div>
 
             <!--Table for current orders (borrowing and extenstion) in xhtml code -->
-            <div class="container tableContainer  mt-5">
+            <div class="container tableContainer   mt-5">
                 <table class="table table-hover  text-center " id="currentT">
                     <thead class="bg-success">
                         <tr>

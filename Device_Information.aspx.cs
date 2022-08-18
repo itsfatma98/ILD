@@ -18,6 +18,7 @@ namespace ILD
         public static string devNum;
         public static string devPic;
         public static string devType;
+        public static Boolean available = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -73,24 +74,40 @@ namespace ILD
         //---------------------- When the button is clicked ----------------------------//
         protected void orderClicked(object sender, EventArgs e)
         {
-            con = new SqlConnection(getConString());
-            con.Open();
-
-            Session["deviceNum"] = devNum;
-
-            //Here we check if the type of the device is either local or global
-            if (devType.Equals("local"))
+            using (SqlCommand sqlcmd = new SqlCommand("select available_quantity from Device where serial_number= deviceNum", con))
             {
-                //if local it will go to reservation form else to borrowing form
-                Response.Redirect("ReservationForm.aspx");
-            }
-            else
-            {
-                Response.Redirect("BorrowingForm.aspx");
-            }
+                int count = Convert.ToInt32(sqlcmd.ExecuteScalar());
 
-            con.Close();
-            con.Dispose();
+                if (count > 0)
+                {
+                    available = true;
+                }
+                else
+                {
+                    available = false;
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "notAvailable();", true);
+                    // button1.Enabled = false;
+
+                }
+                con = new SqlConnection(getConString());
+                con.Open();
+
+                Session["deviceNum"] = devNum;
+
+                //Here we check if the type of the device is either local or global
+                if (devType.Equals("local"))
+                {
+                    //if local it will go to reservation form else to borrowing form
+                    Response.Redirect("ReservationForm.aspx");
+                }
+                else
+                {
+                    Response.Redirect("BorrowingForm.aspx");
+                }
+
+                con.Close();
+                con.Dispose();
+            }
         }
     }
 }

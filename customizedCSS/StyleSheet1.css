@@ -1,26 +1,24 @@
 ﻿body {
     font-family: Arial;
+    background-color:aqua;
 }
 
 .bcolor {
     background-color: #cae8ca;
+}
 
-}
-.icon{
-    display:flex;
-    justify-content:flex-end;
-}
-.text-primary {
-   
+.icon {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .footer {
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: space-between;
-    
 }
+
 .b {
     display: flex;
     flex-direction: column;
@@ -28,13 +26,14 @@
     width: 300px;
     height: 300px;
     padding-top: 3rem;
-    paddding-bottom: 3rem;
+    padding-bottom: 3rem;
     padding-right: 2rem;
     padding-left: 2rem;
-    font-size:15px;
+    font-size: 15px;
 }
-.iconbg{
-   color:gray;
+
+.iconbg {
+    color: gray;
 }
 
 a:hover {
@@ -45,9 +44,8 @@ a:hover {
 .aboutDiv {
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
-    justify-content:flex-start;
-
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 /* Container holding the image and the text */
@@ -56,24 +54,39 @@ a:hover {
     padding: 50px;
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
 .text-block-left {
     position: absolute;
-    top: 50%;
-    right: 25%;
-    transform: translate(-50%, -50%);
+    top: 30%;
+    right: 45%;
     background: rgba(0, 0, 0, 0.4);
     color: white;
-    padding: 35px;
+    padding: 1%;
+    width: 40%;
+    height: 37%;
+    overflow: auto;
 }
 
 .text-block-right {
     position: absolute;
     left: 45%;
     top: auto;
-    right:5%;
+    right: 8%;
     background: transparent;
     color: gray;
-    padding: 35px;
+    padding: 10px;
+    overflow: auto;
+    height: 70%;
+    width: 45%;
 }
 
 .text-block-center {
@@ -85,6 +98,7 @@ a:hover {
     background: rgba(0, 0, 0, 0.4);
     padding: 40px;
 }
+
 .center {
     display: block;
     margin-left: auto;
@@ -100,7 +114,7 @@ a:hover {
     transform: translate(-50%, -50%);
 }
 
-    .centered:hover{
+    .centered:hover {
         opacity: 1;
     }
 /** Dividers for sections and headers */
@@ -109,7 +123,11 @@ hr.dashed {
     border-top: 3px dashed gray;
     background-color: transparent;
 }
-
+/* Solid border */
+hr.solid {
+    border-top: 1px solid gray;
+    background-color: transparent;
+}
 /** Add a Circle on a Header */
 .dotHomeHeader {
     height: 80px;
@@ -126,41 +144,48 @@ hr.dashed {
     color: white;
 }
 
+.buttonHP {
+    font-size: 1.2rem;
+    border-color: transparent;
+}
+
 /* Responsive text */
 /* If the screen size is 1200px wide or more, set the font-size to 80px */
-@media (min-width: 1200px) {
-    .responsiveText{
+@media (min-width: 600px) {
+    .responsiveText {
         font-size: 80px;
     }
 }
 /* If the screen size is smaller than 1200px, set the font-size to 80px */
-@media (max-width: 1199.98px) {
+@media (max-width: 600px) {
     .responsiveText {
-        font-size: 30px;
+        font-size: 20px;
     }
 }
 
-.forMore:hover{
+.forMore:hover {
     text-decoration: underline;
 }
 
-.dotHomeHeader {
-    height: 80px;
-    width: 80px;
-    background-color: #cae8ca;
-    border-radius: 100%;
-    display: inline-block;
+
+.plusMinus:hover {
+    box-shadow: 0px 0px 21px 10px #cae8ca;
+    background-image: radial-gradient(white 40%, #cae8cac2, #cfe7cfc7);
+    color: #447232;
+}
+
+.deviceInfo {
+    font-size: 18px;
+    width: 80%;
     margin-right: 50px;
-
-
-.box {
-    /*margin-right:5%;*/
-    
-    
+    background-color: #cae8ca;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
 }
 
 .field {
-    margin-right:0;
+    margin-right: 0;
     font-family: Roboto, Arial, sans-serif;
     position: relative;
     justify-content: center;
@@ -181,5 +206,59 @@ personal-details {
     align-items: center;
     margin-bottom: 7px;
     width: 50%;
-
 }
+
+.dropbtn {
+    background-color: transparent;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #cae8ca;
+            color: #3e8e41;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #3e8e41;
+}
+
+.headerM {
+    color: black;
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+    .headerM:hover {
+        color: #3e8e41;
+        text-decoration: none;
+    }

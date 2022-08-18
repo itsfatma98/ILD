@@ -22,8 +22,8 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
-<%--    <!-- swiper css link -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />--%>
+    <!-- swiper css link -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,7 +31,7 @@
 
     <link href="customizedCSS/RawanStyle.css" rel="stylesheet" />
 
-    
+   
 <div class="">
         <!-- Banner Image -->
         <section>
@@ -39,9 +39,9 @@
                 <img src="img/home.jpg" alt="Banner Image" style="width: 100%" class="center" />
                 <div class="text-block-left" style="text-align: right">
                     <h1 style="margin: auto; font-size: 3vw;">إعارة أجهزة معمل الابتكارات</h1>
-                    <h4 style="font-size: 2vw">لخدمة مشاريعك</h4>
-                    <p style="font-size: 1.7vw">أحدث التقنيات والاجهزة لخدمة منسوبي جامعة الملك عبدالعزيز</p>
-                    <button onclick="location.href='#Devices'" type="button" class="buttonHP" style="font-size:1.5vw">ابدأ الإستعارة/حجز الأجهزة</button>
+                    <h4 style="font-size: 1.8vw">لخدمة مشاريعك</h4>
+                    <p style="font-size: 1.6vw">أحدث التقنيات والاجهزة لخدمة منسوبي جامعة الملك عبدالعزيز</p>
+                    <button onclick="location.href='Devices.aspx'" type="button" class="buttonHP" style="font-size:1.5vw">ابدأ الإستعارة/حجز الأجهزة</button>
                 </div>
             </div>
         </section>
@@ -67,7 +67,12 @@
                 <div class="row">
                         <!-- The Graph of the Dashboard -->
                         <div dir="ltr" class="col-md-7 mt-5" id="myChart" style="max-width: 600px; max-height: 424px; padding: 20px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; background-color: white; overflow: auto;"></div>
-                        
+                        <!-- Message to show that there aren't any devices available-->
+                    <div dir="ltr" class="col-md-7 mt-5" id="message2" style="display:none; max-width: 600px; max-height: 424px; padding: 20px; box-shadow: 10px 10px 15px #1b3c27; border-radius: 25px; background-color: white; overflow: auto;">
+                        <center>
+                                <img class="mt-3" src="img/noDevice.png" style="width: 100%; height: 90%;"></img>
+                            </center>
+                        </div>
                     <!-- Data for the graph taken from the database -->
                     <p id="d1" style="display: none"><%=d1%></p>
                     <p id="d2" style="display: none"><%=d2%></p>
@@ -90,15 +95,18 @@
                             google.charts.load('current', { 'packages': ['corechart'] });
                             google.charts.setOnLoadCallback(drawChart);
                             function drawChart() {
-                                
+
+                                var l1 = parseInt(<%=l1%>);
+
                                 var data = google.visualization.arrayToDataTable([
-                                    ['التقنيات','إعارة محلية', 'إعارة خارجية'],
+                                    ['التقنيات', 'إعارة محلية', 'إعارة خارجية'],
                                     [document.getElementById("d1").innerText, parseInt(document.getElementById("l1").innerText), parseInt(document.getElementById("g1").innerText)],
                                     [document.getElementById("d2").innerText, parseInt(document.getElementById("l2").innerText), parseInt(document.getElementById("g2").innerText)],
                                     [document.getElementById("d3").innerText, parseInt(document.getElementById("l3").innerText), parseInt(document.getElementById("g3").innerText)],
                                     [document.getElementById("d4").innerText, parseInt(document.getElementById("l4").innerText), parseInt(document.getElementById("g4").innerText)],
                                     [document.getElementById("d5").innerText, parseInt(document.getElementById("l5").innerText), parseInt(document.getElementById("g5").innerText)]
                                 ]);
+
                                 var options = {
                                     title: 'أكثر الأجهزة طلباً في معمل الابتكارات',
                                     titleTextStyle: {
@@ -112,6 +120,7 @@
                                     },
                                     isStacked: true,
                                 };
+
                                 var chart = new google.visualization.ColumnChart(document.getElementById('myChart'));
                                 chart.draw(data, options);
                             }
@@ -136,7 +145,8 @@
                                     <div class="row">
                                         <div class="col-md-8" style="text-align: right">
                                             <h4 style="font-size: 24px">اكثر الأجهزة مستعارة:</h4>
-                                            <p class="mt-2" style="color: #437231; font-size: 20px">جهاز الـ(<%=top1%>)</p>
+                                            <p id="top1D" class="mt-2" style="color: #437231; font-size: 20px">جهاز الـ(<%=top1%>)</p>
+                                            <p id="message3" class="mt-2" style="color: red; font-size: 20px; display:none;">لا يوجد أي جهاز حالياً!</p>
                                         </div>
                                         <div class="col-md-4" style="text-align: center">
                                             <i class="fa fa-line-chart" style="font-size: 65px"></i>
@@ -144,11 +154,20 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Script to Show/Hide -->
+                        <script>
+                            if (document.getElementById("d1").innerText == '') {
+                                document.getElementById("message2").style.display = "block";
+                                document.getElementById("myChart").style.display = "none";
+                                document.getElementById("message3").style.display = "block";
+                                document.getElementById("top1D").style.display = "none";
+                            }
+                        </script>
                         </div>
                 </div>
             </div>
-            </div>
-        </div>
+        </section>
             
                 
         
@@ -158,13 +177,13 @@
             <div class="container mt-5" id="Devices">
                 <!-- Header Section -->
                 <div class="row" style="text-align: right">
-                    <div class="col-5">
+                    <div class="col-md-5">
                         <hr class="dashed">
                     </div>
-                    <div class="col-2">
+                    <div class="col-md-2">
                         <h2 style="text-align: center">التقنيات</h2>
                     </div>
-                    <div class="col-5">
+                    <div class="col-md-5">
                         <hr class="dashed">
                     </div>
                 </div>
@@ -174,40 +193,46 @@
                     <div class="container">
                         <!-- Header -->
                         <div class="row">
-                                <span class="dotHomeHeader" style="width: 8%">
+                                <span class="dotHomeHeader" style="width: 90px">
                                 <p style="font-size: 35px; padding: 12px; width: 200px;">إعارة محلية</p>
                                 </span>
                         </div>
                         <!-- Slider of Devices -->
                         <div class="row">
-                            <div #swiperRef="" class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-            
+                            <div id="localContent" #swiperRef="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
                                 <asp:Repeater ID="RPTR_local" runat="server">
                                         <itemtemplate>
                                             <div class="swiper-slide">
                                                 <div class="card" >
                                                     <div class="image-content" style="background-image: url(<%#Eval("picture")%>); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+                                                    <asp:LinkButton runat="server" onclick="deviceClicked" style="width: 100%; opacity: 0; height:100%;" CommandArgument='<%#Eval("serial_number")%>'/>
                                                     </div>
-
                                                     <div class="card-body" >
-                                                        <h4 id="deviceName" class="card-title"><%#Eval("name")%></h4>
-                                                        <asp:Button onclick="deviceClicked" runat="server" class="cardButtons mt-4" Text="حجز" CommandArgument='<%#Eval("serial_number")%>'></asp:Button>
+                                                        <h4 class="card-title"><%#Eval("name")%></h4>
+                                                        <asp:LinkButton ID="LinkButton1" runat="server" style="padding: 4px 27px" onclick="deviceClicked" class="btn btn-success mt-4" Text="حجز" CommandArgument='<%#Eval("serial_number")%>'></asp:LinkButton>
                                                     </div>
                                                 </div>
                                             </div>
                                         </itemtemplate>
                                 </asp:Repeater>
-            
-
-
                             </div>
-
-
                                 <div class="swiper-button-next" style="color:#437131"></div>
                                 <div class="swiper-button-prev" style="color:#437131"></div>
                                 <div class="swiper-pagination"></div>
                             </div>   
+                            <!-- Message to show that there aren't any devices available-->
+                            <center>
+                                <img class="mt-2" src="img/noDevice.png" id="message1" style="display: none; width: 60%;"></img>
+                            </center>
+
+                            <!-- Script to Show/Hide -->
+                        <script>
+                                if (document.getElementById("localContent").textContent.trim() === '') {
+                                    document.getElementById("message1").style.display = "block";
+                                    document.getElementById("localContent").style.display = "none";
+                                }
+                        </script>
                         </div>
                     </div>
 
@@ -218,36 +243,50 @@
                     <div class="container">
                         <!-- Header -->
                         <div clss="row">
-                            <span class="dotHomeHeader" style="width: 8%">
+                            <span class="dotHomeHeader" style="width: 90px">
                                 <p style="font-size: 35px; padding: 12px; width: 200px;">إعارة خارجية</p>
                             </span>
                         </div>
                         <!-- Slider of Devices -->
                         <div class="row">
-                            <div #swiperRef="" class="swiper mySwiper2">
+                            <div id="globalContent" #swiperRef="" class="swiper mySwiper">
         <div class="swiper-wrapper">
 
             <asp:Repeater ID="RPTR_global" runat="server">
                 <ItemTemplate>
                     <div class="swiper-slide">
                 <div class="card">
-                    <div class="image-content" onclick="location.href='#'" style="background-image: url(<%#Eval("picture")%>); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+                    <div class="image-content" style="background-image: url(<%#Eval("picture")%>); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+                        <asp:LinkButton runat="server" onclick="deviceClicked" style="width: 100%; opacity: 0; height:100%;" CommandArgument='<%#Eval("serial_number")%>'/>
                     </div>
 
                     <div class="card-body">
                         <h4 class="card-title"><%#Eval("name")%></h4>
-                        <asp:Button runat="server" onclick="deviceClicked" class="cardButtons mt-4" Text="إستعارة" CommandArgument='<%#Eval("serial_number")%>'></asp:Button>
+                        <asp:LinkButton ID="LinkButton1" runat="server" style="padding: 4px 27px" onclick="deviceClicked" class="btn btn-success mt-4" Text="إستعارة" CommandArgument='<%#Eval("serial_number")%>'></asp:LinkButton>
                     </div>
                 </div>
             </div>
                 </ItemTemplate>
             </asp:Repeater>
+
         </div>
 
         <div class="swiper-button-next" style="color:#437131"></div>
         <div class="swiper-button-prev" style="color:#437131"></div>
         <div class="swiper-pagination"></div>
     </div>
+                            <!-- Message to show that there aren't any devices available-->
+                            <center>
+                                <img class="mt-2" src="img/noDevice.png" id="message" style="display: none; width: 60%;"></img>
+                            </center>
+
+                            <!-- Script to Show/Hide -->
+                        <script>
+                            if (document.getElementById("globalContent").textContent.trim() === '') {
+                                document.getElementById("message").style.display = "block";
+                                document.getElementById("globalContent").style.display = "none";
+                            }
+                        </script>
                         </div>
                     </div>
                 </div>
@@ -268,18 +307,37 @@
         </section>
         
         <!-- About Us Section -->
-        <section>
-            <div class="imageContainer d-flex">
-                <img src="img/about.jpg" alt="Image" style="width: 100%; opacity: 0.6;" class="center" />
-                <div class="text-block-right mt-3" style="text-align: right">
-                    <h1 style="margin: auto; text-align: center;"> --- نبذه عنا ---</h1>
-                    <p></p>
-                    <p style="font-size: 24px">من منطلق المساهمة في الجهود الحثيثة لتحسين مخرجات التعليم والتعلم الالكتروني بجامعة الملك عبدالعزيز ولتحقيق الميزة التنافسية التي تطمح لها جامعة المؤسس، تم إنشاء نظام اعارة أجهزة الابتكارات والذي يندرج تحت مظلة معمل ابتكارات التعلم الالكتروني بعمادة التعلم الالكتروني والتعليم عن بعد. ويسمح النظام للمستخدمين باستعارة أو حجز عدة متطلبات تقنية ووسائل تعليمية للاستخدام التدريبي والبحثي والخدمة المجتمعية.
-                        <span style="color: seagreen; cursor: pointer;" class="forMore" onclick="location.href='AboutUs.aspx'">للمزيد...</span>
-                    </p>
+    <section>
+        <div class="container">
+<!-- Header -->
+                <div class="row" style="text-align: right">
+                    <div class="col-md-5">
+                        <hr class="dashed">
+                    </div>
+                    <div class="col-md-2">
+                        <h2 style="text-align: center">نبذه عنا</h2>
+                    </div>
+                    <div class="col-md-5">
+                        <hr class="dashed">
+                    </div>
                 </div>
-            </div>
-        </section>
-   
+<!-- About Us Content -->
+            <div class="imageContainer d-flex" style="padding: 50px 10px">
+                    <img src="img/about.jpg" alt="Image" style="width: 100%; opacity: 0.6;" class="center" />
+                    <div class="text-block-right" style="text-align: right">
+                        <p></p>
+                        <h3 style="margin: auto; text-align: center; font-size:2vw;">--- إعارة أجهزة معمل الإبتكارات ---</h3>
+                        <p></p>
+                        <p style="font-size: 1.8vw">
+                            من منطلق المساهمة في الجهود الحثيثة لتحسين مخرجات التعليم والتعلم الالكتروني بجامعة الملك عبدالعزيز ولتحقيق الميزة التنافسية التي تطمح لها جامعة المؤسس، تم إنشاء نظام اعارة أجهزة الابتكارات والذي يندرج تحت مظلة معمل ابتكارات التعلم الالكتروني بعمادة التعلم الالكتروني والتعليم عن بعد. ويسمح النظام للمستخدمين باستعارة أو حجز عدة متطلبات تقنية ووسائل تعليمية للاستخدام التدريبي والبحثي والخدمة المجتمعية.
+                        <span style="color: seagreen; cursor: pointer;" class="forMore" onclick="location.href='AboutUs.aspx'">للمزيد...</span>
+                        </p>
+                    </div>
+                </div>
+        </div>
+
+    </section>
+    </div>
+    
     
 </asp:Content>

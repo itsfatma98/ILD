@@ -71,7 +71,7 @@ namespace ILD
                         
                         if (String.Equals(userType, "admin"))
                         {
-                            Response.Redirect("Admin.aspx");
+                            Response.Redirect("AdminProfile.aspx");
                         }
                         else
                         {

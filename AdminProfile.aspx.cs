@@ -9,10 +9,11 @@ using System.Configuration;
 
 namespace ILD
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class AdminProfile : System.Web.UI.Page
     {
         SqlConnection con;
         SqlCommand cmd;
+        String userId;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,15 +21,18 @@ namespace ILD
                 try
                 {
                     if (Session["Id"] == null)
+                       
                     {
                         Response.Redirect("Login.aspx");
                     }
-                    else
+            else
                     {
+                        userId = Session["Id"].ToString();
+                  
                         string str = getConstring();
                         con = new SqlConnection(str);
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("select * from Account where UserName='" + Session["UserName"] + "'", con);
+                        cmd = new SqlCommand("select * from Account where Id='" + userId + "'", con);
                         //cmd = new SqlCommand("select * from Account where Id='1911144'", con);
                         SqlDataReader reader;
                         reader = cmd.ExecuteReader();
@@ -51,21 +55,22 @@ namespace ILD
             }
         }
 
+
         public string getConstring()
         {
             string constr = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             return constr;
         }
-
         [Obsolete]
-        protected void Edit_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Write("hhhhh");
             try
             {
+                userId = Session["Id"].ToString();
+                Response.Write("hello");
                 string str = getConstring();
                 con = new SqlConnection(str);
-                cmd = new SqlCommand("update Account set Fname=@fname, Lname=@lname, email=@email, phone=@phone where Id='1911144'", con);
+                cmd = new SqlCommand("update Account set Fname=@fname, Lname=@lname, email=@email, phone=@phone where Id='" +userId +"'", con);
                 con.Open();
                 cmd.Parameters.Add("fname", fname.Value.Trim().ToString());
                 cmd.Parameters.Add("lname", lname.Value.Trim().ToString());
@@ -79,7 +84,16 @@ namespace ILD
                 Console.WriteLine(error.Message);
 
             }
-            Response.Redirect("Admin.aspx");
+            Response.Redirect("AdminProfile.aspx");
         }
     }
 }
+
+
+
+
+
+
+
+
+    

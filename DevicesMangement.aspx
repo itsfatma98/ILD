@@ -1,14 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="DevicesMangement.aspx.cs" Inherits="ILD.WebForm3"  %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="DevicesMangement.aspx.cs" Inherits="ILD.WebForm3"  %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="customizedCSS/AdminPages.css" rel="stylesheet" />
+   <%-- <link href="customizedCSS/AdminPages.css" rel="stylesheet" />--%>
 
     
  
-    <div class="container-fluid  ">
-            <div class=" d-flex flex-column">
+    <div class="container-fluid ">
+            <div class=" d-flex flex-column ml-5 pl-5">
                 <div class="text-center mt-5">
                     <h2 >إدارة الأجهزة</h2>
                 </div>
@@ -17,10 +17,10 @@
                     <table class="table table-hover  text-center "  id="device_table"  >
                         <thead  class="bg-success">
                             <tr >
-                                <th >الرقم التسلسلي للجهاز</th>
-                                <th >اسم الجهاز</th>
-                                <th>تعديل</th>
-                                <th>حذف</th>
+                                <th class="text-white">الرقم التسلسلي للجهاز</th>
+                                <th class="text-white" >اسم الجهاز</th>
+                                <th class="text-white">تعديل</th>
+                                <th class="text-white">حذف</th>
                             </tr>
                         </thead>
 
@@ -41,7 +41,7 @@
                         </tbody>
                     </table>
                  </div>
-                 <div class="container mt-2">
+                 <div class=" mt-5">
                             <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="إضافة جهاز" OnClick="Button1_Click"  /><br />
                  </div>
            </div>

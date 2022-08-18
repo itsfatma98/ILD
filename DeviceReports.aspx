@@ -1,12 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="DeviceReports.aspx.cs" Inherits="ILD.DeviceReports" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="DeviceReports.aspx.cs" Inherits="ILD.DeviceReports" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="customizedCSS/AdminPages.css" rel="stylesheet" />
-     <h2>تقارير الأجهزة</h2>
+    <%--<link href="customizedCSS/AdminPages.css" rel="stylesheet" />--%>
 
-    <table class="table" id="device_table">
-        <thead>
+     <div class="container-fluid  ">
+        <div class=" d-flex flex-column">
+            <div class="text-center mt-5">
+     <h2>تقارير الأجهزة</h2>
+                </div>
+
+<div class="container tableContainer  mt-5 ml-5 pl-5">
+    <table class="table table-hover  text-center " id="device_table">
+        <thead  class="bg-success">
             <tr>
                 <th>الرقم التسلسلي
                 </th>
@@ -32,4 +38,7 @@
             </asp:Repeater>
         </tbody>
     </table>
+     </div>
+            </div>
+         </div>
 </asp:Content>

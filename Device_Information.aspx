@@ -113,7 +113,21 @@
             </div>
 
     
-  
+  <script>
+
+      function notAvailable() {
+          Swal.fire({
+              title: ' الجهاز غير متاح',
+              text: 'هذا الجهاز غير متاح في الوقت الحالي',
+              icon: 'error',
+              buttonsStyling: false,
+              confirmButtonText: 'موافق'
+          }).then(function () {
+              window.location.href = 'Home.aspx';
+          });
+      }
+
+  </script>
 
   
 </asp:Content>

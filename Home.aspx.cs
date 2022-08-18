@@ -58,9 +58,8 @@ namespace ILD
                 RPTR_local.DataSource = Table;
                 RPTR_local.DataBind();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Response.Write("There is an exception when pulling local devices from the database!");
             }
         }
 
@@ -80,9 +79,8 @@ namespace ILD
                 RPTR_global.DataSource = Table;
                 RPTR_global.DataBind();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Response.Write("There is an exception when pulling global devices from the database!");
             }
         }
 
@@ -90,7 +88,7 @@ namespace ILD
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("select top 5 name, type, counter from Device order by counter desc", con);
+                SqlCommand cmd = new SqlCommand("select top 5 name, type,counter from Device order by counter desc", con);
 
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter DA = new SqlDataAdapter(cmd);
@@ -158,9 +156,8 @@ namespace ILD
                 }
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Response.Write("There is an exception when pulling top1 device from the database!");
             }
         }
 
@@ -178,9 +175,8 @@ namespace ILD
 
                 top1 = Table.Rows[0][0].ToString();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Response.Write("There is an exception when pulling top1 device from the database!");
             }
         }
 
@@ -190,8 +186,8 @@ namespace ILD
             con = new SqlConnection(getConString());
             con.Open();
 
-            string devName = ((Button)sender).CommandArgument;
-            Session["deviceNum"] = devName;
+            string devNum = ((LinkButton)sender).CommandArgument;
+            Session["deviceNum"] = devNum;
             Response.Redirect("Device_Information.aspx");
 
 

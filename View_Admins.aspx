@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="View_Admins.aspx.cs" Inherits="ILD.View_Admins" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="View_Admins.aspx.cs" Inherits="ILD.View_Admins" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="customizedCSS/AdminPages.css" rel="stylesheet" />
+  <%--  <link href="customizedCSS/AdminPages.css" rel="stylesheet" />--%>
         <div class="container-fluid  ">
-            <div class=" d-flex flex-column">
+            <div class=" d-flex flex-column ml-5 pl-5">
                 <div class="text-center mt-5">
                     <h2>استعراض المشرفين</h2>
                 </div>

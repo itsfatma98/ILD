@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Requests_Reports.aspx.cs" Inherits="ILD.Requests_Reports1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="Requests_Reports.aspx.cs" Inherits="ILD.Requests_Reports1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <link href="customizedCSS/AdminPages.css" rel="stylesheet" />
+  <%--   <link href="customizedCSS/AdminPages.css" rel="stylesheet" />--%>
         <div class="container-fluid  ">
-            <div class=" d-flex flex-column">
+            <div class=" d-flex flex-column ml-5 pl-5">
                 <div class="text-center mt-5">
                     <h2>تقرير الطلبات</h2>
                 </div>

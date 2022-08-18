@@ -1,16 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="ComingRequests.aspx.cs" Inherits="ILD.ComingRequests" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site2.Master" CodeBehind="ComingRequests.aspx.cs" Inherits="ILD.ComingRequests" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
+   <%-- <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <center>
+<div class="container-fluid  ">
+        <div class=" d-flex flex-column ml-5 pl-5">
+            <div class="text-center mt-5">
     <h2>إدارة الطلبات الواردة</h2>
-        </center>
+</div>
 
-    <table class="table" id="device_table">
-        <thead>
+            <div class="container tableContainer  mt-5">
+                <table class="table table-hover  text-center " id="currentT">
+        <thead class="bg-success">
             <tr>
                 <th>رقم الطلب
                 </th>
@@ -42,8 +44,10 @@
             </asp:Repeater>
         </tbody>
     </table>
-    
-
+  </div>
+   </div>
+ 
+</div>
 
 
 </asp:Content>

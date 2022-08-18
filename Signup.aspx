@@ -38,6 +38,7 @@
                 <asp:ListItem Text="التمريض" Value="التمريض" />
                 <asp:ListItem Text="الدراسات العليا التربوية" Value="الدراسات العليا التربوية" />
                 <asp:ListItem Text="علوم التأهيل الطبي" Value="علوم التأهيل" />
+
             </asp:DropDownList>
 
             <div>

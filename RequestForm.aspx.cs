@@ -32,14 +32,11 @@ namespace ILD
 
                 SqlDataReader DR1 = cmd.ExecuteReader();
 
-
-
-
                 if (DR1.Read())
                 {
-                    request_num.Text = DR1.GetValue(0).ToString(); ;
-                    device_name.Text = DR1.GetValue(1).ToString(); ;
-                    req_type.Text = DR1.GetValue(2).ToString(); ;
+                    request_num.Text = DR1.GetValue(0).ToString();
+                    device_name.Text = DR1.GetValue(1).ToString();
+                    req_type.Text = DR1.GetValue(2).ToString();
                     user_name.Text = DR1.GetValue(3).ToString();
                     email.Text = DR1.GetValue(4).ToString();
                     id.Text = DR1.GetValue(5).ToString();
@@ -66,43 +63,67 @@ namespace ILD
         protected void Button_click(object sender, EventArgs e)
         {
 
-            
-        
+
             string id = Session["id"].ToString();
             string admin_name = Session["name"].ToString();
 
 
             try
             {
+
                 string str = GetConstring();
                 con = new SqlConnection(str);
                 con.Open();
-                SqlCommand myCommand = new SqlCommand("UPDATE Borrowing SET return_date= @return_date,admin_response=@admin_response,status=@status,admin_id=@admin_id,admin_name=@admin_name WHERE Borrowing.request_number='" + Session["request_number"] + "'", con);
-                SqlCommand DeviceCom = new SqlCommand("UPDATE Device SET available_quantity=@available_quantity", con);
-
-
-                if (acc.Checked)
+                SqlCommand cmd1 = new SqlCommand("SELECT Borrowing.request_number ,Device.name, Device.serial_number, Device.available_quantity, Device.counter FROM Borrowing" +
+                                  " JOIN Device ON Device.serial_number= Borrowing.serial_number " +
+                               "WHERE Borrowing.request_number='" + Session["request_number"] + "'", con);
+                SqlDataReader DR = cmd1.ExecuteReader();
+                if (DR.Read())
                 {
 
-                    myCommand.Parameters.AddWithValue("@return_date", date2.Text.Trim());
-                    myCommand.Parameters.AddWithValue("@admin_response", "accepted");
-                    myCommand.Parameters.AddWithValue("@status", "not_returned");
-                    myCommand.Parameters.AddWithValue("@admin_id", id);
-                    myCommand.Parameters.AddWithValue("@admin_name", admin_name);
-                    //DeviceCom.Parameters.AddWithValue("@available_quantity", );
-                    myCommand.ExecuteNonQuery();
-                    Response.Write("<script>alert('تم قبول الطلب بنجاح');</script>");
+                    int avc = Convert.ToInt32(DR.GetValue(3));
+                    int cont = Convert.ToInt32(DR.GetValue(4));
+                    string serialn = DR.GetValue(3).ToString();
+                    DR.Close();
+                    SqlCommand myCommand = new SqlCommand("UPDATE Borrowing SET return_date= @return_date,admin_response=@admin_response,status=@status,admin_id=@admin_id,admin_name=@admin_name WHERE Borrowing.request_number='" + Session["request_number"] + "'", con);
+                    SqlCommand DeviceCom = new SqlCommand("UPDATE Device SET available_quantity=@available_quantity, counter=@counter WHERE Device.serial_number='" + serialn + "'", con);
+                    if (acc.Checked)
+                    {
+                        if (date2.Text.Trim() == "")
+                        {
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "error();", true);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@return_date", date2.Text.Trim());
+                            myCommand.Parameters.AddWithValue("@admin_response", "accepted");
+                            myCommand.Parameters.AddWithValue("@status", "not_returned");
+                            myCommand.Parameters.AddWithValue("@admin_id", id);
+                            myCommand.Parameters.AddWithValue("@admin_name", admin_name);
+                            DeviceCom.Parameters.AddWithValue("@available_quantity", avc - 1);
+                            DeviceCom.Parameters.AddWithValue("@counter", cont + 1);
+                            myCommand.ExecuteNonQuery();
+                            DeviceCom.ExecuteNonQuery();
+                            con.Close();
 
-                }
-                else
-                {
-                    myCommand.Parameters.AddWithValue("@return_date", "");
-                    myCommand.Parameters.AddWithValue("@admin_response", "declined");
-                    myCommand.Parameters.AddWithValue("@status", "");
-                    myCommand.Parameters.AddWithValue("@admin_id", id);
-                    myCommand.Parameters.AddWithValue("@admin_name", admin_name);
-                    myCommand.ExecuteNonQuery();
-                    Response.Write("<script>alert('تم رفض الطلب بنجاح');</script>");
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "accept();", true);
+                        }
+
+                    }
+
+                    else
+                    {
+                        myCommand.Parameters.AddWithValue("@return_date", "");
+                        myCommand.Parameters.AddWithValue("@admin_response", "declined");
+                        myCommand.Parameters.AddWithValue("@status", "");
+                        myCommand.Parameters.AddWithValue("@admin_id", id);
+                        myCommand.Parameters.AddWithValue("@admin_name", admin_name);
+                        myCommand.ExecuteNonQuery();
+                        con.Close();
+
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "decline();", true);
+                    }
+
                 }
 
             }
@@ -111,54 +132,6 @@ namespace ILD
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
 
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-
-            string id = Session["id"].ToString();
-            string admin_name = Session["name"].ToString();
-
-
-            try
-            {
-                string str = GetConstring();
-                con = new SqlConnection(str);
-                con.Open();
-                SqlCommand myCommand = new SqlCommand("UPDATE Borrowing SET return_date= @return_date,admin_response=@admin_response,status=@status,admin_id=@admin_id,admin_name=@admin_name WHERE Borrowing.request_number='" + Session["request_number"] + "'", con);
-                SqlCommand DeviceCom = new SqlCommand("UPDATE Device SET available_quantity=@available_quantity", con);
-
-
-                if (acc.Checked)
-                {
-
-                    myCommand.Parameters.AddWithValue("@return_date", date2.Text.Trim());
-                    myCommand.Parameters.AddWithValue("@admin_response", "accepted");
-                    myCommand.Parameters.AddWithValue("@status", "not_returned");
-                    myCommand.Parameters.AddWithValue("@admin_id", id);
-                    myCommand.Parameters.AddWithValue("@admin_name", admin_name);
-                    //DeviceCom.Parameters.AddWithValue("@available_quantity", );
-                    myCommand.ExecuteNonQuery();
-                    Response.Write("<script>alert('تم قبول الطلب بنجاح');</script>");
-
-                }
-                else
-                {
-                    myCommand.Parameters.AddWithValue("@return_date", "");
-                    myCommand.Parameters.AddWithValue("@admin_response", "declined");
-                    myCommand.Parameters.AddWithValue("@status", "");
-                    myCommand.Parameters.AddWithValue("@admin_id", id);
-                    myCommand.Parameters.AddWithValue("@admin_name", admin_name);
-                    myCommand.ExecuteNonQuery();
-                    Response.Write("<script>alert('تم رفض الطلب بنجاح');</script>");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
         }
     }
 }

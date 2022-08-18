@@ -11,7 +11,7 @@ namespace ILD
 {
 
 
-    public partial class Admin
+    public partial class AdminProfile
     {
 
         /// <summary>

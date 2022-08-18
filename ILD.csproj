@@ -126,6 +126,7 @@
     <Content Include="customizedCSS\JumanaStyle.css" />
     <Content Include="customizedCSS\AdminPages.css" />
     <Content Include="customizedCSS\sideNav.css" />
+    <Content Include="customizedCSS\style.css" />
     <Content Include="customizedCSS\StyleSheet1.css" />
     <Content Include="customizedCSS\RawanStyle.css" />
     <Content Include="dataTables\css\jquery.dataTables.min.css" />
@@ -2187,8 +2188,6 @@
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\svgs\solid\z.svg" />
     <Content Include="ForgetPass1.aspx" />
-    <Content Include="ForgetPass2.aspx" />
-    <Content Include="ForgetPass3.aspx" />
     <Content Include="img\about.jpg" />
     <Content Include="img\circleHeader.png" />
     <Content Include="img\d1.jpg" />
@@ -2283,13 +2282,12 @@
     <Content Include="Web.config" />
     <Content Include="AboutUs.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="Admin.aspx" />
     <Content Include="DevicesMangement.aspx" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="AddEditDevice.aspx" />
     <Content Include="DeviceReports.aspx" />
     <Content Include="ComingRequests.aspx" />
-    <Content Include="WebForm4.aspx" />
+    <Content Include="AdminProfile.aspx" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BorrowingForm.aspx.cs">
@@ -2326,20 +2324,6 @@
     </Compile>
     <Compile Include="ForgetPass1.aspx.designer.cs">
       <DependentUpon>ForgetPass1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ForgetPass2.aspx.cs">
-      <DependentUpon>ForgetPass2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ForgetPass2.aspx.designer.cs">
-      <DependentUpon>ForgetPass2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ForgetPass3.aspx.cs">
-      <DependentUpon>ForgetPass3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ForgetPass3.aspx.designer.cs">
-      <DependentUpon>ForgetPass3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -2421,13 +2405,6 @@
     <Compile Include="UserForm.aspx.designer.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DevicesMangement.aspx.cs">
       <DependentUpon>DevicesMangement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2441,13 +2418,6 @@
     </Compile>
     <Compile Include="View_Admins.aspx.designer.cs">
       <DependentUpon>View_Admins.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddEditDevice.aspx.cs">
       <DependentUpon>AddEditDevice.aspx</DependentUpon>
@@ -2470,12 +2440,19 @@
     <Compile Include="ComingRequests.aspx.designer.cs">
       <DependentUpon>ComingRequests.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm4.aspx.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="AdminProfile.aspx.cs">
+      <DependentUpon>AdminProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm4.aspx.designer.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="AdminProfile.aspx.designer.cs">
+      <DependentUpon>AdminProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2549,7 +2526,6 @@
     <Content Include="obj\Release\ILD.csproj.AssemblyReference.cache" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
-    <Content Include="Site2.Master" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\.signature.p7s" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" />
@@ -2584,6 +2560,7 @@
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.exe.config" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.rsp" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe.config" />
+    <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
