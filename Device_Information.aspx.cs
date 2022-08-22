@@ -46,6 +46,7 @@ namespace ILD
             try
             {
                 devNum = Session["deviceNum"].ToString();
+                //Response.Write("sd" + devNum);
                 SqlCommand cmd = new SqlCommand("select name, type, description, serial_number,picture from Device where serial_number='" + devNum + "'", con);
 
                 cmd.CommandType = CommandType.Text;
@@ -67,32 +68,34 @@ namespace ILD
             }
             catch (Exception e)
             {
-                Response.Write(" There is an exception when getting the device information.");
+                //Response.Write(" There is an exception when getting the device information.");
             }
         }
 
         //---------------------- When the button is clicked ----------------------------//
         protected void orderClicked(object sender, EventArgs e)
         {
-            using (SqlCommand sqlcmd = new SqlCommand("select available_quantity from Device where serial_number= deviceNum", con))
+            SqlConnection cons = new SqlConnection(getConString());
+            cons.Open();
+
+            SqlCommand cmd = new SqlCommand("select available_quantity from Device where serial_number='" + devNum + "'", cons);
+            //int count = Convert.ToInt32(cmd.ExecuteScalar());
+            int count = 5;
+
+            if (count > 0)
             {
-                int count = Convert.ToInt32(sqlcmd.ExecuteScalar());
+                available = true;
+            }
+            else
+            {
+                available = false;
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "notAvailable();", true);
+                // button1.Enabled = false;
 
-                if (count > 0)
-                {
-                    available = true;
-                }
-                else
-                {
-                    available = false;
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "notAvailable();", true);
-                    // button1.Enabled = false;
+            }
+            devNum = Session["deviceNum"].ToString();
 
-                }
-                con = new SqlConnection(getConString());
-                con.Open();
-
-                Session["deviceNum"] = devNum;
+            Session["deviceNum"] = devNum;
 
                 //Here we check if the type of the device is either local or global
                 if (devType.Equals("local"))
@@ -105,9 +108,8 @@ namespace ILD
                     Response.Redirect("BorrowingForm.aspx");
                 }
 
-                con.Close();
-                con.Dispose();
+                cons.Close();
+                cons.Dispose();
             }
         }
     }
-}

@@ -40,8 +40,8 @@ namespace ILD
             // mylabel.Visible = true;
 
 
-            string ID = usid.Value;
-            string pass = passw.Value;
+            string ID = userid.Text;
+            string pass = passr.Text;
 
 
 

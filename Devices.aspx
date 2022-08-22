@@ -39,7 +39,7 @@
                                         </div>
                                         <center>
                                             <h4 class="mt-2"><%#Eval("name")%></h4>
-                                            <asp:LinkButton runat="server" Text="حجز" OnClick="deviceClick" class="btn btn-success mb-4 mt-2" style="padding: 4px 27px" CommandArgument='<%#Eval("serialNum")%>'/>
+                                            <asp:LinkButton runat="server" Text="حجز" OnClick="deviceClick" class="btn btn-success mb-4 mt-2" style="padding: 4px 27px" CommandArgument='<%#Eval("serial_number")%>'/>
                                         </center>
                                     </div>
                             </ItemTemplate>
@@ -101,7 +101,7 @@
                                         </div>
                                         <center>
                                             <h4 class="mt-2"><%#Eval("name")%></h4>
-                                            <asp:LinkButton runat="server" OnClick="deviceClick" Text="إستعارة"  class="btn btn-success mb-4 mt-2" style="padding: 4px 27px" CommandArgument='<%#Eval("serialNum")%>' />
+                                            <asp:LinkButton runat="server" OnClick="deviceClick" Text="إستعارة"  class="btn btn-success mb-4 mt-2" style="padding: 4px 27px" CommandArgument='<%#Eval("serial_number")%>' />
                                         </center>
                                     </div>
                             </ItemTemplate>

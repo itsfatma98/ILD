@@ -24,13 +24,13 @@ namespace ILD
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// usid control.
+        /// userid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText usid;
+        protected global::System.Web.UI.WebControls.TextBox userid;
 
         /// <summary>
         /// Label2 control.
@@ -42,22 +42,22 @@ namespace ILD
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// passw control.
+        /// passr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword passw;
+        protected global::System.Web.UI.WebControls.TextBox passr;
 
         /// <summary>
-        /// Button1 control.
+        /// errorlabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Button1;
+        protected global::System.Web.UI.WebControls.Label errorlabel;
 
         /// <summary>
         /// LinkButton1 control.
@@ -69,13 +69,13 @@ namespace ILD
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
 
         /// <summary>
-        /// Label3 control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.LinkButton Button1;
 
         /// <summary>
         /// Button2 control.
@@ -85,14 +85,5 @@ namespace ILD
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
-
-        /// <summary>
-        /// errorlabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorlabel;
     }
 }

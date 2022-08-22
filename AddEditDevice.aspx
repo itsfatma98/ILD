@@ -7,7 +7,7 @@
   
     <div class="container-fluid">
         <div class=" container d-flex flex-column px-xl-5 ml-5 pl-5">
-            <div class="text-center" style="margin-left:20%;">
+            <div class="text-center" style="margin-left:25%;">
                 <h1>إضافة / تعديل جهاز </h1>
             </div>
             <div class="box" style="">
@@ -62,7 +62,7 @@
                     </div>
 
                     <%-- save changes button--%>
-                    <div class="form-group row mt-2">
+                    <div class="form-group row text-center mt-4" style="margin-left:10%">
                         <div class="col-sm-10">
                             <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="حفظ التغيرات" OnClick="saveChanges" />
                         </div>

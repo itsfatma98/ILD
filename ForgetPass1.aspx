@@ -3,29 +3,58 @@
     <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <body style="background: url(img/w3.JFIF); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+   <br>
     <br>
-    <br>
-        <h1>تعيين كلمة مرور جديدة </h1>
+        <h2> استعادة كلمة المرور </h2>
     <br>
     <br>
     <fieldset>
         <br>
         <br>
-        <form action="/">
-            <div class="personal-details">
-                <div>
-                    <div>
-                        <label> ادخل بريدك الالكتروني:</label><input type="email" name="Gmail" required>
-                    </div>
-                </div>
-            </div>
+        <div class="form-group row ">
+                                <asp:Label ID="Label2" class="col-sm-2 col-form-label text-center" runat="server" Text="البريد الالكتروني:"></asp:Label>
+                                <div class="col-sm-10" >
+                                    <input type="email" ID="useremail" class="form-control w-50" runat="server" required></div>
+                                </div>     
+                     
             <center>
                 <br>
                 <br>
-                <button class="d-flex justify-content-center" type="submit" href="/">إرسال</button>
+                <asp:Button ID="Button1" class="btn btn-success" runat="server" OnClick="password" Text="إرسال" />
             </center>
-        </form>
     </fieldset>
-</body>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
+
+     <script>
+        function error() {
+            Swal.fire({
+                title: 'تم ارسال كلمة المرور بنجاح',
+                icon: 'success',
+                buttonsStyling: false,
+                confirmButtonText: 'موافق'
+
+            }).then(function () {
+                window.location.href = 'Login.aspx';
+            });
+        }
+
+
+        function errorInfo() {
+            Swal.fire({
+                title: 'خطأ!',
+                text: 'البريد الالكتروني غير مسجل ',
+                icon: 'error',
+                buttonsStyling: false,
+                confirmButtonText: 'موافق'
+
+            })
+        }
+
+        
+
+     </script>
+
 </asp:Content>

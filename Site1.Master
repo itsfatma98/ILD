@@ -5,15 +5,13 @@
 <html lang="ar" dir="rtl">
 <head runat="server">
     <title></title>
-    
+    <link href="customizedCSS/StyleSheet1.css" rel="stylesheet" />
     <%--bootstrap css--%>
     <link href="bootsrap/css/bootstrap.min.css" rel="stylesheet" />
-    <%--dataTables css--%>
-    <link href="dataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <%--foontawsome--%>
     <link href="fontawesome/fontawesome-free-6.1.2-web/css/all.css" rel="stylesheet" />
     <%--ourr customized css--%>
-    <link href="customizedCSS/StyleSheet1.css" rel="stylesheet" />
+  
     <%--jQuery--%>
     <script src="bootsrap/js/jquery-3.3.1.slim.min.js"></script>
     <%--proper js--%>
@@ -83,42 +81,68 @@
             </asp:ContentPlaceHolder>
         <!-- Main Content Placeholder end -->
 
-         <!-- Footer Start-->
+        <!-- Footer Start-->
         <footer class="bcolor">
+            <div class="container-fluid" style="text-align: right">
 
-            <div class="container-fluid  mt-5 pt-3 pb-3  text-right footer">
-                <!--address-->
-                <div class="b pt"> 
-                    <h5 class="text-dark">العنوان</h5>
-                     <div class="d-flex d-inline mt-3">
-                        <div class="mb-2">
-                            <i class="fa fa-map-marker-alt text-primary  "></i>
-                            <p class="mr-3 d-flex d-inline">جامعة الملك عبدالعزيز عمادة التعلم الإلكتروني والتعليم عن بعد مبنى 66 الدور الثالث غرفة 452</p>
+                    <div class="row mb-3">
+                        <!--address-->
+                        <div class="col-md-5 mt-3" style="padding: 40px">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="text-dark" style="font-family: Arial;">العنوان</h3>
+                                </div>
+                            </div>
+                            <div class="row mt-3" style="font-size: 18px">
+                                <div class="col-md-1">
+                                    <i class="fa fa-map-marker-alt"></i>
+                                </div>
+                                <div class="col-md-11" style="padding-right:0px">
+                                    <p style="color: gray">
+                                    جامعة الملك عبدالعزيز عمادة التعلم الإلكتروني والتعليم عن بعد مبنى 66 الدور الثالث غرفة 452</p>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                        
-                </div>
-                <!--contact as-->
-                <div class="b  " id="contact"> 
-                    <h5 class="text-dark ">تواصل معنا</h5>
-                     <div class="mt-3">
-                         <p class="mb-2"><i class="fa fa-envelope text-primary ml-3 "></i>info@example.com</p>
-                        <p class="mb-0"><i class="fa fa-phone-alt text-primary ml-3 "></i>+012 345 67890</p>
-                     </div>
-                        
-                </div>
-                <!--social media-->
-                 <div class="b" > 
-                    <h5 class="text-dark">مواقع التواصل الإجتماعي</h5>
-                    <div class="mt-3">
-                        <a class="btn btn-secondry ml-2" href="#"><i class="fab fa-twitter iconbg"></i></a>
-                        <a class="btn btn-secondry ml-2" href="#"><i class="fab fa-facebook-f iconbg"></i></a>
-                        <a class="btn btn-secondry" href="#"><i class="fab fa-instagram iconbg"></i></a>
+                        <!--contact as-->
+                        <div class="col-md-4 mt-3" id="contact" style="padding: 40px">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="text-dark" style="font-family: Arial;">تواصل معنا</h3>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <p class="mb-2" style="font-size: 18px"><i class="fa fa-envelope ml-3"></i><span style="color: gray">info@example.com</span></p>
+                                    <p class="mb-0" style="font-size: 18px"><i class="fa fa-phone-alt ml-3"></i><span style="color: gray">+012 345 67890</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--social media-->
+                        <div class="col-md-3 mt-3" style="padding: 40px">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="text-dark" style="font-family: Arial;">مواقع التواصل الإجتماعي</h3>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-12">
+                                    <a class="headerM" style="font-size: 30px;display: inline-block;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="headerM" style="font-size: 30px;display: inline-block;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="headerM" style="font-size: 30px;display: inline-block;" href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                
+                    
+                    <!-- CopyRight -->
+                <div class="row" style="background-color: #437131">
+                    <center>
+                        <small style="color: white"> Copyright 2022, Innovation Lab Devices. All Rights Reserved &copy;</small>
+                    </center>
                 </div>
-            
+            </div>
         </footer>
+        <!-- Footer End-->
         <!-- Footer End-->
         </form>
 </body>

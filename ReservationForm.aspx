@@ -1,11 +1,61 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ReservationForm.aspx.cs" Inherits="ILD.ReservationForm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <div class="container-fluid">
+        <div class=" container d-flex flex-column px-xl-5 ml-5 pl-5">
+            
+           <div class=" text-center  mt-5 " style="margin-left:25%"><h1>نموذج طلب حجز </h1></div>
 
-    <h1>نموذج طلب حجز </h1>
+            <div class="box mt-5" style="">
+              
+                     <div class="form-group row ">
+                        <asp:Label ID="Label2" class="col-sm-2 col-form-label text-center" runat="server" Text="الإسم :"></asp:Label>
+                        <div class="col-sm-10" >
+                             <asp:TextBox type="text" ID="name" ReadOnly="true" runat="server" class="form-control w-50" name="Fname"></asp:TextBox>
+                         </div>
+                    </div>
+
+                    <div class="form-group row ">
+                        <asp:Label ID="Label1" class="col-sm-2 col-form-label text-center" runat="server" Text="الرقم الجامعي /الوظيفي  :"></asp:Label>
+                        <div class="col-sm-10" >
+                             <asp:TextBox type="text" ID="id" ReadOnly="true" runat="server" class="form-control w-50" ></asp:TextBox>
+                         </div>
+                    </div>
+
+                    <div class="form-group row ">
+                        <asp:Label ID="Label3" class="col-sm-2 col-form-label text-center" runat="server" Text="الكلية :"></asp:Label>
+                        <div class="col-sm-10" >
+                             <asp:TextBox type="text" ID="dep"  ReadOnly="true" runat="server" class="form-control w-50" name="Fname"></asp:TextBox>
+                         </div>
+                    </div>
+
+                  <div class="form-group row ">
+                        <asp:Label ID="Label4" class="col-sm-2 col-form-label text-center" runat="server" Text="تاريخ حجز الجهاز :"></asp:Label>
+                        <div class="col-sm-10" >
+                             <asp:TextBox  ID="cal" runat="server" type="date"  name="calender"     class="form-control w-50" ></asp:TextBox>
+                         </div>
+                    </div>
+                <div class="form-group row ">
+                    <asp:CheckBox style="width: 5%;"   class="col-sm-2 col-form-label text-center"  name="إقرار[]" id="إقرار" placeholder="إقرار" required="true"  runat="server" />
+                        <div class="col-sm-10" >
+                            <asp:Label ID="Label5" class="form-control w-50 text-right" style="border:transparent;" runat="server" Text="أتعهد بالمحافظة على الجهاز وملحقاته واستعماله بصورة جيدة "></asp:Label>
+                         </div>
+                    </div>
+
+                <div class="form-group row mt-2" >
+                                    <div class="col-sm-10 text-center">
+                                        <asp:Button class="btn btn-success" style="margin-left:15%"  runat="server" OnClick="Reservation_Form_Click" Text="اتمام الطلب" />
+                                    </div>
+                     </div>
+
+
+                </div>
+            </div>
+         </div>
+   <%-- <h1>نموذج طلب حجز </h1>
 
    <fieldset>
 
@@ -41,7 +91,7 @@
                 <asp:Button class="btn btn-success"  runat="server" OnClick="Reservation_Form_Click" Text="اتمام الطلب"></asp:Button>
             </center>
         </div>
-    </fieldset>
+    </fieldset>--%>
 
 
   <!-- pupup JS -->

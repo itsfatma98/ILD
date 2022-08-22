@@ -17,39 +17,37 @@ namespace ILD
         SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-
-                con = new SqlConnection(GetConstring());
-                con.Open();
-
-
-                SqlCommand cmd = new SqlCommand("SELECT Borrowing.request_number ,Device.name, Borrowing.request_type , Account.Fname, Account.email, Account.Id, Account.phone, Account.department_name, Borrowing.start_date, Borrowing.duration FROM Borrowing" +
-                  " JOIN Device ON Device.serial_number= Borrowing.serial_number " +
-                  " JOIN Account ON Account.Id= Borrowing.user_id " +
-               "WHERE Borrowing.request_number='" + Session["request_number"] + "'", con);
+            //if (!IsPostBack)
+            //{
+                    con = new SqlConnection(GetConstring());
+                    con.Open();
 
 
-                SqlDataReader DR1 = cmd.ExecuteReader();
-
-                if (DR1.Read())
-                {
-                    request_num.Text = DR1.GetValue(0).ToString();
-                    device_name.Text = DR1.GetValue(1).ToString();
-                    req_type.Text = DR1.GetValue(2).ToString();
-                    user_name.Text = DR1.GetValue(3).ToString();
-                    email.Text = DR1.GetValue(4).ToString();
-                    id.Text = DR1.GetValue(5).ToString();
-                    phone.Text = DR1.GetValue(6).ToString();
-                    department.Text = DR1.GetValue(7).ToString();
-                    date1.Text = DR1.GetValue(8).ToString();
-                    duration.Text = DR1.GetValue(9).ToString();
-                    con.Close();
-                    con.Dispose();
-                }
+                    SqlCommand cmd = new SqlCommand("SELECT Borrowing.request_number ,Device.name, Borrowing.request_type , Account.Fname, Account.email, Account.Id, Account.phone, Account.department_name, Borrowing.start_date, Borrowing.duration FROM Borrowing" +
+                      " JOIN Device ON Device.serial_number= Borrowing.serial_number " +
+                      " JOIN Account ON Account.Id= Borrowing.user_id " +
+                   "WHERE Borrowing.request_number='" + Session["request_number"] + "'", con);
 
 
-            }
+                    SqlDataReader DR1 = cmd.ExecuteReader();
+
+                    if (DR1.Read())
+                    {
+                        request_num.Text = DR1.GetValue(0).ToString();
+                        device_name.Text = DR1.GetValue(1).ToString();
+                        req_type.Text = DR1.GetValue(2).ToString();
+                        user_name.Text = DR1.GetValue(3).ToString();
+                        email.Text = DR1.GetValue(4).ToString();
+                        id.Text = DR1.GetValue(5).ToString();
+                        phone.Text = DR1.GetValue(6).ToString();
+                        department.Text = DR1.GetValue(7).ToString();
+                        date1.Text = DR1.GetValue(8).ToString();
+                        duration.Text = DR1.GetValue(9).ToString();
+                        con.Close();
+                        con.Dispose();
+                    }
+
+            //}
         }
 
 
@@ -62,7 +60,7 @@ namespace ILD
         [Obsolete]
         protected void Button_click(object sender, EventArgs e)
         {
-
+            Response.Write("hi");
 
             string id = Session["id"].ToString();
             string admin_name = Session["name"].ToString();
@@ -132,6 +130,11 @@ namespace ILD
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
         }
     }
 }

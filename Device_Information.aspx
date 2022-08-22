@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-        <div id="devInfo" runat="server" class="container mt-5" style="background-color: white; padding: 40px; box-shadow: 5px 5px 10px gray; border-radius: 25px; width: 60%; vertical-align: central; text-align: right;">
+        <div id="devInfo" runat="server" class="container mt-5 mb-5" style="background-color: white; padding: 40px; box-shadow: 5px 5px 10px gray; border-radius: 25px; width: 60%; vertical-align: central; text-align: right;">
                 <!-- Header -->
                 <div class="row">
                     <div class="col-md-12">
@@ -29,8 +29,8 @@
                         <div class="row">
                             <div class="col-md-1" style="margin: auto">
                                 <a onclick="showHideDesc()">
-                                    <i id="plus" class="fa fa-plus-square-o plusMinus" style="font-size: 36px;"></i>
-                                    <i id="minus" class="fa fa-minus-square plusMinus" style="font-size: 33px; display: none;"></i>
+                                    <i id="plus" class="fa fa-plus-square-o plusMinus" style="font-size: 36px; display: none;"></i>
+                                    <i id="minus" class="fa fa-minus-square plusMinus" style="font-size: 33px;"></i>
                                 </a>
                             </div>
                             <div class="col-md-11">
@@ -53,7 +53,7 @@
                         </script>
                         <!-- Description Content -->
                         <div class="row">
-                            <div class="col-md-12" style="display: none" id="desc">
+                            <div class="col-md-12" style="display: block" id="desc">
                                 <p class="deviceInfo"><%=devDesc%></p>
                             </div>
                         </div>
@@ -67,8 +67,8 @@
                         <div class="row">
                             <div class="col-md-1" style="margin: auto">
                                 <a onclick="showHideSer()">
-                                    <i id="plus1" class="fa fa-plus-square-o plusMinus" style="font-size: 36px;"></i>
-                                    <i id="minus1" class="fa fa-minus-square plusMinus" style="font-size: 33px; display: none;"></i>
+                                    <i id="plus1" class="fa fa-plus-square-o plusMinus" style="font-size: 36px; display: none;"></i>
+                                    <i id="minus1" class="fa fa-minus-square plusMinus" style="font-size: 33px;"></i>
                                 </a>
                             </div>
                             <div class="col-md-11">
@@ -91,7 +91,7 @@
                         </script>
                         <!-- Serial Number Content -->
                         <div class="row">
-                            <div class="col-md-12" style="display: none" id="ser">
+                            <div class="col-md-12" style="display: block" id="ser">
                                 <p class="deviceInfo"><%=devNum%></p>
                             </div>
                         </div>

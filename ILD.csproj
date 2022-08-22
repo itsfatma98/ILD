@@ -129,8 +129,6 @@
     <Content Include="customizedCSS\style.css" />
     <Content Include="customizedCSS\StyleSheet1.css" />
     <Content Include="customizedCSS\RawanStyle.css" />
-    <Content Include="dataTables\css\jquery.dataTables.min.css" />
-    <Content Include="dataTables\js\jquery.dataTables.min.js" />
     <Content Include="Devices.aspx" />
     <Content Include="Device_Information.aspx" />
     <Content Include="fontawesome\fontawesome-free-6.1.2-web\css\all.css" />

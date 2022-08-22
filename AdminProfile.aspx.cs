@@ -67,7 +67,6 @@ namespace ILD
             try
             {
                 userId = Session["Id"].ToString();
-                Response.Write("hello");
                 string str = getConstring();
                 con = new SqlConnection(str);
                 cmd = new SqlCommand("update Account set Fname=@fname, Lname=@lname, email=@email, phone=@phone where Id='" +userId +"'", con);

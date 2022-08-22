@@ -20,7 +20,7 @@ namespace ILD
 
         public string GetConstring()
         {
-            string constr = ConfigurationManager.ConnectionStrings["constring"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             return constr;
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -57,27 +57,28 @@ namespace ILD
         protected void Reservation_Form_Click(object sender, EventArgs e)
 
         {
-            string str = GetConstring();
-            con = new SqlConnection(str);
-            con.Open();
+           
 
             try
             {
+                string str = GetConstring();
+                con = new SqlConnection(str);
+                con.Open();
 
                 SqlCommand cmd1 = new SqlCommand("INSERT INTO Reservation(date,user_id,serial_number) values(@date,@user_id,@serial_number)", con);
-
+                Response.Write("After sqlCommand! ");
                 cmd1.Parameters.AddWithValue("@date", cal.Text.Trim());
                 cmd1.Parameters.AddWithValue("@user_id", userid);
                 cmd1.Parameters.AddWithValue("@serial_number", deviceNum);
-
+                Response.Write("After ADDING! ");
                 cmd1.ExecuteNonQuery();
                 con.Close();
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "success();", true);
             }
             catch (Exception ex)
             {
-                // Response.Write(ex.ToString());
-                Response.Write("<script>alert('التاريخ غير متاح للحجز');</script>");
+                Response.Write(ex.ToString());
+
             }
 
         }

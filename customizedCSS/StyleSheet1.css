@@ -1,6 +1,6 @@
 ﻿body {
     font-family: Arial;
-    background-color:aqua;
+   
 }
 
 .bcolor {
@@ -262,3 +262,7 @@ personal-details {
         color: #3e8e41;
         text-decoration: none;
     }
+.dropdown-content a:hover {
+    background-color: #437131;
+    color: white;
+}

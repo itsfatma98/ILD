@@ -57,7 +57,7 @@ namespace ILD
             cmd.ExecuteNonQuery();
             con.Close();
             //set feedback session
-            Response.Redirect("Admin.aspx");
+            Response.Redirect("AdminProfile.aspx");
 
         }
     }

@@ -27,7 +27,7 @@ namespace ILD
         protected void Button3_Click(object sender, EventArgs e)
         {
 
-            if (pass.Value != pass2.Value)
+            if (password.Text != confirm_password.Text)
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errorPassword();", true);
                 //  Response.Write("<script>alert('كلمة المرور غير متطابقة');</script>");
@@ -44,12 +44,12 @@ namespace ILD
                 con = new SqlConnection(str);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("insert into Account values (@userid,@fname,@lname,@emailAdd,@phoneNum,@password,@dep,@accountTyp)", con);
-                cmd.Parameters.AddWithValue("@fname", firstname.Value.Trim().ToString());
-                cmd.Parameters.AddWithValue("@lname", lastname.Value.Trim().ToString());
-                cmd.Parameters.AddWithValue("@userid", usid.Value.Trim().ToString());
-                cmd.Parameters.AddWithValue("@phoneNum", phone.Value.Trim().ToString());
-                cmd.Parameters.AddWithValue("@emailAdd", email.Value.Trim().ToString());
-                cmd.Parameters.AddWithValue("@password", pass.Value.Trim().ToString());
+                cmd.Parameters.AddWithValue("@fname", Fname.Text.Trim().ToString());
+                cmd.Parameters.AddWithValue("@lname", Lname.Text.Trim().ToString());
+                cmd.Parameters.AddWithValue("@userid", id.Text.Trim().ToString());
+                cmd.Parameters.AddWithValue("@phoneNum", phone.Text.Trim().ToString());
+                cmd.Parameters.AddWithValue("@emailAdd", email.Text.Trim().ToString());
+                cmd.Parameters.AddWithValue("@password", password.Text.Trim().ToString());
                 cmd.Parameters.AddWithValue("@dep", "null");
                 cmd.Parameters.AddWithValue("@accountTyp", "admin");
                
@@ -72,7 +72,7 @@ namespace ILD
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("SELECT * from Account where Id='" + usid.Value.Trim() + "';", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from Account where Id='" +id.Text.Trim() + "';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

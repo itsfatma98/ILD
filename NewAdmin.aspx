@@ -1,54 +1,77 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="NewAdmin.aspx.cs" Inherits="ILD.NewAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-       <link href="customizedCSS/FormsStyle.css" rel="stylesheet" />
+     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid" style="justify-content: center">
-        <div class=" container d-flex flex-column px-xl-5 ">
-            <div class="text-center mt-5 mr-5 mb-5">
-              <h1>اضافة مشرف</h1>  
-            </div>
+    
+    <div class="container-fluid">
 
-            <div class=" x ">
-                <div class="col-md-2"></div>
-                <div class="col-md-8 mt-5 ">  
+        <div class=" container d-flex flex-column px-xl-5 ml-5 pl-5 x">
+
+            <div class=" text-center  mt-5 " style="margin-left:25%"><h1 > إضافة مشرف </h1></div>
+
+            <div class=" mt-4 ">
    
                     <div class="form-group row ">
-                        <label>الاسم الاول:</label><input type="text" name="name" id="firstname" runat="server" required>
+                         <asp:Label ID="Label1" class="col-sm-2 col-form-label text-center" runat="server" Text="الإسم الأول:"></asp:Label>
+                        <div class="col-sm-10" >
+                             <asp:TextBox  ID="Fname" runat="server" class="form-control w-50" name="Fname" required="true"></asp:TextBox>
+                         </div>
+                    </div>
+
+                    
+                    <div class="form-group row ">
+                        <asp:Label ID="Label2" class="col-sm-2 col-form-label text-center" runat="server" Text="الإسم الأخير:"></asp:Label>
+                        <div class="col-sm-10">
+                            <asp:TextBox type="text" ID="Lname" class="form-control w-50" runat="server" required="true" ></asp:TextBox>
+                        </div>
+                    </div>
+
+                   <div class="form-group row ">
+                        <asp:Label ID="Label3" class="col-sm-2 col-form-label text-center" runat="server" Text="الرقم الجامعي/الوظيفي:"></asp:Label>
+                        <div class="col-sm-10">
+                            <asp:TextBox type="text" ID="id" class="form-control w-50" runat="server" required="true" ></asp:TextBox>
+                        </div>
+                    </div>
+
+                     <div class="form-group row ">
+                            <asp:Label ID="Label5" class="col-sm-2 col-form-label text-center" runat="server" Text="رقم الجوال:"></asp:Label>
+                            <div class="col-sm-10">
+                                <asp:TextBox ID="phone" TextMode="Phone" name="phoneNum" class="form-control w-50" runat="server" required="true" ></asp:TextBox>
+                            </div>
+                    </div>
+                    
+                    <div class="form-group row ">
+                            <asp:Label ID="Label6" class="col-sm-2 col-form-label text-center" runat="server" Text="البريد الإلكتروني:"></asp:Label>
+                            <div class="col-sm-10">
+                                <asp:TextBox  TextMode="Email"  ID="email"  name="Gmail" class="form-control w-50" runat="server" required="true" ></asp:TextBox>
+                            </div>
                     </div>
 
                     <div class="form-group row ">
-                        <label>الاسم الاخير:</label><input type="text" name="name" id="lastname" runat="server" required>
+                        <asp:Label ID="Label7" class="col-sm-2 col-form-label text-center" runat="server" Text="كلمة المرور:"></asp:Label>
+                        <div class="col-sm-10">
+                            <asp:TextBox class="form-control w-50" ID="password" runat="server" name="pass" required="true" TextMode="Password"></asp:TextBox>
+                        </div>
                     </div>
 
                     <div class="form-group row ">
-                        <label>الرقم الوظيفي:</label><input type="text" name="idNum" id="usid" runat="server">
+                        <asp:Label ID="Label8" class="col-sm-2 col-form-label text-center" runat="server" Text="تأكيد كلمة المرور:"></asp:Label>
+                        <div class="col-sm-10">
+                            <asp:TextBox class="form-control w-50" ID="confirm_password" runat="server" name="pass2" required="true" TextMode="Password"></asp:TextBox>
+                        </div>
                     </div>
 
-                    <div class="form-group row ">
-                        <label>رقم الجوال:</label><input type="text" name="phoneNum" id="phone" runat="server" required>
-                    </div>
+                    <div class="form-group row text-center  mb-4">
+                        <div class="col-sm-10 ">
+                           <asp:Button class="btn btn-success text-center" style="margin-left:9%" ID="Button1" runat="server" Text="إضافة المشرف" OnClick="Button3_Click" />
+                        </div>
 
-                    <div class="form-group row ">
-                        <label>البريد الالكتروني:</label><input type="email" name="Gmail" id="email" runat="server" required>
                     </div>
-
-                    <div class="form-group row ">
-                        <label>كلمة المرور:</label><input type="password" id="pass" runat="server" required>
-                    </div>
-
-                    <div class="form-group row ">                        
-                        <label>تأكيد كلمة المرور:</label><input type="password" id="pass2" runat="server" required>
-                    </div>
-          
-         <div class="form-group row mt-2" style="justify-content: left;">
-                           <div class="col-sm-10">
-                <asp:Button class="btn btn-success" Style="margin-left: 80px;" ID="Button3" runat="server"  OnClick="Button3_Click" Text="اضافة" />
-           </div> 
-         </div><%----%>
-      
- </div> </div> </div> </div>
-
+                </div>
+            </div>
+        </div>
+    
            <!-- pupup JS -->
              <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
              <script src="sweetalert2.all.min.js"></script>
@@ -61,7 +84,7 @@
                  buttonsStyling: false,
                  confirmButtonText: 'موافق'
              }).then(function () {
-                 window.location.href = 'Admin.aspx';
+                 window.location.href = 'AdminProfile.aspx';
              });
          }
          function error() {

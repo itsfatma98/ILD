@@ -51,7 +51,7 @@ namespace ILD
 
         public string getConstring()
         {
-            string constr = ConfigurationManager.ConnectionStrings["constring"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             return constr;
         }
 
