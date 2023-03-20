@@ -73,9 +73,11 @@ namespace ILD
         {
             // CheckBox chk = (CheckBox)sender;
             //if (chk.Checked){
-            //string request_number = ((CheckBox)sender).CommandArgument;          }
-
+            //string request_number = ((CheckBox)sender).CommandArgument;
+            //}
+            
             string request_number = ((Button)sender).CommandArgument;
+            Response.Write(request_number);
             string str = getConstring();
             con = new SqlConnection(str);
             con.Open();
@@ -83,8 +85,9 @@ namespace ILD
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             con.Close();
+            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "success();", true);
             //set feedback session
-            Response.Redirect("currentOrders.aspx");
+            // Response.Redirect("currentOrders.aspx");
 
         }
     }

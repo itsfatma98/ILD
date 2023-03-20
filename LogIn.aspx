@@ -29,7 +29,7 @@
                 <asp:Label ID="errorlabel" runat="server" Text="Label" Visible="false"></asp:Label>
 
                 <div class="d-flex justify-content-center">
-                    <asp:linkButton ID="LinkButton1" runat="server" class=" text-center mt-4"  style="margin-left:30%" Text="هل نسيت كلمة السر؟" OnClick="password" />
+                     <asp:linkButton ID="LinkButton1" class=" text-right  mt-4 mb-4"  runat="server" style="margin-left:30%" Text="هل نسيت كلمة السر؟" OnClick="password" />
 
                 </div>
                 <div class="d-flex justify-content-center">
@@ -39,7 +39,7 @@
 
                     <div class="form-group row text-center  mb-4">
                         <div class="col-sm-10 ">
-                             <asp:Button ID="Button2" class="btn btn-success " style="margin-left:15%"  runat="server" Text="تسجيل الدخول" OnClick="login_Click" />
+                             <asp:Button ID="Button2" class="btn btn-success "  style="margin-left:15%"  runat="server" Text="تسجيل الدخول" OnClick="login_Click" />
                         </div>
 
                     </div>

@@ -70,7 +70,7 @@ namespace ILD
                 cmd1.Parameters.AddWithValue("@date", cal.Text.Trim());
                 cmd1.Parameters.AddWithValue("@user_id", userid);
                 cmd1.Parameters.AddWithValue("@serial_number", deviceNum);
-                Response.Write("After ADDING! ");
+               
                 cmd1.ExecuteNonQuery();
                 con.Close();
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "success();", true);

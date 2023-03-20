@@ -73,7 +73,7 @@ namespace ILD
 
                 if (Table.Rows[0][0].ToString().Equals("admin"))
                 {
-                    Response.Redirect("Admin.aspx");
+                    Response.Redirect("AdminProfile.aspx");
                 }
                 else
                 {

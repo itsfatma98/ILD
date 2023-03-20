@@ -16,7 +16,7 @@ namespace ILD
     {
         string sNum;
         static string globalFilePath;
-        static int actualStock, currentStock, issuedBook;
+     
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,8 +52,10 @@ namespace ILD
                         }
 
                     }
+                    
 
                 }
+                
             }
 
         }
@@ -66,7 +68,8 @@ namespace ILD
 
         protected void saveChanges(object sender, EventArgs e)    //add button click
         {
-          
+            Response.Write("خلاااص");
+
             if (sNum != null)
             {
                
@@ -101,10 +104,10 @@ namespace ILD
                     string filepath = "";
                     string filename = Path.GetFileName(DeviceImg.PostedFile.FileName);
                     DeviceImg.SaveAs(Server.MapPath("DevicesImgs/" + filename));
-                    filepath = "~/DevicesImgs/" + filename;
+                    filepath = "DevicesImgs/" + filename;
 
 
-
+                    
                     //query
                     SqlCommand cmd = new SqlCommand("insert into Device (serial_number, name, description, total_quantity, available_quantity, picture, type, counter) values (@serial_number,@name,@description,@total_quantity,@available_quantity,@picture,@type,@counter )", con);
                     //cmd.CommandType = CommandType.Text;
@@ -113,10 +116,14 @@ namespace ILD
                     cmd.Parameters.AddWithValue("@description", TextBox1.Text.Trim());
                     cmd.Parameters.AddWithValue("@total_quantity", Quantity.Text.Trim());
                     cmd.Parameters.AddWithValue("available_quantity", Quantity.Text.Trim());
+                   
+                  
                     cmd.Parameters.AddWithValue("@picture", filepath);
                     cmd.Parameters.AddWithValue("@type", type.SelectedItem.Value);
                     cmd.Parameters.AddWithValue("@counter", "0");
+                 
                     cmd.ExecuteNonQuery();
+                 
                     con.Close();
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "success();", true);
                     globalFilePath = filepath;
@@ -173,13 +180,28 @@ namespace ILD
             {
                 try
                 {
-                    
-                  
+
+                    string strcon = GetConstring();
+                    SqlConnection con = new SqlConnection(strcon);
+                    con.Open(); 
+
                     string filepath = "";
                     string filename = Path.GetFileName(DeviceImg.PostedFile.FileName);
-                    Response.Redirect(filename);
+                   
                     if (filename == "" || filename == null)
                     {
+                        SqlCommand imgcmd = new SqlCommand("SELECT * from Device where serial_number='" + sNum + "';", con);
+                        //take query adapt query from table to dt table
+                        SqlDataAdapter da = new SqlDataAdapter(imgcmd);
+                        //save qury results
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        if (dt.Rows.Count > 0)
+                        {
+                            globalFilePath = dt.Rows[0]["picture"].ToString();
+                           
+                        }
                         filepath = globalFilePath;
 
                     }
@@ -189,9 +211,6 @@ namespace ILD
                         filepath = "~/DevicesImgs/" + filename;
                     }
 
-                    string strcon = GetConstring();
-                    SqlConnection con = new SqlConnection(strcon);
-                    con.Open();
                     SqlCommand cmd = new SqlCommand("UPDATE Device set serial_number=@serial_number, name=@name, description=@description, total_quantity=@total_quantity, picture=@picture, type=@type WHERE serial_number= '"+sNum+"'", con);
                     cmd.Parameters.AddWithValue("@serial_number", Serial.Text.Trim());
                     cmd.Parameters.AddWithValue("@name", DeviceName.Text.Trim());
@@ -201,15 +220,15 @@ namespace ILD
                     cmd.Parameters.AddWithValue("@type", type.SelectedItem.Value);
                  
                     cmd.ExecuteNonQuery();
-                    
-                    con.Close();
                     sNum = null;
+                    con.Close();
+                   
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "update();", true);
 
                 }
                 catch (Exception ex)
                 {
-                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                    Response.Write("<script>alert('" + ex.Message+ "dd" + "');</script>");
                 }
 
                 

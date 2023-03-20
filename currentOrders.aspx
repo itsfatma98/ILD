@@ -8,11 +8,11 @@
     <div class="container-fluid  ">
         <div class=" d-flex flex-column ml-5 pl-5">
             <div class="text-center mt-5">
-                <h2>طلبات الإستعارة والتمديد: </h2>
+                <h2>طلبات الإستعارة : </h2>
             </div>
 
             <!--Table for current orders (borrowing and extenstion) in xhtml code -->
-            <div class="container tableContainer   mt-5">
+           <div class="container tableContainer  mt-5">
                 <table class="table table-hover  text-center " id="currentT">
                     <thead class="bg-success">
                         <tr>
@@ -33,7 +33,7 @@
                                     <td><%#Eval("Fname")%></td>
                                     <td><%#Eval("request_type")%></td>
                                     <td>
-                                        <asp:Button class="btn btn-success fa fa-cloud" runat="server" ID="return" Text="تم" OnClick="btnReturn_Click" CommandArgument='<%#Eval("request_number")%>' />
+                                        <asp:Button class="btn btn-success " runat="server" ID="return" Text="تم" OnClick="btnReturn_Click" CommandArgument='<%#Eval("request_number")%>' />
                                     </td>
                                 </tr>
                             </ItemTemplate>
@@ -78,4 +78,20 @@
         </div>
     </div>
 
+    <!-- pupup JS -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script>
+        function success() {
+            Swal.fire({
+                title: 'شكراً لك',
+                text: 'تم إتمام إرجاع الجهاز بنجاح',
+                icon: 'success',
+                buttonsStyling: false,
+                confirmButtonText: 'موافق'
+            }).then(function () {
+                window.location.href = 'currentOrders.aspx';
+            });
+        }
+    </script>
 </asp:Content>

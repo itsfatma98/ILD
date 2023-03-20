@@ -17,9 +17,9 @@ namespace ILD
         SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-                    con = new SqlConnection(GetConstring());
+            if (!IsPostBack)
+            {
+                con = new SqlConnection(GetConstring());
                     con.Open();
 
 
@@ -43,12 +43,13 @@ namespace ILD
                         department.Text = DR1.GetValue(7).ToString();
                         date1.Text = DR1.GetValue(8).ToString();
                         duration.Text = DR1.GetValue(9).ToString();
-                        con.Close();
-                        con.Dispose();
+                        
                     }
 
-            //}
+                    con.Close();
+                    con.Dispose();
         }
+    }
 
 
         public string GetConstring()
@@ -60,15 +61,17 @@ namespace ILD
         [Obsolete]
         protected void Button_click(object sender, EventArgs e)
         {
-            Response.Write("hi");
-
+            
+            //Session["id"] = "1824846";
+            //Session["name"] = "ولاء";
             string id = Session["id"].ToString();
             string admin_name = Session["name"].ToString();
 
 
+
             try
             {
-
+                
                 string str = GetConstring();
                 con = new SqlConnection(str);
                 con.Open();
@@ -76,15 +79,20 @@ namespace ILD
                                   " JOIN Device ON Device.serial_number= Borrowing.serial_number " +
                                "WHERE Borrowing.request_number='" + Session["request_number"] + "'", con);
                 SqlDataReader DR = cmd1.ExecuteReader();
+               
                 if (DR.Read())
                 {
-
+                  
                     int avc = Convert.ToInt32(DR.GetValue(3));
+                  
                     int cont = Convert.ToInt32(DR.GetValue(4));
-                    string serialn = DR.GetValue(3).ToString();
+                    
+                    string serialn = DR.GetValue(2).ToString();
+                  
                     DR.Close();
-                    SqlCommand myCommand = new SqlCommand("UPDATE Borrowing SET return_date= @return_date,admin_response=@admin_response,status=@status,admin_id=@admin_id,admin_name=@admin_name WHERE Borrowing.request_number='" + Session["request_number"] + "'", con);
+                    SqlCommand myCommand = new SqlCommand("UPDATE Borrowing SET return_date= @return_date,admin_response=@admin_response,status=@status,admin_id=@admin_id, adminName=@adminName WHERE Borrowing.request_number='" + Session["request_number"] + "'", con);
                     SqlCommand DeviceCom = new SqlCommand("UPDATE Device SET available_quantity=@available_quantity, counter=@counter WHERE Device.serial_number='" + serialn + "'", con);
+                  
                     if (acc.Checked)
                     {
                         if (date2.Text.Trim() == "")
@@ -93,15 +101,17 @@ namespace ILD
                         }
                         else
                         {
+                           
                             myCommand.Parameters.AddWithValue("@return_date", date2.Text.Trim());
                             myCommand.Parameters.AddWithValue("@admin_response", "accepted");
-                            myCommand.Parameters.AddWithValue("@status", "not_returned");
+                            myCommand.Parameters.AddWithValue("@status", "not returned");
                             myCommand.Parameters.AddWithValue("@admin_id", id);
-                            myCommand.Parameters.AddWithValue("@admin_name", admin_name);
+                            myCommand.Parameters.AddWithValue("@adminName", admin_name);
                             DeviceCom.Parameters.AddWithValue("@available_quantity", avc - 1);
                             DeviceCom.Parameters.AddWithValue("@counter", cont + 1);
                             myCommand.ExecuteNonQuery();
                             DeviceCom.ExecuteNonQuery();
+                           
                             con.Close();
 
                             ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "accept();", true);

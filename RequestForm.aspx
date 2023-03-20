@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="RequestForm.aspx.cs" Inherits="ILD.RequestForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="RequestForm.aspx.cs" Inherits="ILD.RequestForm" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <%--<link href="customizedCSS/FormsStyle.css" rel="stylesheet" />--%>
 </asp:Content>
@@ -95,7 +95,7 @@
                         <div class="col-sm-10 ">
                              <asp:Button ID="Button2" class="btn btn-success " style="margin-left:15%"  runat="server" text="حفظ التغييرات" type="submit"  OnClick="Button_click" />
                         </div>
-                    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+                    
 
                     </div>
 

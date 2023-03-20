@@ -67,7 +67,7 @@ namespace ILD
                         Session["id"] = ID;
                         Session["name"] = username;
                         Session["userType"] = userType;
-                        //Response.Redirect("Admin.aspx");
+                      
                         
                         if (String.Equals(userType, "admin"))
                         {
@@ -116,7 +116,8 @@ namespace ILD
 
         protected void password(object sender, EventArgs e)
         {
-
+            Response.Write("hwllo");
+            Response.Redirect("ForgetPass1.aspx");
         }
 
         //    bool CheckUserExists()

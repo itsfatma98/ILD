@@ -36,4 +36,18 @@
                 </div>
             </div>
         </div>
+    <script>
+        function success() {
+            Swal.fire({
+                title: 'شكراً لك',
+                text: 'تم حذف المشرف بنجاح',
+                icon: 'success',
+                buttonsStyling: false,
+                confirmButtonText: 'موافق'
+            }).then(function () {
+                window.location.href = 'AdminProfile.aspx';
+            });
+        }
+    </script>
+    
 </asp:Content>

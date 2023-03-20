@@ -56,8 +56,7 @@ namespace ILD
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             con.Close();
-            //set feedback session
-            Response.Redirect("AdminProfile.aspx");
+            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "success();", true);
 
         }
     }

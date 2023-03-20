@@ -46,8 +46,7 @@ namespace ILD
             try
             {
                 devNum = Session["deviceNum"].ToString();
-                //Response.Write("sd" + devNum);
-                SqlCommand cmd = new SqlCommand("select name, type, description, serial_number,picture from Device where serial_number='" + devNum + "'", con);
+                SqlCommand cmd = new SqlCommand("select name, type, description, serial_number, picture from Device where serial_number='" + devNum + "'", con);
 
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter DA = new SqlDataAdapter(cmd);
@@ -64,6 +63,11 @@ namespace ILD
                 devDesc = Table.Rows[0][2].ToString();
                 devNum = Table.Rows[0][3].ToString();
                 devPic = Table.Rows[0][4].ToString();
+                //devName = Table.Rows[0][1].ToString();
+                //devType = Table.Rows[0][6].ToString();
+                //devDesc = Table.Rows[0][2].ToString();
+                //devNum = Table.Rows[0][0].ToString();
+                //devPic = Table.Rows[0][5].ToString();
 
             }
             catch (Exception e)
@@ -79,8 +83,8 @@ namespace ILD
             cons.Open();
 
             SqlCommand cmd = new SqlCommand("select available_quantity from Device where serial_number='" + devNum + "'", cons);
-            //int count = Convert.ToInt32(cmd.ExecuteScalar());
-            int count = 5;
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+           
 
             if (count > 0)
             {

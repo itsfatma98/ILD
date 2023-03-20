@@ -15,8 +15,8 @@ namespace ILD
     public partial class BorrowingForm : System.Web.UI.Page
     {
         SqlConnection con;
-        string userid;
-        string deviceNum;
+        static string userid;
+        static  string deviceNum;
 
         public string GetConstring()
         {
@@ -25,7 +25,7 @@ namespace ILD
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack) { 
 
             if (Session["id"] == null)
             {
@@ -36,8 +36,9 @@ namespace ILD
 
                 userid = Session["id"].ToString();
                 deviceNum = Session["deviceNum"].ToString();
+                   
 
-                string str = GetConstring();
+                    string str = GetConstring();
                 con = new SqlConnection(str);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select * from Account where id='" + userid + "'", con);
@@ -53,6 +54,7 @@ namespace ILD
                 con.Close();
 
             }
+            }
         }
 
         protected void Borrowing_Form_Click(object sender, EventArgs e)
@@ -65,15 +67,17 @@ namespace ILD
                 con.Open();
 
 
-                SqlCommand cmd1 = new SqlCommand(" INSERT INTO Borrowing(start_date,duration,admin_response,status,serial_number,user_id,request_type) values(@start_date,@duration,@admin_response,@status,@serial_number,@user_id,@request_type)", con);
+                SqlCommand cmd1 = new SqlCommand(" INSERT INTO Borrowing(start_date,duration,return_date,admin_response,status,serial_number,user_id,request_type,adminName) values(@start_date,@duration,@return_date,@admin_response,@status,@serial_number,@user_id,@request_type ,@adminName)", con);
 
                 cmd1.Parameters.AddWithValue("@start_date", cal.Text.Trim());
+                cmd1.Parameters.AddWithValue("@return_date", "");
                 cmd1.Parameters.AddWithValue("@duration", duration.SelectedItem.Value);
                 cmd1.Parameters.AddWithValue("@admin_response", "pending");
                 cmd1.Parameters.AddWithValue("@status", "Not Active");
                 cmd1.Parameters.AddWithValue("@serial_number", deviceNum);
                 cmd1.Parameters.AddWithValue("@user_id", userid);
-                cmd1.Parameters.AddWithValue("@request_type", "اعارة");
+                cmd1.Parameters.AddWithValue("@request_type", "global");
+                cmd1.Parameters.AddWithValue("@adminName","");
                 cmd1.ExecuteNonQuery();
                 con.Close();
 
